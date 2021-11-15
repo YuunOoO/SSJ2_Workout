@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.ItemsPage"
-             Title="{Binding Title}"
+             Title="Ustawienia"
              xmlns:local="clr-namespace:SSJ2_Workout.ViewModels"  
              xmlns:model="clr-namespace:SSJ2_Workout.Models"  
              x:Name="BrowseItemsPage">

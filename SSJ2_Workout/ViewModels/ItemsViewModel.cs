@@ -19,7 +19,7 @@ namespace SSJ2_Workout.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Ustawienia";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

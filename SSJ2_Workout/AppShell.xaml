@@ -15,12 +15,12 @@
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.ForegroundColor" Value="#21d2ff" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#1e1f26" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#1e1f26"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
             </Style>
@@ -46,7 +46,7 @@
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="#21d2ff" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
