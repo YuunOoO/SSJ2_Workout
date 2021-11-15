@@ -38,9 +38,9 @@
 
         </Frame>
         
-        <Frame HeightRequest="70" WidthRequest="400"
+        <Frame HeightRequest="60" WidthRequest="400"
                BackgroundColor="#2196f3" Margin="5"
-               HasShadow="True" Padding="0" CornerRadius="25"
+               HasShadow="True" Padding="5" CornerRadius="25"
                HorizontalOptions="Center" >
             <Grid>
                 <Grid.RowDefinitions>
@@ -51,10 +51,12 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 
-                    <Label Text="Powiadomienia:" HorizontalOptions="Center"
-                           FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="0"></Label>
-                    <Label Text="Do roboty!" HorizontalOptions="Center"
-                           FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="1"></Label>
+                    <Label Text="Powiadomienia:" FontAttributes="Bold" 
+                           FontSize="20" TextColor="Black" Grid.Row="0"
+                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                    <Label Text="Do roboty!" FontAttributes="Bold" 
+                           FontSize="20" TextColor="Black" Grid.Row="1"
+                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
                 
             </Grid>
         </Frame>
@@ -63,23 +65,22 @@
                BackgroundColor="#2196f3" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
-            <Grid ColumnSpacing="10">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="https://icon-library.com/images/step-icon/step-icon-12.jpg"
-                           HeightRequest="80" Margin="0" HorizontalOptions="Start"
+                <Image Source="https://icon-library.com/images/step-icon/step-icon-12.jpg" Aspect="AspectFill"
                        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
                 </Image>
                 <Label Text="Przebyte kroki: " Grid.Row="0" Grid.Column="1"
                        TextColor="Black" FontSize="20" FontAttributes="Bold"
-                       ></Label>
-                <Label Text="Przykładowe kroki 1231245 " Grid.Row="1" Grid.Column="1"
+                       VerticalTextAlignment="Center"></Label>
+                <Label Text="P. kroki 1231245 " Grid.Row="1" Grid.Column="1"
                        TextColor="Black" FontSize="20" FontAttributes="Bold"
                        ></Label>
 
@@ -88,9 +89,9 @@
 
         <Frame HeightRequest="160" WidthRequest="400"
                BackgroundColor="#2196f3" Margin="5"
-               HasShadow="True" Padding="0" CornerRadius="25"
+               HasShadow="True" Padding="5" CornerRadius="25"
                HorizontalOptions="Center" >
-            <Grid>
+            <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                 </Grid.RowDefinitions>
@@ -100,17 +101,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#21d2ff" Grid.Column="0" Margin="10" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#21d2ff" Grid.Column="0" CornerRadius="25" HasShadow="True">
                     <Label Text="BMI:" TextColor="Black" 
                    FontSize="20" FontAttributes="Bold"  HorizontalOptions="Center"
                        ></Label>
                 </Frame>
-                <Frame BackgroundColor="#21d2ff" Grid.Column="1" Margin="10" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#21d2ff" Grid.Column="1" CornerRadius="25" HasShadow="True">
                     <Label Text="Puls:" TextColor="Black" 
                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
                        ></Label>
                 </Frame>
-                <Frame BackgroundColor="#21d2ff" Grid.Column="2" Margin="10" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#21d2ff" Grid.Column="2" CornerRadius="25" HasShadow="True">
                     <Label Text="Kcal:" TextColor="Black" 
                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
                        ></Label>
