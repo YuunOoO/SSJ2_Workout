@@ -120,7 +120,7 @@
             </Grid>
         </Frame>
 
-        <Frame HeightRequest="30" WidthRequest="400"
+        <Frame HeightRequest="40" WidthRequest="400"
                BackgroundColor="#2196f3" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
