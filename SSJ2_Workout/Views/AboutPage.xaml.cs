@@ -31,5 +31,17 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new PasekBoczny());
         }
+        public void GoToNotifications(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Notifications());
+        }
+        public void GoToGoals(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Goals());
+        }
+        public void GoToSettings(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Settings());
+        }
     }
 }
