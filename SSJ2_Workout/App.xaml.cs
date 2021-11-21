@@ -14,7 +14,7 @@ namespace SSJ2_Workout
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            // MainPage = new AppShell();
+            MainPage = new AppShell();
             MainPage = new NavigationPage(new AboutPage());
         }
 

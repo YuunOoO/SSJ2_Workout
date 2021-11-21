@@ -5,6 +5,21 @@
              xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
              Title="{Binding Title}">
 
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color"
+                    Android="Yellow"
+                    />
+    </ContentPage.BackgroundColor>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+          
+                 Text="Dodaj Ikonke"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="GoToMenu"/>
+    </ContentPage.ToolbarItems>
+
     <StackLayout BackgroundColor="#1e1f26">
         
 
