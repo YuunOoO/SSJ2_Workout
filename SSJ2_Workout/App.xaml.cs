@@ -4,6 +4,8 @@ using SSJ2_Workout.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Samantha.ttf")]
+
 namespace SSJ2_Workout
 {
     public partial class App : Application
