@@ -9,10 +9,11 @@
     <NavigationPage.TitleView>
         <Label Text="SSJ2" FontSize="50" TextColor="White" HorizontalOptions="Center" FontFamily="Samantha" FontAttributes="Bold"/>
     </NavigationPage.TitleView>
+    
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-                 Text="Ikona"
+                 IconImageSource="menu.png"
                  Order="Primary"
                  Priority="0"
                  Clicked="GoToMenu"/>
