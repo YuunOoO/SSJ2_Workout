@@ -155,7 +155,7 @@
                BackgroundColor="#2196f3" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
-            <Label Text="Ver. 0.0.9 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+            <Label Text="Ver. 0.1.1 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center"
                        ></Label>
        </Frame>
