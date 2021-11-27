@@ -3,4 +3,8 @@
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
 	<application android:label="SSJ2_Workout.Android" android:theme="@style/MainTheme" android:icon="@mipmap/ic_launcher"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+	<uses-feature android:name="android.hardware.sensor.stepcounter" />
+	<uses-feature android:name="android.hardware.sensor.stepdetector" />
+	
 </manifest>

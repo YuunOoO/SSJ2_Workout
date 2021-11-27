@@ -8,8 +8,10 @@
             <Label Grid.Row="0" Grid.Column="2" x:Name="LabelX" TextColor="White" />
             <Label Grid.Row="1" Grid.Column="2" x:Name="LabelY" TextColor="White"/>
             <Label Grid.Row="2" Grid.Column="2" x:Name="LabelZ" TextColor="White" />
+            <Label x:Name="mylabel"  Text="Ilosc krokow" Grid.Row="5" Grid.Column="0"/>
             <Button Grid.Row="3" Grid.Column="0" Text="Start" x:Name="ButtonStart" Clicked="ButtonClicked" />
-            <Label Grid.Row="4" Grid.Column="2" x:Name="Kroki" TextColor="White" Text="Liczba krokow" />
+            <Button Text="Click"  x:Name="myBtn" IsVisible="False" Clicked="Button_Clicked2" Grid.Row="4" Grid.Column="0"/>
+            
 
         </StackLayout>
     </ContentPage.Content>

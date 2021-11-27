@@ -2,7 +2,7 @@
 using SSJ2_Workout.Services;
 using SSJ2_Workout.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Plugin;
 
 [assembly: ExportFont("Samantha.ttf")]
 
@@ -10,7 +10,7 @@ namespace SSJ2_Workout
 {
     public partial class App : Application
     {
-
+      
         public App()
         {
             InitializeComponent();
@@ -18,8 +18,12 @@ namespace SSJ2_Workout
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
             MainPage = new NavigationPage(new AboutPage());
-            
+       
         }
+
+      
+
+
         protected override void OnStart()
         {
         }
