@@ -1,24 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
-
+using Android;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Hardware;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Core.App;
+using AndroidX.Core.Content;
 using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Droid
 {
     [Activity(Label = "Counter")]
+    [assembly: Dependency(typeof(Counter))]
+
     public class Counter : Java.Lang.Object, IStepCounter, ISensorEventListener
     {
 
-        private int StepsCounter = 0;
+        public int StepsCounter = 0;
         private SensorManager sManager;
 
         public int Steps
@@ -62,6 +68,12 @@ namespace SSJ2_Workout.Droid
             return Application.Context.PackageManager.HasSystemFeature(Android.Content.PM.PackageManager.FeatureSensorStepCounter) &&
                 Application.Context.PackageManager.HasSystemFeature(Android.Content.PM.PackageManager.FeatureSensorStepDetector);
         }
-
-    }
+        //public void perm()
+        //{
+        //    ActivityCompat.RequestPermissions(thisActivity,
+        //     arrayOf(Manifest.permission.ACTIVITY_RECOGNITION),
+        //     MY_PERMISSIONS_REQUEST_ACTIVITY_RECOGNITION);
+        //}
+    
+     }
 }

@@ -12,12 +12,13 @@ using SQLitePCL;
 using SQLite;
 using Plugin;
 using System.ComponentModel;
+using static Xamarin.Essentials.Permissions;
+using System.Windows.Input;
 
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [DesignTimeVisible(false)]
-
     public partial class Steps : ContentPage
     {
         public interface IStepCounter
@@ -30,19 +31,43 @@ namespace SSJ2_Workout.Views
 
             void StopSensorService();
         }
+        public async Task GetSensorsAsync()
+        {
+            var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
+            if (permissions != PermissionStatus.Granted)
+            {
+                testowy.Text = "Uprawnienia sa juz przyznane!";
+                permissions = await Permissions.RequestAsync<Permissions.Sensors>();
+            }
+            
+        }
+        public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permission)
+                    where T : BasePermission
+        {
+            var status = await permission.CheckStatusAsync();
+            if (status != PermissionStatus.Granted)
+            {
+                status = await permission.RequestAsync();
+            }
+            return status;
+        }
+
         public Steps()
         {
             InitializeComponent();
-            Accelerometer.ReadingChanged += Readchanged;
-           if (DependencyService.Get<IStepCounter>().IsAvailable())
-           {
-                DependencyService.Get<IStepCounter>().InitSensorService();
+            DependencyService.Get<IStepCounter>().InitSensorService();
+            myBtn.IsVisible = true;
+            if (DependencyService.Get<IStepCounter>().IsAvailable())
+            {
                 myBtn.IsVisible = true;
-           }
+                DependencyService.Get<IStepCounter>().InitSensorService();
+            }
+            Accelerometer.ReadingChanged += Readchanged;
         }
+
         private void Button_Clicked2(object sender, EventArgs e)
         {
-            mylabel.Text = DependencyService.Get<IStepCounter>().Steps.ToString();
+            mylabel.Text =$"Liczba krokow:  { DependencyService.Get<IStepCounter>().Steps.ToString()}";
         }
 
         /*  public class PedometerImpl : AbstractSensor<int>, IPedometer
@@ -52,24 +77,27 @@ namespace SSJ2_Workout.Views
           }
         */
 
+
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)
         {
             LabelX.Text = $"X: {args.Reading.Acceleration.X}";
             LabelY.Text = $"Y: {args.Reading.Acceleration.Y}";
             LabelZ.Text = $"Z: {args.Reading.Acceleration.Z}";
-          
+
         }
 
-    
+
 
 
         private async void NavigateButton_OnClicked(object sender, EventArgs e)
         {
+            GetSensorsAsync();
+
             await Navigation.PushAsync(new AboutPage());
         }
         void ButtonClicked(Object Sender, EventArgs e)
         {
-            if(Accelerometer.IsMonitoring)
+            if (Accelerometer.IsMonitoring)
             {
                 Accelerometer.Stop();
                 ButtonStart.Text = "Start";
@@ -79,7 +107,7 @@ namespace SSJ2_Workout.Views
                 Accelerometer.Start(SensorSpeed.UI);
                 ButtonStart.Text = "Stop";
             }
-           // Device.BeginInvokeOnMainThread;
+            // Device.BeginInvokeOnMainThread;
         }
 
     }

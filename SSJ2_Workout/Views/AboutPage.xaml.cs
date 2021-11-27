@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SSJ2_Workout.Views;
+using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Views
 {
@@ -10,6 +12,7 @@ namespace SSJ2_Workout.Views
         public AboutPage()
         {
             InitializeComponent();
+            wyswietlkroki.Text  = $"Liczba krokow:  { DependencyService.Get<IStepCounter>().Steps.ToString()}";
         }
         public void GoToSteps(object obj, EventArgs args)
         {
@@ -44,4 +47,5 @@ namespace SSJ2_Workout.Views
             Navigation.PushAsync(new Settings());
         }
     }
+   
 }
