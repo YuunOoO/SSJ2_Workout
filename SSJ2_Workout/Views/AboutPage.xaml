@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.AboutPage"
              xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
-             Title="{Binding Title}">
+             Title="{Binding Title}" BackgroundImageSource="backw">
 
 
     <NavigationPage.TitleView>
@@ -19,11 +19,11 @@
                  Clicked="GoToMenu"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout BackgroundColor="#1e1f26">
+    <StackLayout>
         
 
         <Frame HeightRequest="180" WidthRequest="400"
-               BackgroundColor="#2196f3" Margin="5"
+               BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
             <Grid>
@@ -31,21 +31,21 @@
                              VerticalOptions="Start">
                     <Label Text="Kalorie ogółem: " HorizontalOptions="Center"
                            FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
-                    <ProgressBar ProgressColor="#21d2ff" Progress="0.5"/>
+                    <ProgressBar ProgressColor="#286492" Progress="0.5"/>
                 </StackLayout>
                 
                 <StackLayout HeightRequest="50"  Padding="0" Margin="10"
                              VerticalOptions="Center">
                     <Label Text="Zjedzone kalorii: " HorizontalOptions="Center"
                            FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
-                    <ProgressBar ProgressColor="#21d2ff" Progress="0.5" />
+                    <ProgressBar ProgressColor="#286492" Progress="0.5" />
                 </StackLayout>
 
                 <StackLayout HeightRequest="50" Padding="0" Margin="10"
                              VerticalOptions="End">
                     <Label Text="Spalone Kalorie: " HorizontalOptions="Center"
                            FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
-                    <ProgressBar ProgressColor="#21d2ff" Progress="0.5" />
+                    <ProgressBar ProgressColor="#286492" Progress="0.5" />
                 </StackLayout>
                 
             </Grid>
@@ -53,7 +53,7 @@
         </Frame>
         
         <Frame HeightRequest="60" WidthRequest="400"
-               BackgroundColor="#2196f3" Margin="5"
+               BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="5" CornerRadius="25"
                HorizontalOptions="Center" >
             <Grid>
@@ -76,7 +76,7 @@
         </Frame>
 
         <Frame HeightRequest="80" WidthRequest="400"
-               BackgroundColor="#2196f3" Margin="5"
+               BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" 
                >
@@ -102,7 +102,7 @@
         </Frame>
 
         <Frame HeightRequest="160" WidthRequest="400"
-               BackgroundColor="#2196f3" Margin="5"
+               BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="5" CornerRadius="25"
                HorizontalOptions="Center" >
             <Grid Margin="5">
@@ -115,7 +115,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#21d2ff" Grid.Column="0" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#99444b69" Grid.Column="0" CornerRadius="25" HasShadow="True">
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
@@ -125,7 +125,7 @@
                    FontSize="20" FontAttributes="Bold"  HorizontalOptions="Center"
                        ></Label>
                 </Frame>
-                <Frame BackgroundColor="#21d2ff" Grid.Column="1" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="25" HasShadow="True">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToPulse" NumberOfTapsRequired="1" />
                     </Frame.GestureRecognizers>
@@ -133,7 +133,7 @@
                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
                        ></Label>
                 </Frame>
-                <Frame BackgroundColor="#21d2ff" Grid.Column="2" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#99444b69" Grid.Column="2" CornerRadius="25" HasShadow="True">
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToCalories" NumberOfTapsRequired="1" />
@@ -148,10 +148,10 @@
         </Frame>
 
         <Frame HeightRequest="40" WidthRequest="400"
-               BackgroundColor="#2196f3" Margin="5"
+               BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
-            <Label Text="Ver. 0.1.4 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+            <Label Text="Ver. 0.1.5 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center"
                        ></Label>
        </Frame>

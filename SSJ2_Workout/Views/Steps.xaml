@@ -5,7 +5,7 @@
              Title="Aktywność / Kroki">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#1e1f26">
-            <Label Grid.Row="0" Grid.Column="2" x:Name="LabelX" TextColor="White" />
+            <Label Grid.Row="0" Grid.Column="2" x:Name="LabelX" TextColor="white" />
             <Label Grid.Row="1" Grid.Column="2" x:Name="LabelY" TextColor="White"/>
             <Label Grid.Row="2" Grid.Column="2" x:Name="LabelZ" TextColor="White" />
             <Label x:Name="mylabel"  Text="Ilosc krokow" Grid.Row="5" Grid.Column="0" TextColor="White"/>
