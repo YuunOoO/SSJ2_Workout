@@ -12,7 +12,7 @@ namespace SSJ2_Workout.Views
         public AboutPage()
         {
             InitializeComponent();
-            wyswietlkroki.Text  = $"Liczba krokow:  { DependencyService.Get<IStepCounter>().Steps.ToString()}";
+            wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
         }
         public void GoToSteps(object obj, EventArgs args)
         {

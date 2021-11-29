@@ -68,12 +68,7 @@ namespace SSJ2_Workout.Droid
             return Application.Context.PackageManager.HasSystemFeature(Android.Content.PM.PackageManager.FeatureSensorStepCounter) &&
                 Application.Context.PackageManager.HasSystemFeature(Android.Content.PM.PackageManager.FeatureSensorStepDetector);
         }
-        //public void perm()
-        //{
-        //    ActivityCompat.RequestPermissions(thisActivity,
-        //     arrayOf(Manifest.permission.ACTIVITY_RECOGNITION),
-        //     MY_PERMISSIONS_REQUEST_ACTIVITY_RECOGNITION);
-        //}
+      
     
      }
 }

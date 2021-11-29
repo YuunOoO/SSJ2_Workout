@@ -14,6 +14,7 @@ using Plugin;
 using System.ComponentModel;
 using static Xamarin.Essentials.Permissions;
 using System.Windows.Input;
+using System.Threading;
 
 namespace SSJ2_Workout.Views
 {
@@ -21,6 +22,8 @@ namespace SSJ2_Workout.Views
     [DesignTimeVisible(false)]
     public partial class Steps : ContentPage
     {
+        public static uint mySteps = 0;
+        // public uint mySteps;
         public interface IStepCounter
         {
             int Steps { get; set; }
@@ -30,6 +33,34 @@ namespace SSJ2_Workout.Views
             void InitSensorService();
 
             void StopSensorService();
+        }
+
+        public class MySteps : INotifyPropertyChanged
+        {
+            string step;
+            public string Step
+            {
+                set
+                {
+                    if (step != value)
+                    {
+                        step = value;
+                        OnPropertyChanged("Step");
+
+                    }
+                }
+                get
+                {
+                    return step;
+                }
+            }
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            protected virtual void OnPropertyChanged(string propertyName)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+
         }
         public async Task GetSensorsAsync()
         {
@@ -51,7 +82,6 @@ namespace SSJ2_Workout.Views
             }
             return status;
         }
-
         public Steps()
         {
             InitializeComponent();
@@ -67,7 +97,8 @@ namespace SSJ2_Workout.Views
 
         private void Button_Clicked2(object sender, EventArgs e)
         {
-            mylabel.Text =$"Liczba krokow:  { DependencyService.Get<IStepCounter>().Steps.ToString()}";
+            mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
+            mylabel.Text = $"Liczba krokow:  { mySteps }";
         }
 
         /*  public class PedometerImpl : AbstractSensor<int>, IPedometer
