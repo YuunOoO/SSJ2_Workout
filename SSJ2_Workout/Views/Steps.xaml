@@ -5,15 +5,47 @@
              Title="Aktywność / Kroki">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#1e1f26">
-            <Label Grid.Row="0" Grid.Column="2" x:Name="LabelX" TextColor="white" />
-            <Label Grid.Row="1" Grid.Column="2" x:Name="LabelY" TextColor="White"/>
-            <Label Grid.Row="2" Grid.Column="2" x:Name="LabelZ" TextColor="White" />
-            <Label x:Name="mylabel"  Text="Ilosc krokow" Grid.Row="5" Grid.Column="0" TextColor="White"/>
-            <Button Grid.Row="3" Grid.Column="0" Text="Start" x:Name="ButtonStart" Clicked="ButtonClicked" />
-            <Button Text="Licz Kroki"  x:Name="myBtn" IsVisible="False" Clicked="Button_Clicked2" Grid.Row="4" Grid.Column="0"/>
-            <Label Grid.Row="6" Grid.Column="2" x:Name="testowy" TextColor="White" Text="Czy sa uprawnienia?"/>
-            
-
+            <Frame BackgroundColor="Transparent">
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                    
+                <Label Grid.Row="0" Grid.Column="1" 
+                       x:Name="LabelX" TextColor="white" />
+                    
+                <Label Grid.Row="1" Grid.Column="1" 
+                       x:Name="LabelY" TextColor="White"/>
+                    
+                <Label Grid.Row="2" Grid.Column="1" 
+                       x:Name="LabelZ" TextColor="White" />
+                    
+                <Button Grid.Row="3" Grid.Column="1" 
+                        Text="Start" x:Name="ButtonStart" 
+                        Clicked="ButtonClicked" />
+                    
+                <Button Text="Licz Kroki"  x:Name="myBtn" 
+                        IsVisible="False" Clicked="Button_Clicked2" 
+                        Grid.Row="4" Grid.Column="1"/>
+                    
+                <Label x:Name="mylabel"  Text="Ilosc krokow" 
+                       Grid.Row="5" Grid.Column="1" TextColor="White"/>
+                    
+                <Label Grid.Row="6" Grid.Column="1" x:Name="testowy" 
+                       TextColor="White" Text="Czy sa uprawnienia?"/>
+            </Grid>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
