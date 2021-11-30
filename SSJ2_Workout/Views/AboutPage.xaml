@@ -43,7 +43,7 @@
 
                 <StackLayout HeightRequest="50" Padding="0" Margin="10"
                              VerticalOptions="End">
-                    <Label Text="Spalone Kalorie: " HorizontalOptions="Center"
+                    <Label Text="{Binding MyStringProperty}" HorizontalOptions="Center"
                            FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
                     <ProgressBar ProgressColor="#286492" Progress="0.5" />
                 </StackLayout>

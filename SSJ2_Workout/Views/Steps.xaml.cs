@@ -111,6 +111,7 @@ namespace SSJ2_Workout.Views
 
             //}).ConfigureAwait(false);
             myBtn.IsVisible = true;
+            DependencyService.Get<IStepCounter>().InitSensorService();
             if (DependencyService.Get<IStepCounter>().IsAvailable())
             {
                 myBtn.IsVisible = true;
@@ -122,7 +123,7 @@ namespace SSJ2_Workout.Views
         private void Button_Clicked2(object sender, EventArgs e)
         {
             mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
-            mylabel.Text = $"Liczba krokow:  { DependencyService.Get<IStepCounter>().Steps.ToString() }";
+            mylabel.Text = $"Liczba krokow:  { mySteps }";
         }
 
         //public static void updat()
