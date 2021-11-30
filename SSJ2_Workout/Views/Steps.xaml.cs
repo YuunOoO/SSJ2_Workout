@@ -15,14 +15,30 @@ using System.ComponentModel;
 using static Xamarin.Essentials.Permissions;
 using System.Windows.Input;
 using System.Threading;
+using Android.App;
 
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [DesignTimeVisible(false)]
+    [Service]
     public partial class Steps : ContentPage
     {
+
+
         public static uint mySteps = 0;
+        private string myStringProperty;
+        public string MyStringProperty
+        {
+            get { return myStringProperty; }
+            set
+            {
+                myStringProperty = value;
+                OnPropertyChanged(nameof(MyStringProperty)); // Notify that there was a change on this property
+            }
+        }
+
+
         // public uint mySteps;
         public interface IStepCounter
         {
@@ -34,7 +50,7 @@ namespace SSJ2_Workout.Views
 
             void StopSensorService();
         }
-
+        
         public class MySteps : INotifyPropertyChanged
         {
             string step;
@@ -70,7 +86,7 @@ namespace SSJ2_Workout.Views
                 testowy.Text = "Uprawnienia sa juz przyznane!";
                 permissions = await Permissions.RequestAsync<Permissions.Sensors>();
             }
-            
+
         }
         public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permission)
                     where T : BasePermission
@@ -85,7 +101,15 @@ namespace SSJ2_Workout.Views
         public Steps()
         {
             InitializeComponent();
-            DependencyService.Get<IStepCounter>().InitSensorService();
+            BindingContext = this;
+            MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label -> pokaazuje na biezoco (refres) krokow
+            //System.Threading.Tasks.Task.Run(() =>                           // dzialaanie w tle 
+            //{
+            //    DependencyService.Get<IStepCounter>().InitSensorService();
+            //    mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
+            //    OnPropertyChanged();
+
+            //}).ConfigureAwait(false);
             myBtn.IsVisible = true;
             if (DependencyService.Get<IStepCounter>().IsAvailable())
             {
@@ -98,15 +122,13 @@ namespace SSJ2_Workout.Views
         private void Button_Clicked2(object sender, EventArgs e)
         {
             mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
-            mylabel.Text = $"Liczba krokow:  { mySteps }";
+            mylabel.Text = $"Liczba krokow:  { DependencyService.Get<IStepCounter>().Steps.ToString() }";
         }
 
-        /*  public class PedometerImpl : AbstractSensor<int>, IPedometer
-          {
-              public PedometerImpl() : base(SensorType.StepCounter) { }
-              protected override int ToReading(SensorEvent e) => Convert.ToInt32(e.Values[0]);
-          }
-        */
+        //public static void updat()
+        //{
+           // mySteps = $"Liczba krokow:  { mySteps }";
+       // }
 
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)

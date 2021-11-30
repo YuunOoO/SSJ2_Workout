@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:SSJ2_Workout.Views" 
              x:Class="SSJ2_Workout.Views.Steps"
              Title="Aktywność / Kroki">
     <ContentPage.Content>
@@ -38,13 +38,13 @@
                 <Button Text="Licz Kroki"  x:Name="myBtn" 
                         IsVisible="False" Clicked="Button_Clicked2" 
                         Grid.Row="4" Grid.Column="1"/>
-                    
-                <Label x:Name="mylabel"  Text="Ilosc krokow" 
+
+                    <Label x:Name="mylabel"  Text="{Binding MyStringProperty}"
                        Grid.Row="5" Grid.Column="1" TextColor="White"/>
-                    
-                <Label Grid.Row="6" Grid.Column="1" x:Name="testowy" 
+
+                    <Label Grid.Row="6" Grid.Column="1" x:Name="testowy" 
                        TextColor="White" Text="Czy sa uprawnienia?"/>
-            </Grid>
+                </Grid>
             </Frame>
         </StackLayout>
     </ContentPage.Content>

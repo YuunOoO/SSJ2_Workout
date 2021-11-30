@@ -7,12 +7,25 @@ using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class AboutPage : ContentPage, INotifyPropertyChanged
     {
+        public static uint mySteps = 0;
+        private string myStringProperty;
+        public string MyStringProperty
+        {
+            get { return myStringProperty; }
+            set
+            {
+                myStringProperty = value;
+                OnPropertyChanged(nameof(MyStringProperty)); // Notify that there was a change on this property
+            }
+        }
         public AboutPage()
         {
             InitializeComponent();
-            wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
+            BindingContext = this;
+            MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label
+         //   wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
         }
         public void GoToSteps(object obj, EventArgs args)
         {

@@ -12,7 +12,6 @@ using Android.Widget;
 using SSJ2_Workout.Views;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
-
 namespace SSJ2_Workout.Droid
 {
     [Activity(Label = "INotifyPropertyChanged")]
@@ -22,14 +21,15 @@ namespace SSJ2_Workout.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            System.Timers.Timer t = new System.Timers.Timer(1000);
+            System.Timers.Timer t = new System.Timers.Timer(500);
             t.Elapsed += new System.Timers.ElapsedEventHandler(getDate);
             t.AutoReset = true;
             t.Enabled = true;
 
-            void getDate(object sender, ElapsedEventArgs e)
+            static void getDate(object sender, ElapsedEventArgs e)
             {
                 mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
+                //updat();
             }
         }
     }
