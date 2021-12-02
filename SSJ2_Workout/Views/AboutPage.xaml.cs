@@ -1,30 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using SSJ2_Workout.Views;
-using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Views
 {
     public partial class AboutPage : ContentPage, INotifyPropertyChanged
     {
-        public static uint mySteps = 0;
-        private string myStringProperty;
-        public string MyStringProperty
-        {
-            get { return myStringProperty; }
-            set
-            {
-                myStringProperty = value;
-                OnPropertyChanged(nameof(MyStringProperty)); // Notify that there was a change on this property
-            }
-        }
+        public string myProperty { get; set; } = "MY TEXT";
         public AboutPage()
         {
             InitializeComponent();
             BindingContext = this;
-            MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label
+           // MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label
          //   wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
         }
         public void GoToSteps(object obj, EventArgs args)
@@ -60,5 +47,5 @@ namespace SSJ2_Workout.Views
             Navigation.PushAsync(new Settings());
         }
     }
-   
+
 }

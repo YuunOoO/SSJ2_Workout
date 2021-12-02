@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
-using Plugin.Sensors;
-using SQLitePCL;
-using SQLite;
-using Plugin;
 using System.ComponentModel;
 using static Xamarin.Essentials.Permissions;
-using System.Windows.Input;
-using System.Threading;
 using Android.App;
-
+using System.Timers;
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -24,22 +15,6 @@ namespace SSJ2_Workout.Views
     [Service]
     public partial class Steps : ContentPage
     {
-
-
-        public static uint mySteps = 0;
-        private string myStringProperty;
-        public string MyStringProperty
-        {
-            get { return myStringProperty; }
-            set
-            {
-                myStringProperty = value;
-                OnPropertyChanged(nameof(MyStringProperty)); // Notify that there was a change on this property
-            }
-        }
-
-
-        // public uint mySteps;
         public interface IStepCounter
         {
             int Steps { get; set; }
@@ -50,34 +25,8 @@ namespace SSJ2_Workout.Views
 
             void StopSensorService();
         }
-        
-        public class MySteps : INotifyPropertyChanged
-        {
-            string step;
-            public string Step
-            {
-                set
-                {
-                    if (step != value)
-                    {
-                        step = value;
-                        OnPropertyChanged("Step");
 
-                    }
-                }
-                get
-                {
-                    return step;
-                }
-            }
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            protected virtual void OnPropertyChanged(string propertyName)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-
-        }
+        public static string mySteps = "0";
         public async Task GetSensorsAsync()
         {
             var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
@@ -101,15 +50,7 @@ namespace SSJ2_Workout.Views
         public Steps()
         {
             InitializeComponent();
-            BindingContext = this;
-            MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label -> pokaazuje na biezoco (refres) krokow
-            //System.Threading.Tasks.Task.Run(() =>                           // dzialaanie w tle 
-            //{
-            //    DependencyService.Get<IStepCounter>().InitSensorService();
-            //    mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
-            //    OnPropertyChanged();
-
-            //}).ConfigureAwait(false);
+           // BindingContext = new MySteps();
             myBtn.IsVisible = true;
             DependencyService.Get<IStepCounter>().InitSensorService();
             if (DependencyService.Get<IStepCounter>().IsAvailable())
@@ -118,19 +59,27 @@ namespace SSJ2_Workout.Views
                 DependencyService.Get<IStepCounter>().InitSensorService();
             }
             Accelerometer.ReadingChanged += Readchanged;
+            
+             System.Timers.Timer t = new System.Timers.Timer(1000);
+             t.Elapsed += new System.Timers.ElapsedEventHandler(getDate);
+             t.AutoReset = true;
+             t.Enabled = true;
+
+            
+            
+
+            void getDate(object sender, ElapsedEventArgs e)
+            {
+                mySteps = DependencyService.Get<IStepCounter>().Steps.ToString();
+                kroczki.Text = $"Przebyte kroki : {mySteps}";
+            }
         }
 
         private void Button_Clicked2(object sender, EventArgs e)
         {
-            mySteps = ((uint)DependencyService.Get<IStepCounter>().Steps);
-            mylabel.Text = $"Liczba krokow:  { mySteps }";
+            mySteps = DependencyService.Get<IStepCounter>().Steps.ToString();
+            //mylabel.Text = $"Liczba krokow:  { mySteps }";
         }
-
-        //public static void updat()
-        //{
-           // mySteps = $"Liczba krokow:  { mySteps }";
-       // }
-
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)
         {
@@ -140,13 +89,9 @@ namespace SSJ2_Workout.Views
 
         }
 
-
-
-
         private async void NavigateButton_OnClicked(object sender, EventArgs e)
         {
             GetSensorsAsync();
-
             await Navigation.PushAsync(new AboutPage());
         }
         void ButtonClicked(Object Sender, EventArgs e)
@@ -161,7 +106,6 @@ namespace SSJ2_Workout.Views
                 Accelerometer.Start(SensorSpeed.UI);
                 ButtonStart.Text = "Stop";
             }
-            // Device.BeginInvokeOnMainThread;
         }
 
     }

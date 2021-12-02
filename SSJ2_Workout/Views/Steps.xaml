@@ -39,10 +39,10 @@
                         IsVisible="False" Clicked="Button_Clicked2" 
                         Grid.Row="4" Grid.Column="1"/>
 
-                    <Label x:Name="mylabel"  Text="{Binding MyStringProperty}"
+                    <Label Text="Kroki" x:Name="kroczki"
                        Grid.Row="5" Grid.Column="1" TextColor="White"/>
 
-                    <Label Grid.Row="6" Grid.Column="1" x:Name="testowy" 
+                    <Label Grid.Row="6" Grid.Column="1"  x:Name="testowy"
                        TextColor="White" Text="Czy sa uprawnienia?"/>
                 </Grid>
             </Frame>
