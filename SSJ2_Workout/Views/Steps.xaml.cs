@@ -8,13 +8,15 @@ using System.ComponentModel;
 using static Xamarin.Essentials.Permissions;
 using Android.App;
 using System.Timers;
+using SSJ2_Workout;
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [DesignTimeVisible(false)]
     [Service]
-    public partial class Steps : ContentPage
+    public partial class Steps : ContentPage, INotifyPropertyChanged
     {
+        MainViewModel MySteps;
         public interface IStepCounter
         {
             int Steps { get; set; }
@@ -26,7 +28,10 @@ namespace SSJ2_Workout.Views
             void StopSensorService();
         }
 
-        public static string mySteps = "0";
+        public static string mySteps = "1";
+
+        //public string Step { get;  set; }
+
         public async Task GetSensorsAsync()
         {
             var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
@@ -50,7 +55,7 @@ namespace SSJ2_Workout.Views
         public Steps()
         {
             InitializeComponent();
-           // BindingContext = new MySteps();
+            BindingContext = new MainViewModel();
             myBtn.IsVisible = true;
             DependencyService.Get<IStepCounter>().InitSensorService();
             if (DependencyService.Get<IStepCounter>().IsAvailable())
@@ -59,26 +64,30 @@ namespace SSJ2_Workout.Views
                 DependencyService.Get<IStepCounter>().InitSensorService();
             }
             Accelerometer.ReadingChanged += Readchanged;
+            Timerr();
             
-             System.Timers.Timer t = new System.Timers.Timer(1000);
-             t.Elapsed += new System.Timers.ElapsedEventHandler(getDate);
-             t.AutoReset = true;
-             t.Enabled = true;
-
-            
-            
+        }
+        public async Task Timerr()
+        {
+            System.Timers.Timer t = new System.Timers.Timer(500);
+            t.Elapsed += new System.Timers.ElapsedEventHandler(getDate);
+            t.AutoReset = true;
+            t.Enabled = true;
 
             void getDate(object sender, ElapsedEventArgs e)
             {
-                mySteps = DependencyService.Get<IStepCounter>().Steps.ToString();
-                kroczki.Text = $"Przebyte kroki : {mySteps}";
+                var dane = (MainViewModel)BindingContext;
+                testowy.Text = "Twoje kroki to: " + dane.Step;
+                //MainViewModel.DisplayStep = $"Liczba krokow wynosi: {DependencyService.Get<IStepCounter>().Steps.ToString()}";
+
             }
         }
-
+        
         private void Button_Clicked2(object sender, EventArgs e)
         {
-            mySteps = DependencyService.Get<IStepCounter>().Steps.ToString();
-            //mylabel.Text = $"Liczba krokow:  { mySteps }";
+            var dane = (MainViewModel)BindingContext;
+            dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+            testowy.Text = "Twoje kroki to: " + dane.Step;
         }
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)
@@ -86,9 +95,7 @@ namespace SSJ2_Workout.Views
             LabelX.Text = $"X: {args.Reading.Acceleration.X}";
             LabelY.Text = $"Y: {args.Reading.Acceleration.Y}";
             LabelZ.Text = $"Z: {args.Reading.Acceleration.Z}";
-
         }
-
         private async void NavigateButton_OnClicked(object sender, EventArgs e)
         {
             GetSensorsAsync();
@@ -107,6 +114,5 @@ namespace SSJ2_Workout.Views
                 ButtonStart.Text = "Stop";
             }
         }
-
     }
 }

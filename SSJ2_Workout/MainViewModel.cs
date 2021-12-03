@@ -1,7 +1,19 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
+using System.ComponentModel;
+using static Xamarin.Essentials.Permissions;
+using Android.App;
+using System.Timers;
+using static SSJ2_Workout.Views.Steps;
+
 namespace SSJ2_Workout.Views
 {
-    public class MySteps : INotifyPropertyChanged
+ 
+    public class MainViewModel : INotifyPropertyChanged
     {
         string step;
         public string Step
@@ -11,8 +23,8 @@ namespace SSJ2_Workout.Views
                 if (step != value)
                 {
                     step = value;
-                    OnPropertyChanged("Step");
-                   // OnPropertyChanged(nameof(DisplayStep));
+                    OnPropertyChanged(nameof(Step));
+         //           OnPropertyChanged(nameof(DisplayStep));
                 }
             }
             get
@@ -20,14 +32,14 @@ namespace SSJ2_Workout.Views
                 return step;
             }
         }
-        //public string DisplayStep => $"Twoja liczba krokow to: {Step}";
+       // static public string DisplayStep => $"Twoja liczba krokow to:{Step}";
 
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

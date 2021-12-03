@@ -39,7 +39,7 @@
                         IsVisible="False" Clicked="Button_Clicked2" 
                         Grid.Row="4" Grid.Column="1"/>
 
-                    <Label Text="Kroki" x:Name="kroczki"
+                    <Label Text="{Binding Step}"
                        Grid.Row="5" Grid.Column="1" TextColor="White"/>
 
                     <Label Grid.Row="6" Grid.Column="1"  x:Name="testowy"

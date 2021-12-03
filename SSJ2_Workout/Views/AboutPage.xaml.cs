@@ -1,18 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
 using Xamarin.Forms;
+using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Views
 {
     public partial class AboutPage : ContentPage, INotifyPropertyChanged
     {
-        public string myProperty { get; set; } = "MY TEXT";
         public AboutPage()
         {
             InitializeComponent();
-            BindingContext = this;
-           // MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label
-         //   wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
+            BindingContext = new MyBindingObject();
+           // podaj = DependencyService.Get<IStepCounter>().Steps.ToString();
+            // MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label
+            //   wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
         }
         public void GoToSteps(object obj, EventArgs args)
         {
