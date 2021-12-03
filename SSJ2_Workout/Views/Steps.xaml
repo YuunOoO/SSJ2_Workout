@@ -34,11 +34,10 @@
                 <Button Grid.Row="3" Grid.Column="1" 
                         Text="Start" x:Name="ButtonStart" 
                         Clicked="ButtonClicked" />
-                    
-                <Button Text="Licz Kroki"  x:Name="myBtn" 
-                        IsVisible="False" Clicked="Button_Clicked2" 
-                        Grid.Row="4" Grid.Column="1"/>
 
+                    <Button Text="Zeruj kroki"  x:Name="myBtn" 
+                        IsVisible="True" Clicked="Button_Clicked2" 
+                        Grid.Row="7" Grid.Column="1"/>
                     <Label Text="{Binding Step}"
                        Grid.Row="5" Grid.Column="1" TextColor="White"/>
 

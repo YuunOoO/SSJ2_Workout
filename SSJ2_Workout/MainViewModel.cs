@@ -24,7 +24,6 @@ namespace SSJ2_Workout.Views
                 {
                     step = value;
                     OnPropertyChanged(nameof(Step));
-         //           OnPropertyChanged(nameof(DisplayStep));
                 }
             }
             get
@@ -32,8 +31,6 @@ namespace SSJ2_Workout.Views
                 return step;
             }
         }
-       // static public string DisplayStep => $"Twoja liczba krokow to:{Step}";
-
         
         public event PropertyChangedEventHandler PropertyChanged;
 

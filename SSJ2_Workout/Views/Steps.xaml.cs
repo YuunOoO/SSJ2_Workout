@@ -27,10 +27,6 @@ namespace SSJ2_Workout.Views
             void StopSensorService();
         }
 
-        public static string mySteps = "1";
-
-        //public string Step { get;  set; }
-
         public async Task GetSensorsAsync()
         {
             var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
@@ -55,21 +51,18 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
             BindingContext = new MainViewModel();
-            myBtn.IsVisible = true;
             var dane = (MainViewModel)BindingContext;
-            DependencyService.Get<IStepCounter>().InitSensorService();
-            if (DependencyService.Get<IStepCounter>().IsAvailable())
+            //DependencyService.Get<IStepCounter>().InitSensorService();
+            if (DependencyService.Get<IStepCounter>().IsAvailable())//jesli nie ma uprawnienen to je podajemy
             {
-                myBtn.IsVisible = true;
                 DependencyService.Get<IStepCounter>().InitSensorService();
             }
             Accelerometer.ReadingChanged += Readchanged;
 
-            Device.StartTimer(TimeSpan.FromMilliseconds(300), () =>
+            Device.StartTimer(TimeSpan.FromMilliseconds(300), () => //dzialanie w tle tasku 
             {
                 Task.Run(async () =>
                 {
-                    // CoinList = await RestService.GetCoins();
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                 });
                 Device.BeginInvokeOnMainThread(() =>
@@ -79,11 +72,12 @@ namespace SSJ2_Workout.Views
                 return true;
             });          
         }
+
+
         private void Button_Clicked2(object sender, EventArgs e)
         {
-            var dane = (MainViewModel)BindingContext;
-            dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
-            testowy.Text = "Twoje kroki to: " + dane.Step;
+            DependencyService.Get<IStepCounter>().StopSensorService();
+            DependencyService.Get<IStepCounter>().InitSensorService();
         }
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)
