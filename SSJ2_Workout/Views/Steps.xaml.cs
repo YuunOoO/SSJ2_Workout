@@ -57,6 +57,7 @@ namespace SSJ2_Workout.Views
             InitializeComponent();
             BindingContext = new MainViewModel();
             myBtn.IsVisible = true;
+            var dane = (MainViewModel)BindingContext;
             DependencyService.Get<IStepCounter>().InitSensorService();
             if (DependencyService.Get<IStepCounter>().IsAvailable())
             {
@@ -64,7 +65,22 @@ namespace SSJ2_Workout.Views
                 DependencyService.Get<IStepCounter>().InitSensorService();
             }
             Accelerometer.ReadingChanged += Readchanged;
-            Timerr();
+
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                Task.Run(async () =>
+                {
+                    // CoinList = await RestService.GetCoins();
+                    dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+                });
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    testowy.Text = "Twoje kroki to: " + dane.Step;
+                });
+                return true;
+            });
+
+            //Timerr();
             
         }
         public async Task Timerr()
@@ -77,6 +93,7 @@ namespace SSJ2_Workout.Views
             void getDate(object sender, ElapsedEventArgs e)
             {
                 var dane = (MainViewModel)BindingContext;
+                dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                 testowy.Text = "Twoje kroki to: " + dane.Step;
                 //MainViewModel.DisplayStep = $"Liczba krokow wynosi: {DependencyService.Get<IStepCounter>().Steps.ToString()}";
 
