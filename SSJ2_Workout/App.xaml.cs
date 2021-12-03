@@ -1,4 +1,6 @@
-﻿using SSJ2_Workout.Services;
+﻿using System;
+using System.Threading.Tasks;
+using SSJ2_Workout.Services;
 using SSJ2_Workout.Views;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
@@ -12,12 +14,10 @@ namespace SSJ2_Workout
         public App()
         {
             InitializeComponent();
-
+            DependencyService.Get<IStepCounter>().InitSensorService();
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
             MainPage = new NavigationPage(new AboutPage());
-            
-       
         }
         protected override void OnStart()
         {
@@ -31,5 +31,7 @@ namespace SSJ2_Workout
         protected override void OnResume()
         {
         }
+
+
     }
 }

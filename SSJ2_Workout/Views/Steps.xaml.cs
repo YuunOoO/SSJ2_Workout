@@ -27,15 +27,15 @@ namespace SSJ2_Workout.Views
             void StopSensorService();
         }
 
-        public async Task GetSensorsAsync()
+        public async Task GetSensorsAsync()             ///sprawdzanie uprawnien ale tego akurat nie potrzebujemy
         {
             var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
             if (permissions != PermissionStatus.Granted)
             {
-                testowy.Text = "Uprawnienia sa juz przyznane!";
+                testowy1.Text = "Uprawnienia sa juz przyznane!";
                 permissions = await Permissions.RequestAsync<Permissions.Sensors>();
             }
-
+            testowy1.Text = "Przyznano uprawnienia!";
         }
         public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permission)
                     where T : BasePermission
@@ -50,6 +50,7 @@ namespace SSJ2_Workout.Views
         public Steps()
         {
             InitializeComponent();
+            //GetSensorsAsync();
             BindingContext = new MainViewModel();
             var dane = (MainViewModel)BindingContext;
             //DependencyService.Get<IStepCounter>().InitSensorService();
@@ -70,14 +71,13 @@ namespace SSJ2_Workout.Views
                     testowy.Text = "Twoje kroki to: " + dane.Step;
                 });
                 return true;
-            });          
+            });
         }
 
 
         private void Button_Clicked2(object sender, EventArgs e)
         {
-            DependencyService.Get<IStepCounter>().StopSensorService();
-            DependencyService.Get<IStepCounter>().InitSensorService();
+                // nw jeszcze XDD
         }
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
 
@@ -12,8 +13,17 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
             BindingContext = new MainViewModel();
+            DependencyService.Get<IStepCounter>().InitSensorService();
             var dane = (MainViewModel)BindingContext;
             dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+            Device.StartTimer(TimeSpan.FromMilliseconds(300), () => //dzialanie w tle tasku 
+            {
+                Task.Run(async () =>
+                {
+                    dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+                });
+                return true;
+            });
         }
 
         public void GoToSteps(object obj, EventArgs args)

@@ -43,6 +43,9 @@
 
                     <Label Grid.Row="6" Grid.Column="1"  x:Name="testowy"
                        TextColor="White" Text="Czy sa uprawnienia?"/>
+
+                    <Label Grid.Row="9" Grid.Column="1"  x:Name="testowy1"
+                       TextColor="White" Text="Czy sa uprawnienia?"/>
                 </Grid>
             </Frame>
         </StackLayout>
