@@ -22,14 +22,17 @@ namespace SSJ2_Workout
         protected override void OnStart()
         {
             DependencyService.Get<IStepCounter>().InitSensorService();
+
         }
 
         protected override void OnSleep()
         {
+            DependencyService.Get<IStepCounter>().InitSensorService();
         }
 
         protected override void OnResume()
         {
+            DependencyService.Get<IStepCounter>().InitSensorService();
         }
 
 
