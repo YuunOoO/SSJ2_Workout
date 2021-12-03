@@ -95,9 +95,9 @@
                 <Image Source="https://icon-library.com/images/step-icon/step-icon-12.jpg" Aspect="AspectFill"
                        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
                 </Image>
-                <Label Text="XD" Grid.Row="0" Grid.Column="1"
+                <Label Text="{Binding Step}" Grid.Row="0" Grid.Column="1"
                        TextColor="Black" FontSize="20" FontAttributes="Bold"
-                       VerticalTextAlignment="Center" x:Name="wyswietlkroki"></Label>
+                       VerticalTextAlignment="Center"></Label>
             </Grid>
         </Frame>
 

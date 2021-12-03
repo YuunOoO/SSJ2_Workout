@@ -7,14 +7,15 @@ namespace SSJ2_Workout.Views
 {
     public partial class AboutPage : ContentPage, INotifyPropertyChanged
     {
+       
         public AboutPage()
         {
             InitializeComponent();
-            BindingContext = new MyBindingObject();
-           // podaj = DependencyService.Get<IStepCounter>().Steps.ToString();
-            // MyStringProperty = $"Liczba krokow :  { mySteps }"; // It will be shown at your label
-            //   wyswietlkroki.Text  = $"Liczba krokow:  { mySteps}";
+            BindingContext = new MainViewModel();
+            var dane = (MainViewModel)BindingContext;
+            dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
         }
+
         public void GoToSteps(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Steps());

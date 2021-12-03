@@ -16,7 +16,6 @@ namespace SSJ2_Workout.Views
     [Service]
     public partial class Steps : ContentPage, INotifyPropertyChanged
     {
-        MainViewModel MySteps;
         public interface IStepCounter
         {
             int Steps { get; set; }
@@ -66,7 +65,7 @@ namespace SSJ2_Workout.Views
             }
             Accelerometer.ReadingChanged += Readchanged;
 
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            Device.StartTimer(TimeSpan.FromMilliseconds(300), () =>
             {
                 Task.Run(async () =>
                 {
@@ -78,28 +77,8 @@ namespace SSJ2_Workout.Views
                     testowy.Text = "Twoje kroki to: " + dane.Step;
                 });
                 return true;
-            });
-
-            //Timerr();
-            
+            });          
         }
-        public async Task Timerr()
-        {
-            System.Timers.Timer t = new System.Timers.Timer(500);
-            t.Elapsed += new System.Timers.ElapsedEventHandler(getDate);
-            t.AutoReset = true;
-            t.Enabled = true;
-
-            void getDate(object sender, ElapsedEventArgs e)
-            {
-                var dane = (MainViewModel)BindingContext;
-                dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
-                testowy.Text = "Twoje kroki to: " + dane.Step;
-                //MainViewModel.DisplayStep = $"Liczba krokow wynosi: {DependencyService.Get<IStepCounter>().Steps.ToString()}";
-
-            }
-        }
-        
         private void Button_Clicked2(object sender, EventArgs e)
         {
             var dane = (MainViewModel)BindingContext;
