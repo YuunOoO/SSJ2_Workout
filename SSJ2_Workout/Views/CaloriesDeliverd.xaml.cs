@@ -34,6 +34,18 @@ namespace SSJ2_Workout.Views
             return true;
         }
 
+
+        async void DeleteButtonClicked(object sender, EventArgs e)
+        {
+
+            ImageButton button = sender as ImageButton;
+            var product = button.BindingContext as Product;
+
+            await App.Database.DeleteProductAsync(product);
+            await Navigation.PopAsync();
+
+        }
+
         async void OnButtonClicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(caloriesEntry.Text))

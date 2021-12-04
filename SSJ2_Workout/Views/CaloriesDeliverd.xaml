@@ -14,6 +14,7 @@
                         <StackLayout>
                             <Label Text="{Binding Name}" FontSize="Medium" />
                             <Label Text="{Binding Calories}" FontSize="Medium"  />
+                            <ImageButton Source="iconmoins.png"  HeightRequest="30" WidthRequest="30" Clicked="DeleteButtonClicked"></ImageButton>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

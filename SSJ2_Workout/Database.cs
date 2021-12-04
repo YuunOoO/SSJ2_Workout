@@ -25,5 +25,9 @@ namespace SSJ2_Workout
         {
             return _database.InsertAsync(product);
         }
+        public Task<int> DeleteProductAsync(Product product)
+        {
+            return _database.DeleteAsync(product);
+        }
     }
 }
