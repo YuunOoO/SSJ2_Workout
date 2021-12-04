@@ -16,5 +16,46 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            collectionView.ItemsSource = await App.Database.GetProductAsync();
+        }
+
+        bool IsDigitsOnly(string str) //chroni przed podaniem liter
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
+
+        async void OnButtonClicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(caloriesEntry.Text))
+            {
+                if (IsDigitsOnly(caloriesEntry.Text))
+                {
+                    await App.Database.SaveProductAsync(new Product
+                    {
+                        Name = nameEntry.Text,
+                        Calories = Convert.ToInt32(caloriesEntry.Text)
+                    });
+
+                    nameEntry.Text = string.Empty;
+                    caloriesEntry.Text = string.Empty;
+
+                    collectionView.ItemsSource = await App.Database.GetProductAsync();
+                }
+                else
+                {
+                    // bedzie kod powiadomienia ze zle podano
+                }
+            }
+        }
     }
 }

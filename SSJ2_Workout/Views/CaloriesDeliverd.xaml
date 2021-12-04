@@ -4,10 +4,21 @@
              x:Class="SSJ2_Workout.Views.CaloriesDeliverd"
              Title="Dostarczone kalorie">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#1e1f26">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20,35,20,20">
+            <Entry x:Name="nameEntry" Placeholder="Podaj artykuł" />
+            <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc kalori" />
+            <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" />
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontSize="Medium" />
+                            <Label Text="{Binding Calories}" FontSize="Medium"  />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

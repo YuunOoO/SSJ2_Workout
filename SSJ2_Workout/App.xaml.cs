@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using SSJ2_Workout.Services;
 using SSJ2_Workout.Views;
 using Xamarin.Forms;
+using System.IO;
 using static SSJ2_Workout.Views.Steps;
 
 [assembly: ExportFont("Samantha.ttf")]
@@ -11,6 +12,22 @@ namespace SSJ2_Workout
 {
     public partial class App : Application
     {
+
+        private static Database database;
+
+        public static Database Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "product.db3"));
+                }
+
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();

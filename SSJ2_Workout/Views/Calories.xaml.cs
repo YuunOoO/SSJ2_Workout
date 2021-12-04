@@ -16,5 +16,10 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
         }
+
+        public void GoToDelivered(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new CaloriesDeliverd());
+        }
     }
 }

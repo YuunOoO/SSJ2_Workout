@@ -7,8 +7,6 @@ using Xamarin.Essentials;
 using System.ComponentModel;
 using static Xamarin.Essentials.Permissions;
 using Android.App;
-using System.Timers;
-using SSJ2_Workout;
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
