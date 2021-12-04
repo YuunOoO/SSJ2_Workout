@@ -13,12 +13,11 @@ namespace SSJ2_Workout.Views
     public partial class CaloriesDeliverd : ContentPage
     {
 
-        public int suma { get; set; }
+        public int suma = 0;
         public CaloriesDeliverd()
         {
             InitializeComponent();
-            BindingContext = this;
-            var suma = (CaloriesDeliverd)BindingContext;
+            
         }
 
         protected override async void OnAppearing()
@@ -41,7 +40,8 @@ namespace SSJ2_Workout.Views
         async void CheckCalories(object sender, EventArgs e)
         {
             var produkty = await App.Database.GetProductAsync();
-            foreach(var produkt in produkty)
+            suma = 0;
+            foreach (var produkt in produkty)
             {
                 suma += produkt.Calories;
             }
@@ -55,8 +55,7 @@ namespace SSJ2_Workout.Views
             var product = button.BindingContext as Product;
 
             await App.Database.DeleteProductAsync(product);
-            await Navigation.PopAsync();
-
+            collectionView.ItemsSource = await App.Database.GetProductAsync();  //no kurwa jestem genialny i tyle xdddd
         }
 
         async void OnButtonClicked(object sender, EventArgs e)

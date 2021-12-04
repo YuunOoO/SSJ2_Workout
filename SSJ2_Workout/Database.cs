@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,6 @@ namespace SSJ2_Workout
     public class Database
     {
         private readonly SQLiteAsyncConnection _database;
-        static object locker = new object();
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
@@ -31,13 +31,16 @@ namespace SSJ2_Workout
         }
         public Task<Product> GetProduct(int id)
         {
-            // Get a specific note.
-            //lock(locker)
-            //{
-            //    return _database.Table<Product>().FirstOrDefaultAsync(t => t.Id == id);
-            //}
-            return  _database.FindAsync<Product>(id);
+            return _database.FindAsync<Product>(id);
         }
+
+        //public ObservableCollection<Product> GetProductAsync2()
+        //{
+        //    List<Product> list = _database.Table<Product>().ToListAsync().Result;
+        //    ObservableCollection<Product> result = new ObservableCollection<Product>(list);
+
+        //    return result;
+        //}
 
     }
 }
