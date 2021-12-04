@@ -9,7 +9,7 @@ namespace SSJ2_Workout
     public class Database
     {
         private readonly SQLiteAsyncConnection _database;
-
+        static object locker = new object();
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
@@ -29,5 +29,15 @@ namespace SSJ2_Workout
         {
             return _database.DeleteAsync(product);
         }
+        public Task<Product> GetProduct(int id)
+        {
+            // Get a specific note.
+            //lock(locker)
+            //{
+            //    return _database.Table<Product>().FirstOrDefaultAsync(t => t.Id == id);
+            //}
+            return  _database.FindAsync<Product>(id);
+        }
+
     }
 }

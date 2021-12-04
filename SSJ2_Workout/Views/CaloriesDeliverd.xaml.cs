@@ -12,9 +12,13 @@ namespace SSJ2_Workout.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CaloriesDeliverd : ContentPage
     {
+
+        public int suma { get; set; }
         public CaloriesDeliverd()
         {
             InitializeComponent();
+            BindingContext = this;
+            var suma = (CaloriesDeliverd)BindingContext;
         }
 
         protected override async void OnAppearing()
@@ -34,6 +38,15 @@ namespace SSJ2_Workout.Views
             return true;
         }
 
+        async void CheckCalories(object sender, EventArgs e)
+        {
+            var produkty = await App.Database.GetProductAsync();
+            foreach(var produkt in produkty)
+            {
+                suma += produkt.Calories;
+            }
+            testowy.Text = $"Suma kalori to: {suma}";
+        }
 
         async void DeleteButtonClicked(object sender, EventArgs e)
         {

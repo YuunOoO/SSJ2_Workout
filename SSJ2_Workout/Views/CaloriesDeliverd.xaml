@@ -5,6 +5,8 @@
              Title="Dostarczone kalorie">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
+            <Label Text="{Binding suma}" Grid.Column="1" x:Name="testowy"/>
+            <Button Text="Sumuj kalorie" Clicked="CheckCalories" Grid.Column="1"/>
             <Entry x:Name="nameEntry" Placeholder="Podaj artykuł" />
             <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc kalori" />
             <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" />
