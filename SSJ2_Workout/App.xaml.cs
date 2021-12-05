@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
 using SSJ2_Workout.Services;
 using SSJ2_Workout.Views;
 using Xamarin.Forms;
 using System.IO;
 using static SSJ2_Workout.Views.Steps;
-using static SSJ2_Workout.Views.MainViewModel;
 using Plugin.Geolocator.Abstractions;
 
 [assembly: ExportFont("Samantha.ttf")]

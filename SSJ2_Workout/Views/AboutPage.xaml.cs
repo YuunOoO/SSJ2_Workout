@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
-using static SSJ2_Workout.Views.CaloriesDeliverd;
 namespace SSJ2_Workout.Views
 {
     public partial class AboutPage : ContentPage, INotifyPropertyChanged

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -46,7 +42,6 @@ namespace SSJ2_Workout.Views
                 suma_tmp += produkt.Calories;
             }
             suma.Suma = suma_tmp;
-           // testowy.Text = $"Suma kalori to: {suma.Suma}";
         }
 
         public async void CheckCalories2()
@@ -54,18 +49,30 @@ namespace SSJ2_Workout.Views
             var suma = (MainViewModel)BindingContext;
             var produkty = await App.Database.GetProductAsync();
             int suma_tmp = 0;
+            int suma_tmp2 = 0;
             foreach (var produkt in produkty)
             {
                 suma_tmp += produkt.Calories;
+                if (produkt.Eat)
+                    suma_tmp2 += produkt.Calories;
             }
             suma.Suma = suma_tmp;
+            suma.Suma2 = suma_tmp2;
             SavedData.sum_save = suma_tmp;
-           // testowy.Text = $"Suma kalori to: {suma.Suma}";
         }
-        //MainViewModel CheckCalories3()
-        //{
-        //    return suma;
-        //}
+
+        async void OnChange(object sender, CheckedChangedEventArgs e)
+        {
+            CheckBox checkbox = sender as CheckBox;
+            var product = checkbox.BindingContext as Product;
+
+            Product robota;
+
+            robota = await App.Database.GetProduct(product.Id);
+          //////////////////////
+          ///trzeba dopracowac jeszcze 
+            CheckCalories2();
+        }
 
         async void DeleteButtonClicked(object sender, EventArgs e)
         {
@@ -85,19 +92,20 @@ namespace SSJ2_Workout.Views
                 {
                     await App.Database.SaveProductAsync(new Product
                     {
+                        Eat = eat.IsChecked,
                         Name = nameEntry.Text,
                         Calories = Convert.ToInt32(caloriesEntry.Text)
                     });
 
                     nameEntry.Text = string.Empty;
                     caloriesEntry.Text = string.Empty;
-
+                    eat.IsChecked = false;
                     collectionView.ItemsSource = await App.Database.GetProductAsync();
                     CheckCalories2();
                 }
                 else
                 {
-                    // bedzie kod powiadomienia ze zle podano
+                    DependencyService.Get<IMessage>().ShortAlert("Podano Niepoprawne dane ): ");
                 }
             }
         }

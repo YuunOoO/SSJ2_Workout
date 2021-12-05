@@ -6,17 +6,20 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Label Text="{Binding Suma}" Grid.Column="1" x:Name="testowy"/>
+            <Label Text="{Binding Suma2}"  x:Name="testowy2"/>
             <Button Text="Sumuj kalorie" Clicked="CheckCalories" Grid.Column="1"/>
             <Entry x:Name="nameEntry" Placeholder="Podaj artykuł" />
             <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc kalori" />
+            <CheckBox x:Name="eat"  />
             <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" />
             <CollectionView x:Name="collectionView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
                             <Label Text="{Binding Name}" FontSize="Medium" />
-                            <Label Text="{Binding Calories}" FontSize="Medium"  />
-                            <ImageButton Source="iconmoins.png"  HeightRequest="30" WidthRequest="30" Clicked="DeleteButtonClicked"></ImageButton>
+                            <Label Text="{Binding Calories}" FontSize="Medium" Grid.Column="0" />
+                            <CheckBox IsChecked="{Binding Eat}"  Grid.Column="1" CheckedChanged="OnChange"></CheckBox>
+                            <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="0" Clicked="DeleteButtonClicked" ></ImageButton>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

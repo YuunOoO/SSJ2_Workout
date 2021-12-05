@@ -29,10 +29,21 @@ namespace SSJ2_Workout
         {
             return _database.DeleteAsync(product);
         }
+        public Task<int> ChangeCheck(Product product)
+        {
+            return _database.DeleteAsync(product);
+        }
+
         public Task<Product> GetProduct(int id)
         {
             return _database.FindAsync<Product>(id);
         }
+
+//        _sqLiteConnection.Update(new YourModelClassName
+//{
+//   Id=1,
+//   Name="Updated name"
+//});
 
         //public ObservableCollection<Product> GetProductAsync2()
         //{

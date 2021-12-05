@@ -49,6 +49,23 @@ namespace SSJ2_Workout.Views
             }
         }
 
+        int suma2;
+        public int Suma2
+        {
+            set
+            {
+                if (suma2 != value)
+                {
+                    suma2 = value;
+                    OnPropertyChanged(nameof(Suma2));
+                }
+            }
+            get
+            {
+                return suma2;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
