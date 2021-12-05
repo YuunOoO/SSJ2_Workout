@@ -38,12 +38,25 @@ namespace SSJ2_Workout
         {
             return _database.FindAsync<Product>(id);
         }
+        public Task<int> UpdateProduct(Product product)
+        {
+            return _database.UpdateAsync(new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Calories = product.Calories,
+                Eat = product.Eat
+            }); ; ;
 
-//        _sqLiteConnection.Update(new YourModelClassName
-//{
-//   Id=1,
-//   Name="Updated name"
-//});
+        }
+
+        //_sqLiteConnection.Update(new YourModelClassName
+        //{
+        //   Id=1,
+        //   Name="Updated name"
+        //});
+
+
 
         //public ObservableCollection<Product> GetProductAsync2()
         //{

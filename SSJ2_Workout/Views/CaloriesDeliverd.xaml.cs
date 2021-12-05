@@ -59,18 +59,28 @@ namespace SSJ2_Workout.Views
             suma.Suma = suma_tmp;
             suma.Suma2 = suma_tmp2;
             SavedData.sum_save = suma_tmp;
+            SavedData.sum2_save = suma_tmp2;
         }
 
         async void OnChange(object sender, CheckedChangedEventArgs e)
         {
             CheckBox checkbox = sender as CheckBox;
             var product = checkbox.BindingContext as Product;
+            CheckedChangedEventArgs klik = e as CheckedChangedEventArgs;
+            bool klikniecie = klik.Value;
+            if (klikniecie)
+            {
+                if (!product.Eat)
+                    product.Eat = false;
+                else
+                    product.Eat = true;
 
-            Product robota;
-
-            robota = await App.Database.GetProduct(product.Id);
-          //////////////////////
-          ///trzeba dopracowac jeszcze 
+                await App.Database.UpdateProduct(product);
+            }
+            //Product robota
+            //robota = await App.Database.GetProduct(product.Id);
+            //////////////////////
+            ///trzeba dopracowac jeszcze 
             CheckCalories2();
         }
 

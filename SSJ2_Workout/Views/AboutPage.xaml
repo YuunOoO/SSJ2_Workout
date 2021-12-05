@@ -36,9 +36,11 @@
                 
                 <StackLayout HeightRequest="50"  Padding="0" Margin="10"
                              VerticalOptions="Center">
-                    <Label Text="{Binding Suma}" HorizontalOptions="Center" x:Name="terefere"
+                    <Label Text="{Binding Suma}" x:Name="terefere" Grid.RowSpan="1"
+                           FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="0" Grid.Column="0"></Label>
+                    <Label  Text="{Binding Suma2}"  Grid.Row="0" Grid.Column="1"
                            FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
-                    <ProgressBar ProgressColor="#286492" Progress="0.5" />
+                    <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" />
                 </StackLayout>
 
                 <StackLayout HeightRequest="50" Padding="0" Margin="10"
@@ -151,7 +153,7 @@
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
-            <Label Text="Ver. 0.2.1.1 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+            <Label Text="Ver. 0.2.1.3 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center"
                        ></Label>
        </Frame>

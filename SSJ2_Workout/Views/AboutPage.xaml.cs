@@ -21,10 +21,14 @@ namespace SSJ2_Workout.Views
                 {
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                     dane.Suma = SavedData.sum_save;
+                    dane.Suma2 = SavedData.sum2_save;
+                    decimal x = Decimal.Divide(SavedData.sum2_save,SavedData.sum_save);
+                    await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);
                 });
                 return true;
             });
-    }
+            
+        }
         public void GoToSteps(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Steps());

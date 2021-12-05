@@ -10,7 +10,7 @@
             <Button Text="Sumuj kalorie" Clicked="CheckCalories" Grid.Column="1"/>
             <Entry x:Name="nameEntry" Placeholder="Podaj artykuł" />
             <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc kalori" />
-            <CheckBox x:Name="eat"  />
+            <CheckBox x:Name="eat"/>
             <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" />
             <CollectionView x:Name="collectionView">
                 <CollectionView.ItemTemplate>
