@@ -12,12 +12,11 @@ namespace SSJ2_Workout.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CaloriesDeliverd : ContentPage
     {
-
-        public int suma = 0;
         public CaloriesDeliverd()
         {
             InitializeComponent();
-            
+            BindingContext = new MainViewModel();
+            CheckCalories2();
         }
 
         protected override async void OnAppearing()
@@ -39,14 +38,34 @@ namespace SSJ2_Workout.Views
 
         async void CheckCalories(object sender, EventArgs e)
         {
+            var suma = (MainViewModel)BindingContext;
             var produkty = await App.Database.GetProductAsync();
-            suma = 0;
+            int suma_tmp = 0;
             foreach (var produkt in produkty)
             {
-                suma += produkt.Calories;
+                suma_tmp += produkt.Calories;
             }
-            testowy.Text = $"Suma kalori to: {suma}";
+            suma.Suma = suma_tmp;
+           // testowy.Text = $"Suma kalori to: {suma.Suma}";
         }
+
+        public async void CheckCalories2()
+        {
+            var suma = (MainViewModel)BindingContext;
+            var produkty = await App.Database.GetProductAsync();
+            int suma_tmp = 0;
+            foreach (var produkt in produkty)
+            {
+                suma_tmp += produkt.Calories;
+            }
+            suma.Suma = suma_tmp;
+            SavedData.sum_save = suma_tmp;
+           // testowy.Text = $"Suma kalori to: {suma.Suma}";
+        }
+        //MainViewModel CheckCalories3()
+        //{
+        //    return suma;
+        //}
 
         async void DeleteButtonClicked(object sender, EventArgs e)
         {
@@ -56,8 +75,8 @@ namespace SSJ2_Workout.Views
 
             await App.Database.DeleteProductAsync(product);
             collectionView.ItemsSource = await App.Database.GetProductAsync();  //no kurwa jestem genialny i tyle xdddd
+            CheckCalories2();
         }
-
         async void OnButtonClicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(caloriesEntry.Text))
@@ -74,6 +93,7 @@ namespace SSJ2_Workout.Views
                     caloriesEntry.Text = string.Empty;
 
                     collectionView.ItemsSource = await App.Database.GetProductAsync();
+                    CheckCalories2();
                 }
                 else
                 {

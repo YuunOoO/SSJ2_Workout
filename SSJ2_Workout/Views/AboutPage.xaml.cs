@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
-
+using static SSJ2_Workout.Views.CaloriesDeliverd;
 namespace SSJ2_Workout.Views
 {
     public partial class AboutPage : ContentPage, INotifyPropertyChanged
@@ -21,11 +21,11 @@ namespace SSJ2_Workout.Views
                 Task.Run(async () =>
                 {
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+                    dane.Suma = SavedData.sum_save;
                 });
                 return true;
             });
-        }
-
+    }
         public void GoToSteps(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Steps());

@@ -5,6 +5,7 @@ using SSJ2_Workout.Views;
 using Xamarin.Forms;
 using System.IO;
 using static SSJ2_Workout.Views.Steps;
+using static SSJ2_Workout.Views.MainViewModel;
 
 [assembly: ExportFont("Samantha.ttf")]
 
@@ -27,7 +28,6 @@ namespace SSJ2_Workout
                 return database;
             }
         }
-
         public App()
         {
             InitializeComponent();

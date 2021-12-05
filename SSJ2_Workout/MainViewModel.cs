@@ -31,7 +31,24 @@ namespace SSJ2_Workout.Views
                 return step;
             }
         }
-        
+
+        int suma;
+        public int Suma
+        {
+            set
+            {
+                if (suma != value)
+                {
+                    suma = value;
+                    OnPropertyChanged(nameof(Suma));
+                }
+            }
+            get
+            {
+                return suma;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
