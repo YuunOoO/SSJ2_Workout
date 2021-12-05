@@ -105,7 +105,7 @@
                HorizontalOptions="Center" 
                >
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="GoToPulse" NumberOfTapsRequired="1" />
+                <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
             </Frame.GestureRecognizers>
             <Grid>
                 <Grid.ColumnDefinitions>

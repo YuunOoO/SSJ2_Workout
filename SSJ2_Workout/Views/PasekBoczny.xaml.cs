@@ -20,9 +20,9 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new Steps());
         }
-        public void GoToPulse(object obj, EventArgs args)
+        public void GoToGeolocation(object obj, EventArgs args)
         {
-            Navigation.PushAsync(new Pulse());
+            Navigation.PushAsync(new Geolocation());
         }
         public void GoToBMI(object obj, EventArgs args)
         {

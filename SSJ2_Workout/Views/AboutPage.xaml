@@ -127,9 +127,9 @@
                 </Frame>
                 <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="25" HasShadow="True">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoToPulse" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
                     </Frame.GestureRecognizers>
-                    <Label Text="Puls:" TextColor="Black" 
+                    <Label Text="Geo:" TextColor="Black" 
                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
                        ></Label>
                 </Frame>
@@ -151,7 +151,7 @@
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="25"
                HorizontalOptions="Center" >
-            <Label Text="Ver. 0.2.0.7 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+            <Label Text="Ver. 0.2.0.9 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center"
                        ></Label>
        </Frame>

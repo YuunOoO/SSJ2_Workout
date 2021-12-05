@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SSJ2_Workout.Views.Geolocation"
+             Title="Geolokalizacja!">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#1e1f26">
+            <Button Text="Pobranie pozycji GPS" Clicked="Button_OnClicked" />
+            <Label Text="Szerokość" TextColor="Gray" FontSize="15"/>
+            <Label x:Name="LatitudeLabel" FontSize="20" TextColor="White"/>
+            <Label Text="Długość geograficzna" TextColor="Gray" FontSize = "15" />
+            <Label x:Name="LongitudeLabel" FontSize="20" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+ </ContentPage>
