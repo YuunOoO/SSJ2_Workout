@@ -31,79 +31,79 @@
             <Frame MinimumHeightRequest="250"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="20">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                <Grid>
+                    <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold" 
+                    <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold" 
                        FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2" Margin="0,5,0,0"></Label>
-                
-                <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,10,0" />
-                
-                <Label Text="Miejsce na Binda" 
+
+                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,10,0" />
+
+                    <Label Text="Miejsce na Binda" 
                            FontAttributes="Bold" FontSize="20" TextColor="Black" 
                            Grid.Row="2" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Label>
-                
-                <Label Text="Kalorie zjedzone: " HorizontalOptions="Center" FontAttributes="Bold" 
+
+                    <Label Text="Kalorie zjedzone: " HorizontalOptions="Center" FontAttributes="Bold" 
                            FontSize="20" TextColor="Black" Grid.Row="3" Grid.ColumnSpan="2"></Label>
- 
-                <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0"/>
-                
-                 <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
+
+                    <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0"/>
+
+                    <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
                            FontSize="20" TextColor="Black" Grid.Row="5" 
                            Grid.ColumnSpan="2" Margin="170,0,0,0"></Label>
-                
-                 <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Column="0" 
+
+                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Column="0" 
                            Grid.Row="5" Grid.ColumnSpan="2" Margin="200,0,0,0"></Label>
-                
-                 <Label  Text="{Binding Suma2}" Grid.ColumnSpan="2" Margin="220,0,0,0"
+
+                    <Label  Text="{Binding Suma2}" Grid.ColumnSpan="2" Margin="220,0,0,0"
                             FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="5"></Label>
 
-                 <Label Text="Spalone Kalorie" HorizontalOptions="Center" Grid.Row="6" FontAttributes="Bold" 
+                    <Label Text="Spalone Kalorie" HorizontalOptions="Center" Grid.Row="6" FontAttributes="Bold" 
                            FontSize="20" TextColor="Black" Grid.ColumnSpan="2"></Label>
 
-                <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="7" Grid.ColumnSpan="2" Margin="10,0,10,0"/>
-                 <Label  Text="Miejsce na binda" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"
+                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="7" Grid.ColumnSpan="2" Margin="10,0,10,0"/>
+                    <Label  Text="Miejsce na binda" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"
                            FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="8"></Label>
 
                 </Grid>
 
-        </Frame>
+            </Frame>
 
-        <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
+            <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="5" CornerRadius="20">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
                     <Label Text="Powiadomienia:" FontAttributes="Bold" 
                            FontSize="20" TextColor="Black" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     <Label Text="Do roboty!" FontAttributes="Bold" 
                            FontSize="20" TextColor="Black" Grid.Row="1"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                
-            </Grid>
-        </Frame>
+
+                </Grid>
+            </Frame>
             <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="5" CornerRadius="20">
@@ -129,75 +129,115 @@
             <Frame HeightRequest="70"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="20">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="GoToSteps" NumberOfTapsRequired="1" />
-            </Frame.GestureRecognizers>
-            <Grid x:Name="kroki">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Image Source="https://icon-library.com/images/step-icon/step-icon-12.jpg" Aspect="AspectFill"
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToSteps" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <Grid x:Name="kroki">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="https://icon-library.com/images/step-icon/step-icon-12.jpg" Aspect="AspectFill"
                        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-                </Image>
-                <Label Text="{Binding Step}" Grid.Row="0" Grid.Column="1"
+                    </Image>
+                    <Label Text="{Binding Step}" Grid.Row="0" Grid.Column="1"
                        TextColor="Black" FontSize="20" FontAttributes="Bold"
                        VerticalTextAlignment="Center"></Label>
-            </Grid>
-        </Frame>
+                </Grid>
+            </Frame>
 
             <Frame HeightRequest="160" HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="5" CornerRadius="20">
-            <Grid Margin="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#99444b69" Grid.Column="0" CornerRadius="20" HasShadow="True">
+                    <Frame BackgroundColor="#99444b69" Grid.Column="0" CornerRadius="20" HasShadow="True">
 
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <Grid>
 
-                    <Label Text="BMI:" TextColor="Black" 
-                   FontSize="20" FontAttributes="Bold"  HorizontalOptions="Center"
-                       ></Label>
-                </Frame>
-                <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="20" HasShadow="True">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                    <Label Text="Geo:" TextColor="Black" 
-                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
-                       ></Label>
-                </Frame>
-                <Frame BackgroundColor="#99444b69" Grid.Column="2" CornerRadius="20" HasShadow="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="BMI:" Grid.Row="0" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="BMI:" Grid.Row="1" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="BMI:" Grid.Row="2" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="BMI:" Grid.Row="3" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                        </Grid>
+                    </Frame>
 
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoToCalories" NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
+                    <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="20" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
 
-                    <Label Text="Kcal:" TextColor="Black" 
-                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
-                       ></Label>
-                </Frame>
-                
-            </Grid>
-        </Frame>
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Label Text="Geo:" Grid.Row="0" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Geo:" Grid.Row="1" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Geo:" Grid.Row="2" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+
+                        </Grid>
+
+                    </Frame>
+
+                    <Frame BackgroundColor="#99444b69" Grid.Column="2" CornerRadius="20" HasShadow="True">
+
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="Kcal:" Grid.Row="0" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Kcal:" Grid.Row="1" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Kcal:" Grid.Row="2" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Kcal:" Grid.Row="3" TextColor="Black" 
+                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                        </Grid>
+                    </Frame>
+
+                </Grid>
+            </Frame>
 
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
-                <Label Text="Ver. 0.2.1.8 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.1.9 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

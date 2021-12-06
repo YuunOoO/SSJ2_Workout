@@ -30,8 +30,8 @@
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     </Frame>
 
-                
-                <Button Grid.Row="0" Grid.ColumnSpan="3"
+
+                    <Button Grid.Row="0" Grid.ColumnSpan="3"
                         Text="Start" x:Name="ButtonStart" CornerRadius="50"
                         Clicked="ButtonClicked" BackgroundColor="#99444b69"
                         TextColor="black" FontSize="15" FontAttributes="Bold"/>
@@ -47,16 +47,16 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    
-                <Button Text="Zeruj kroki"  x:Name="myBtn" CornerRadius="50"
+
+                    <Button Text="Zeruj kroki"  x:Name="myBtn" CornerRadius="50"
                         IsVisible="True" Clicked="Button_Clicked2"
                         Grid.Row="0" BackgroundColor="#99444b69"
                         TextColor="black" FontSize="15" FontAttributes="Bold"/>
-                    
-                <Label Text="{Binding Step}" Grid.Row="1" HorizontalOptions="Center"
+
+                    <Label Text="{Binding Step}" Grid.Row="1" HorizontalOptions="Center"
                        TextColor="black" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center"/>
 
-           
+
                 </Grid>
             </Frame>
         </StackLayout>
