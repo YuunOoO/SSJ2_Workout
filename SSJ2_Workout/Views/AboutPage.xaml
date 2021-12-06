@@ -197,7 +197,7 @@
 
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
-                <Label Text="Ver. 0.2.1.7 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.1.8 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
