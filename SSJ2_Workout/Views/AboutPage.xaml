@@ -7,18 +7,24 @@
 
 
     <NavigationPage.TitleView>
-        <Label Text="SSJ2" FontSize="50" TextColor="White" HorizontalOptions="Center" FontFamily="Samantha" FontAttributes="Bold"/>
-    </NavigationPage.TitleView>
-    
+        <Grid BackgroundColor="Red">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem
-                 IconImageSource="menu.png"
-                 Order="Primary"
-                 Priority="0"
-                 Clicked="GoToMenu"/>
-    </ContentPage.ToolbarItems>
-    
+            <Button Clicked="GoToMenu" ImageSource="banner" Grid.Row="0" Grid.ColumnSpan="3" 
+                    HeightRequest="60" WidthRequest="300"></Button>
+            <Label Text="SSJ2" FontSize="40" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   FontFamily="Samantha" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+
     <ScrollView Orientation="Vertical" HeightRequest="2000">
         <StackLayout WidthRequest="200">
 
@@ -159,7 +165,7 @@
 
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
-                <Label Text="Ver. 0.2.1.5 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.1.6 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

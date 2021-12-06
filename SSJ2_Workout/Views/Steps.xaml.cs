@@ -27,13 +27,13 @@ namespace SSJ2_Workout.Views
 
         public async Task GetSensorsAsync()             ///sprawdzanie uprawnien ale tego akurat nie potrzebujemy
         {
-            var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
+            /*var permissions = await Permissions.CheckStatusAsync<Permissions.Sensors>();
             if (permissions != PermissionStatus.Granted)
             {
                 testowy1.Text = "Uprawnienia sa juz przyznane!";
                 permissions = await Permissions.RequestAsync<Permissions.Sensors>();
             }
-            testowy1.Text = "Przyznano uprawnienia!";
+            testowy1.Text = "Przyznano uprawnienia!";*/
         }
         public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permission)
                     where T : BasePermission
@@ -66,7 +66,7 @@ namespace SSJ2_Workout.Views
                 });
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    testowy.Text = "Twoje kroki to: " + dane.Step;
+                    /*testowy.Text = "Twoje kroki to: " + dane.Step;*/
                 });
                 return true;
             });
