@@ -22,10 +22,9 @@
     <ScrollView Orientation="Vertical" HeightRequest="2000">
         <StackLayout WidthRequest="200">
 
-        <Frame HeightRequest="200" WidthRequest="400"
+            <Frame HeightRequest="200"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="0" CornerRadius="25"
-               HorizontalOptions="Center">
+               HasShadow="True" Padding="0" CornerRadius="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
@@ -66,11 +65,10 @@
             </Grid>
 
         </Frame>
-        
-        <Frame HeightRequest="60" WidthRequest="400"
+
+            <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="5" CornerRadius="25"
-               HorizontalOptions="Center">
+               HasShadow="True" Padding="5" CornerRadius="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -90,11 +88,9 @@
             </Grid>
         </Frame>
 
-        <Frame HeightRequest="80" WidthRequest="400"
+            <Frame HeightRequest="80"  HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="0" CornerRadius="25"
-               HorizontalOptions="Center" 
-               >
+               HasShadow="True" Padding="0" CornerRadius="20">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToSteps" NumberOfTapsRequired="1" />
             </Frame.GestureRecognizers>
@@ -116,10 +112,9 @@
             </Grid>
         </Frame>
 
-        <Frame HeightRequest="160" WidthRequest="400"
+            <Frame HeightRequest="160" HorizontalOptions="FillAndExpand"
                BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="5" CornerRadius="25"
-               HorizontalOptions="Center" >
+               HasShadow="True" Padding="5" CornerRadius="20">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -130,7 +125,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#99444b69" Grid.Column="0" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#99444b69" Grid.Column="0" CornerRadius="20" HasShadow="True">
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
@@ -140,7 +135,7 @@
                    FontSize="20" FontAttributes="Bold"  HorizontalOptions="Center"
                        ></Label>
                 </Frame>
-                <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="20" HasShadow="True">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
                     </Frame.GestureRecognizers>
@@ -148,7 +143,7 @@
                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"
                        ></Label>
                 </Frame>
-                <Frame BackgroundColor="#99444b69" Grid.Column="2" CornerRadius="25" HasShadow="True">
+                <Frame BackgroundColor="#99444b69" Grid.Column="2" CornerRadius="20" HasShadow="True">
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToCalories" NumberOfTapsRequired="1" />
@@ -162,13 +157,10 @@
             </Grid>
         </Frame>
 
-            <Frame HeightRequest="40" WidthRequest="400"
-               BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="0" CornerRadius="25"
-               HorizontalOptions="Center" >
-                <Label Text="Ver. 0.2.1.4 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
-                   FontSize="15" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center"
-                       ></Label>
+            <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
+               BackgroundColor="#CC30324d" Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
+                <Label Text="Ver. 0.2.1.5 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                   FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
         </StackLayout>

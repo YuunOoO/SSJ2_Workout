@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.PasekBoczny" BackgroundImageSource="backw">
 
-    <StackLayout>
-
-        <Frame HeightRequest="70" WidthRequest="400" Margin="5"
+    <StackLayout WidthRequest="300">
+        <Frame HeightRequest="70" BorderColor="#414141"
+               BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center"  BackgroundColor="#CC30324d"
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToNotifications" NumberOfTapsRequired="1" />
@@ -23,17 +23,17 @@
                 </Image>
               
 
-                <Label Text="Powiadomienia" Grid.Row="0" Grid.Column="1"
+                <Label Text="Powiadomienia" Grid.Row="0" Grid.Column="1" 
                        TextColor="Black" FontSize="20" FontAttributes="Bold"
                        VerticalTextAlignment="Center"></Label>
                 
             </Grid>
         </Frame>
-
-        <Frame HeightRequest="70" WidthRequest="400"
+       
+        <Frame HeightRequest="70" BorderColor="#414141"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center" 
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToSteps" NumberOfTapsRequired="1" />
@@ -53,10 +53,10 @@
         </Frame>
 
 
-        <Frame HeightRequest="70" WidthRequest="400"
+        <Frame HeightRequest="70" BorderColor="#414141"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center" 
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
@@ -76,10 +76,10 @@
         </Frame>
 
 
-        <Frame HeightRequest="70" WidthRequest="400"
+        <Frame HeightRequest="70" BorderColor="#414141"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center" 
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToCalories" NumberOfTapsRequired="1" />
@@ -99,10 +99,10 @@
         </Frame>
 
 
-        <Frame HeightRequest="70" WidthRequest="400"
+        <Frame HeightRequest="70" BorderColor="#414141"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center" 
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
@@ -121,10 +121,10 @@
             </Grid>
         </Frame>
 
-        <Frame HeightRequest="70" WidthRequest="400"
+        <Frame HeightRequest="70" BorderColor="#414141"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center" 
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToGoals" NumberOfTapsRequired="1" />
@@ -143,10 +143,10 @@
             </Grid>
         </Frame>
 
-        <Frame HeightRequest="70" WidthRequest="400"
+        <Frame HeightRequest="70" BorderColor="#414141"
                BackgroundColor="#CC30324d" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
-               HorizontalOptions="Center" 
+               HorizontalOptions="FillAndExpand" 
                >
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoToSettings" NumberOfTapsRequired="1" />
