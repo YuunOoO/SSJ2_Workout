@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.Calories"
-             Title="Kalorie">
+             Title="Kalorie" BackgroundImageSource="backFood">
     <ContentPage.Content>
         <StackLayout>
             <Frame HeightRequest="70" WidthRequest="400"
-               BackgroundColor="#CC30324d" Margin="5"
+               Margin="5"
                HasShadow="True" Padding="0" CornerRadius="35"
                HorizontalOptions="Center" 
                >
@@ -15,12 +15,18 @@
                 </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Przejdz do dostarczanych kalori!" Grid.Row="0" Grid.Column="1"
-                       TextColor="Black" FontSize="20" FontAttributes="Bold"
-                       VerticalTextAlignment="Center"></Label>
+                    <Label Text="Wprowadź zjedzone kalorie." Grid.Row="0" Grid.Column="0"
+                       TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center">
+                        <Label.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#795e89" Offset="0.1"/>
+                                <GradientStop Color="#df6941" Offset="1."/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
                 </Grid>
             </Frame>
         </StackLayout>

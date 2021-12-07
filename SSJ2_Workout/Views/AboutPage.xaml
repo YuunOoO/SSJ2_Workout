@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.AboutPage"
              xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
-             Title="{Binding Title}" BackgroundImageSource="backw">
+             Title="{Binding Title}" BackgroundImageSource="backMenu">
 
 
     <NavigationPage.TitleView>
@@ -28,64 +28,78 @@
     <ScrollView Orientation="Vertical" HeightRequest="2000">
         <StackLayout WidthRequest="200">
 
-            <Frame MinimumHeightRequest="250"  HorizontalOptions="FillAndExpand"
-               BackgroundColor="#CC30324d" Margin="5"
+            <Frame HeightRequest="270" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="20">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
 
-                    <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold" 
-                       FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2" Margin="0,5,0,0"></Label>
+                <Grid Padding="0" Margin="5" HorizontalOptions="Fill">
+                
 
-                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,10,0" />
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    
+                    <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold"
+                           FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="3"></Label>
 
-                    <Label Text="Miejsce na Binda" 
-                           FontAttributes="Bold" FontSize="20" TextColor="Black" 
-                           Grid.Row="2" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Label>
+                        <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="3" />
 
-                    <Label Text="Kalorie zjedzone: " HorizontalOptions="Center" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="3" Grid.ColumnSpan="2"></Label>
+                        <Label Text="Miejsce na Binda" 
+                               FontAttributes="Bold" FontSize="20" TextColor="Black" 
+                               Grid.Row="2" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
 
-                    <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0"/>
+                        <Label Text="Kalorie zjedzone: " HorizontalOptions="Center" FontAttributes="Bold" 
+                               FontSize="20" TextColor="Black" Grid.Row="3" Grid.ColumnSpan="3"></Label>
 
-                    <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="5" 
-                           Grid.ColumnSpan="2" Margin="170,0,0,0"></Label>
+                        <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="3"/>
 
-                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Column="0" 
-                           Grid.Row="5" Grid.ColumnSpan="2" Margin="200,0,0,0"></Label>
+                        <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
+                               FontSize="20" TextColor="Black" Grid.Row="5" Grid.Column="0" HorizontalOptions="End"></Label>
 
-                    <Label  Text="{Binding Suma2}" Grid.ColumnSpan="2" Margin="220,0,0,0"
-                            FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="5"></Label>
+                        <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Column="1" 
+                               Grid.Row="5"></Label>
 
-                    <Label Text="Spalone Kalorie" HorizontalOptions="Center" Grid.Row="6" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.ColumnSpan="2"></Label>
+                        <Label  Text="{Binding Suma2}" FontAttributes="Bold" 
+                                FontSize="20" TextColor="Black" Grid.Row="5" Grid.Column="2"></Label>
 
-                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="7" Grid.ColumnSpan="2" Margin="10,0,10,0"/>
-                    <Label  Text="Miejsce na binda" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"
-                           FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="8"></Label>
+                        <Label Text="Spalone Kalorie" HorizontalOptions="Center" Grid.ColumnSpan="3" 
+                           Grid.Row="6" FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
 
+                        <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="7" Grid.ColumnSpan="3"/>
+
+                        <Label  Text="Miejsce na binda" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"
+                               FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="8"></Label>
+                 
                 </Grid>
-
+                 
             </Frame>
 
             <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
-               BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="5" CornerRadius="20">
+               Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -105,8 +119,13 @@
                 </Grid>
             </Frame>
             <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
-               BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="5" CornerRadius="20">
+               Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -127,8 +146,13 @@
             </Frame>
 
             <Frame HeightRequest="70"  HorizontalOptions="FillAndExpand"
-               BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="0" CornerRadius="20">
+               Margin="5" HasShadow="True" Padding="0" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="GoToSteps" NumberOfTapsRequired="1" />
                 </Frame.GestureRecognizers>
@@ -150,9 +174,14 @@
                 </Grid>
             </Frame>
 
-            <Frame HeightRequest="160" HorizontalOptions="FillAndExpand"
-               BackgroundColor="#CC30324d" Margin="5"
-               HasShadow="True" Padding="5" CornerRadius="20">
+            <Frame HeightRequest="160" HorizontalOptions="FillAndExpand" 
+                   Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -163,8 +192,13 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <Frame BackgroundColor="#99444b69" Grid.Column="0" CornerRadius="20" HasShadow="True">
-
+                    <Frame Grid.Column="0" CornerRadius="20" HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#995f0a87" Offset="0.0"/>
+                                <GradientStop Color="#99182172" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
@@ -187,7 +221,13 @@
                         </Grid>
                     </Frame>
 
-                    <Frame BackgroundColor="#99444b69" Grid.Column="1" CornerRadius="20" HasShadow="True">
+                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#995f0a87" Offset="0.0"/>
+                                <GradientStop Color="#99182172" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="GoToGeolocation" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
@@ -211,8 +251,13 @@
 
                     </Frame>
 
-                    <Frame BackgroundColor="#99444b69" Grid.Column="2" CornerRadius="20" HasShadow="True">
-
+                    <Frame Grid.Column="2" CornerRadius="20" HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#995f0a87" Offset="0.0"/>
+                                <GradientStop Color="#99182172" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
                         <Grid>
 
                             <Grid.RowDefinitions>
@@ -236,8 +281,14 @@
             </Frame>
 
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
-               BackgroundColor="#CC30324d" Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
-                <Label Text="Ver. 0.2.1.9 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                   Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Label Text="Ver. 0.2.2.0 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

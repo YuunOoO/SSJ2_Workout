@@ -145,8 +145,7 @@
             <Frame HeightRequest="70" BorderColor="#414141"
                    BackgroundColor="#CC30324d" Margin="5"
                    HasShadow="True" Padding="0" CornerRadius="35"
-                   HorizontalOptions="FillAndExpand" 
-                   >
+                   HorizontalOptions="FillAndExpand">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="GoToGoals" NumberOfTapsRequired="1" />
                 </Frame.GestureRecognizers>
