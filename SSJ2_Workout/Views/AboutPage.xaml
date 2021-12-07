@@ -28,7 +28,7 @@
     <ScrollView Orientation="Vertical" HeightRequest="2000">
         <StackLayout WidthRequest="200">
 
-            <Frame HeightRequest="270" Margin="5"
+            <Frame HeightRequest="220" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="20">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -38,57 +38,49 @@
                 </Frame.Background>
 
                 <Grid Padding="0" Margin="5" HorizontalOptions="Fill">
-                
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="10"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                    
-                         <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold"
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Kalorie ogółem: " FontAttributes="Bold"
                            FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
-                         <Label Text="Miejsce na Binda" 
+                    <Label Text="Miejsce na Binda" 
                                FontAttributes="Bold" FontSize="20" TextColor="Black" 
-                               Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"></Label>
-                        <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="3" />
+                               Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
+                    
+                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
+                    <Label Text="Kalorie zjedzone: "  FontAttributes="Bold" 
+                               FontSize="20" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                    <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
+                               FontSize="20" TextColor="Black" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"></Label>
+                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Column="2" Grid.Row="2"></Label>
+                    <Label  Text="{Binding Suma2}" FontAttributes="Bold" FontSize="20" TextColor="Black" HorizontalOptions="Start" Grid.Row="2" Grid.Column="3"></Label>
+                    <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3"/>
 
-                        <Label Text="Kalorie zjedzone: " HorizontalOptions="Center" FontAttributes="Bold" 
-                               FontSize="20" TextColor="Black" Grid.Row="3" Grid.ColumnSpan="3"></Label>
 
-                        <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="3"
-                                      />
+                    <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2"
+                           Grid.Row="4" FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
+                    <Label  Text="Miejsce na binda" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
+                               FontAttributes="Bold" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center"></Label>
+                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3"/>
+                  
 
-                        <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
-                               FontSize="20" TextColor="Black" Grid.Row="5" Grid.Column="0" HorizontalOptions="End"></Label>
 
-                        <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Column="1" 
-                               Grid.Row="5"></Label>
-
-                        <Label  Text="{Binding Suma2}" FontAttributes="Bold" 
-                                FontSize="20" TextColor="Black" Grid.Row="5" Grid.Column="2"></Label>
-
-                        <Label Text="Spalone Kalorie" HorizontalOptions="Center" Grid.ColumnSpan="3" 
-                           Grid.Row="6" FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
-
-                        <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="7" Grid.ColumnSpan="3"/>
-
-                        <Label  Text="Miejsce na binda" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"
-                               FontAttributes="Bold" FontSize="20" TextColor="Black" Grid.Row="8"></Label>
-                 
                 </Grid>
-                 
+
             </Frame>
 
             <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
@@ -287,7 +279,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.2.1 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.2.2 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

@@ -68,7 +68,7 @@
                     </Button>
                 </Grid>
             </Frame>
-            <Frame CornerRadius="30" Margin="5">
+            <Frame CornerRadius="30" Margin="5" VerticalOptions="EndAndExpand">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#99a8ff78" Offset="0.0"/>
