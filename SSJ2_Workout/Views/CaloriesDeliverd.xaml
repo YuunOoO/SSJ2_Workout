@@ -31,10 +31,25 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Label Text="{Binding Name}" FontSize="Medium" />
-                            <Label Text="{Binding Calories}" FontSize="Medium" Grid.Column="0" />
-                            <CheckBox IsChecked="{Binding Eat}"  Grid.Column="1" CheckedChanged="OnChange"></CheckBox>
-                            <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="0" Clicked="DeleteButtonClicked" ></ImageButton>
+                            
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Name}" FontSize="Medium" Grid.Row="0" Grid.Column="0" 
+                                       FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
+                                       FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Clicked="DeleteButtonClicked" ></ImageButton>
+                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Grid.Column="1"></ImageButton>
+                            </Grid>
+                            
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -57,19 +57,18 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                     
-                    <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold"
-                           FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="3"></Label>
-
-                        <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="3" />
-
-                        <Label Text="Miejsce na Binda" 
+                         <Label Text="Kalorie ogółem: " HorizontalOptions="Center" FontAttributes="Bold"
+                           FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
+                         <Label Text="Miejsce na Binda" 
                                FontAttributes="Bold" FontSize="20" TextColor="Black" 
-                               Grid.Row="2" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
+                               Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"></Label>
+                        <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="3" />
 
                         <Label Text="Kalorie zjedzone: " HorizontalOptions="Center" FontAttributes="Bold" 
                                FontSize="20" TextColor="Black" Grid.Row="3" Grid.ColumnSpan="3"></Label>
 
-                        <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="3"/>
+                        <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="4" Grid.ColumnSpan="3"
+                                      />
 
                         <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold" 
                                FontSize="20" TextColor="Black" Grid.Row="5" Grid.Column="0" HorizontalOptions="End"></Label>
@@ -288,7 +287,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.2.0 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.2.1 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

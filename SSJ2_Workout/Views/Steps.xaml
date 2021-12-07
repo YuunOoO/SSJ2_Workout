@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:SSJ2_Workout.Views" 
              x:Class="SSJ2_Workout.Views.Steps"
-             Title="Aktywność / Kroki" BackgroundImageSource="RB">
+             Title="Aktywność / Kroki" BackgroundImageSource="back51">
     <ContentPage.Content>
         <StackLayout>
             <Frame CornerRadius="30" Margin="5" HeightRequest="180">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#CCfbd72b" Offset="0.0"/>
-                        <GradientStop Color="#CCf9484a" Offset="1.0"/>
+                        <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                        <GradientStop Color="#9978ffd6" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
                 <Grid>
@@ -28,8 +28,8 @@
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                <GradientStop Color="#99ffcc2f" Offset="0.0"/>
-                                <GradientStop Color="#99ef5734" Offset="1.0"/>
+                                <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                                <GradientStop Color="#9978ffd6" Offset="1.0"/>
                             </LinearGradientBrush>
                         </Frame.Background>
                     </Frame>
@@ -38,8 +38,8 @@
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                <GradientStop Color="#99ffcc2f" Offset="0.0"/>
-                                <GradientStop Color="#99ef5734" Offset="1.0"/>
+                                <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                                <GradientStop Color="#9978ffd6" Offset="1.0"/>
                             </LinearGradientBrush>
                         </Frame.Background>
                     </Frame>
@@ -48,8 +48,8 @@
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                <GradientStop Color="#99ffcc2f" Offset="0.0"/>
-                                <GradientStop Color="#99ef5734" Offset="1.0"/>
+                                <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                                <GradientStop Color="#9978ffd6" Offset="1.0"/>
                             </LinearGradientBrush>
                         </Frame.Background>
                     </Frame>
@@ -61,8 +61,8 @@
                         FontSize="15" FontAttributes="Bold">
                         <Button.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                <GradientStop Color="#CCffcc2f" Offset="0.0"/>
-                                <GradientStop Color="#CCef5734" Offset="1.0"/>
+                                <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                                <GradientStop Color="#9978ffd6" Offset="1.0"/>
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
@@ -71,8 +71,8 @@
             <Frame CornerRadius="30" Margin="5">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#CCfbd72b" Offset="0.0"/>
-                        <GradientStop Color="#CCf9484a" Offset="1.0"/>
+                        <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                        <GradientStop Color="#9978ffd6" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
                 <Grid>
@@ -91,8 +91,8 @@
                         TextColor="black" FontSize="15" FontAttributes="Bold">
                         <Button.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                <GradientStop Color="#CCffcc2f" Offset="0.0"/>
-                                <GradientStop Color="#CCef5734" Offset="1.0"/>
+                                <GradientStop Color="#99a8ff78" Offset="0.0"/>
+                                <GradientStop Color="#9978ffd6" Offset="1.0"/>
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>

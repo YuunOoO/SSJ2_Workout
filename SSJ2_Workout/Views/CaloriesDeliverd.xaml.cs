@@ -91,7 +91,7 @@ namespace SSJ2_Workout.Views
             var product = button.BindingContext as Product;
 
             await App.Database.DeleteProductAsync(product);
-            collectionView.ItemsSource = await App.Database.GetProductAsync();  //no kurwa jestem genialny i tyle xdddd
+            collectionView.ItemsSource = await App.Database.GetProductAsync();  //no kurwa jestem genialny i tyle xdddd // ano jesteś -JK
             CheckCalories2();
         }
         async void OnButtonClicked(object sender, EventArgs e)
