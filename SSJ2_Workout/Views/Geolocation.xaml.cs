@@ -18,8 +18,10 @@ namespace SSJ2_Workout.Views
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10000), null, true);
-            LongitudeLabel.Text = position.Longitude.ToString();
-            LatitudeLabel.Text = position.Latitude.ToString();
+            SavedData.locat = position.Longitude.ToString();
+            SavedData.posit = position.Latitude.ToString();
+            LongitudeLabel.Text = SavedData.locat;
+            LatitudeLabel.Text = SavedData.posit;
         }
     }
 }

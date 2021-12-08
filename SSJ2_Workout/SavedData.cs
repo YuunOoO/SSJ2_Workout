@@ -8,5 +8,7 @@ namespace SSJ2_Workout
     {
         public static int sum_save;
         public static int sum2_save;
+        public static string locat;
+        public static string posit;
     }
 }

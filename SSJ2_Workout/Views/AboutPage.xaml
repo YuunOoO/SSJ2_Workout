@@ -233,9 +233,9 @@
                             </Grid.RowDefinitions>
                             <Label Text="Geo:" Grid.Row="0" TextColor="Black" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="Geo:" Grid.Row="1" TextColor="Black" 
+                            <Label Text="{Binding Langi}" Grid.Row="1" TextColor="Black" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="Geo:" Grid.Row="2" TextColor="Black" 
+                            <Label Text="{Binding Longi}" Grid.Row="2" TextColor="Black" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
                         </Grid>

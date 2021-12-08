@@ -12,7 +12,7 @@ using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Views
 {
- 
+
     public class MainViewModel : INotifyPropertyChanged
     {
         string step;
@@ -65,6 +65,41 @@ namespace SSJ2_Workout.Views
                 return suma2;
             }
         }
+
+        string longi, langi;
+
+        public string Longi
+        {
+            set
+            {
+                if (longi != value)
+                {
+                    longi = value;
+                    OnPropertyChanged("Longi");
+                }
+            }
+            get
+            {
+                return longi;
+            }
+        }
+
+        public string Langi
+        {
+            set
+            {
+                if (langi != value)
+                {
+                    langi = value;
+                    OnPropertyChanged("Langi");
+                }
+            }
+            get
+            {
+                return langi;
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
