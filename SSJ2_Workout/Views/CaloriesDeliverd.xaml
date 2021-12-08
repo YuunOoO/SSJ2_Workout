@@ -47,7 +47,7 @@
                                 <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
                                        FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
                                 <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Clicked="DeleteButtonClicked" ></ImageButton>
-                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Grid.Column="1"></ImageButton>
+                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Grid.Column="1" Clicked="OnChange"></ImageButton>
                             </Grid>
                             
                         </StackLayout>
