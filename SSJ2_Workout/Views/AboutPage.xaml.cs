@@ -19,6 +19,10 @@ namespace SSJ2_Workout.Views
             {
                 Task.Run(async () =>
                 {
+                    dane.Wzrost = Person.Wzrost.ToString();
+                    dane.Wiek = Person.Wiek.ToString();
+                    dane.Waga = Person.Waga.ToString();
+                    dane.Bmi = Person.BMI.ToString();
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                     dane.Suma = SavedData.sum_save;
                     dane.Suma2 = SavedData.sum2_save;
@@ -62,6 +66,10 @@ namespace SSJ2_Workout.Views
         public void GoToSettings(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Settings());
+        }
+        public void GoToPulse(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Pulse());
         }
     }
 

@@ -44,6 +44,11 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new Settings());
         }
+        public void GoToPulse(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Pulse());
+        }
+
 
     }
 }

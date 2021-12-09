@@ -4,10 +4,12 @@
              x:Class="SSJ2_Workout.Views.BodyParameters"
              Title="Parametry ciała / BMI">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#1e1f26">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" BackgroundColor="#1e1f26">
+            <Entry x:Name="wiekEntry" Placeholder="Podaj Wiek" TextColor="White" BackgroundColor="Gray"/>
+            <Entry x:Name="wzrostEntry" Placeholder="Podaj wzrost(cm)" TextColor="White" BackgroundColor="Gray"/>
+            <Entry x:Name="wagaEntry" Placeholder="Podaj Wage(kg)" TextColor="White" BackgroundColor="Gray"/>
+            <Picker x:Name="genderPicker" SelectedIndexChanged="genderChoice" TextColor="Gray" TitleColor="White" BackgroundColor="Gray" Title="Wybierz płeć" />
+            <Button Text="Zmiana parametrów ciała!" Clicked="BodyChange" BackgroundColor="Green"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

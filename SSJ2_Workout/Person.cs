@@ -4,10 +4,12 @@ using System.Text;
 
 namespace SSJ2_Workout
 {
-    public class Person
+    public class Person 
     {
-        public int Wzrost { get; set; }
-        public int Waga { get; set; }
-        public int BMI { get; set; }
+        public static int Wzrost { get; set; }
+        public static int Waga { get; set; }
+        public static decimal BMI { get; set; }
+        public static int Wiek { get; set; }
+        public static string Gender { get; set; }
     }
 }

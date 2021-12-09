@@ -100,6 +100,69 @@ namespace SSJ2_Workout.Views
             }
         }
 
+        string waga, wzrost, bmi, wiek;
+        public string Waga
+        {
+            set
+            {
+                if (waga != value)
+                {
+                    waga = value;
+                    OnPropertyChanged("Waga");
+                }
+            }
+            get
+            {
+                return waga;
+            }
+        }
+        public string Wzrost
+        {
+            set
+            {
+                if (wzrost != value)
+                {
+                    wzrost = value;
+                    OnPropertyChanged("Wzrost");
+                }
+            }
+            get
+            {
+                return wzrost;
+            }
+        }
+
+        public string Bmi
+        {
+            set
+            {
+                if (bmi != value)
+                {
+                    bmi = value;
+                    OnPropertyChanged("Bmi");
+                }
+            }
+            get
+            {
+                return bmi;
+            }
+        }
+
+        public string Wiek
+        {
+            set
+            {
+                if (wiek != value)
+                {
+                    wiek = value;
+                    OnPropertyChanged("Wiek");
+                }
+            }
+            get
+            {
+                return wiek;
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

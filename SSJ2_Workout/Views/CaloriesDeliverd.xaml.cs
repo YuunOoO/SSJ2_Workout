@@ -112,6 +112,7 @@ namespace SSJ2_Workout.Views
                     eat.IsChecked = false;
                     collectionView.ItemsSource = await App.Database.GetProductAsync();
                     CheckCalories2();
+                    DependencyService.Get<IMessage>().ShortAlert("Pomyślnie dodano produkt!");
                 }
                 else
                 {
