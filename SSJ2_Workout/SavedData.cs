@@ -6,9 +6,9 @@ namespace SSJ2_Workout
 {
     public class SavedData
     {
-        public static int sum_save;
-        public static int sum2_save;
-        public static string locat;
-        public static string posit;
+        public static int sum_save { get; set; }
+        public static int sum2_save { get; set; }
+        public static string locat { get; set; }
+        public static string posit { get; set; }
     }
 }

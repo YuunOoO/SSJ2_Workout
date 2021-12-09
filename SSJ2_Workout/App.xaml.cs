@@ -44,6 +44,10 @@ namespace SSJ2_Workout
             Person.Wiek = Convert.ToInt32(Preferences.Get("WIEK", ""));
             Person.Waga = Convert.ToInt32(Preferences.Get("WAGA", ""));
             Person.BMI = Convert.ToDecimal(Preferences.Get("BMI", ""));
+            SavedData.locat = Preferences.Get("LOCAT", "");
+            SavedData.posit = Preferences.Get("POSIT", "");
+            SavedData.sum_save = Convert.ToInt32(Preferences.Get("SUM", ""));
+            SavedData.sum2_save = Convert.ToInt32(Preferences.Get("SUM2", ""));
         }
 
         protected override void OnSleep()

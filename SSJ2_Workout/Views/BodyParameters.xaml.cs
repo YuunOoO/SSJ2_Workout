@@ -52,7 +52,6 @@ namespace SSJ2_Workout.Views
                     Preferences.Set("GENDER", $"{Person.Gender}");
                     Preferences.Set("BMI", Person.BMI.ToString());
                     
-                    genderPicker.Title = string.Empty;
                     wzrostEntry.Text = string.Empty;
                     wiekEntry.Text = string.Empty;
                     wagaEntry.Text = string.Empty;

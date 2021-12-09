@@ -1,5 +1,6 @@
 ﻿using Plugin.Geolocator;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +23,8 @@ namespace SSJ2_Workout.Views
             SavedData.posit = position.Latitude.ToString();
             LongitudeLabel.Text = SavedData.locat;
             LatitudeLabel.Text = SavedData.posit;
+            Preferences.Set("LOCAT", $"{SavedData.locat}");
+            Preferences.Set("POSIT", $"{SavedData.posit}");
         }
     }
 }

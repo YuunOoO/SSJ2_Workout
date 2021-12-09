@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -60,6 +60,8 @@ namespace SSJ2_Workout.Views
             suma.Suma2 = suma_tmp2;
             SavedData.sum_save = suma_tmp;
             SavedData.sum2_save = suma_tmp2;
+            Preferences.Set("SUM", $"{SavedData.sum_save}");
+            Preferences.Set("SUM2", $"{SavedData.sum2_save}");
         }
 
         async void OnChange(object sender, EventArgs e)
