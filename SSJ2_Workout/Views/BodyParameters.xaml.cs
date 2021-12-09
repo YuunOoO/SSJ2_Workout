@@ -50,7 +50,7 @@ namespace SSJ2_Workout.Views
                     Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
                     Person.BMI = Decimal.Divide (Person.Waga , (Decimal.Divide(Person.Wzrost,100)* Decimal.Divide(Person.Wzrost , 100)));
                     Person.Mnoznik = actionPicker.Items[actionPicker.SelectedIndex];
-                    Preferences.Set("MNOZNIK", $"{Person.Mnoznik}");
+                    Preferences.Set("MNOZNIK", Person.Mnoznik);
                     Preferences.Set("WAGA", $"{Person.Waga}");
                     Preferences.Set("WZROST", $"{Person.Wzrost}");
                     Preferences.Set("WIEK", $"{Person.Wiek}");

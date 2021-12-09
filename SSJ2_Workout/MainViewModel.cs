@@ -12,10 +12,12 @@ using static SSJ2_Workout.Views.Steps;
 
 namespace SSJ2_Workout.Views
 {
-
+   
     public class MainViewModel : INotifyPropertyChanged
     {
         string step;
+        public double Spalone { get; set; }
+        public double Sumarycznie { get; set; }
         public string Step
         {
             set
@@ -23,7 +25,11 @@ namespace SSJ2_Workout.Views
                 if (step != value)
                 {
                     step = value;
+                    Spalone = Oblicz_spalone(Step);
+                    Sumarycznie = Oblicz_Kalorie();
                     OnPropertyChanged(nameof(Step));
+                    OnPropertyChanged(nameof(Spalone));
+                    OnPropertyChanged(nameof(Sumarycznie));
                 }
             }
             get
@@ -57,6 +63,8 @@ namespace SSJ2_Workout.Views
                 if (suma2 != value)
                 {
                     suma2 = value;
+                    Sumarycznie = Oblicz_Kalorie();
+                    OnPropertyChanged(nameof(Sumarycznie));
                     OnPropertyChanged(nameof(Suma2));
                 }
             }
@@ -171,6 +179,15 @@ namespace SSJ2_Workout.Views
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        double Oblicz_spalone(string kroki)
+        {
+            return (0.4 * (double)Person.BMI * Person.Wiek * 4);
+        }
+        Double Oblicz_Kalorie()
+        {
+            return Suma2 - Spalone;
         }
     }
 }

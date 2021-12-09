@@ -18,11 +18,6 @@ namespace SSJ2_Workout.Views
             var dane = (MainViewModel)BindingContext;
             dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
 
-            //dane.Wzrost = Preferences.Get("WZROST", "default_value");
-            //dane.Wiek = Preferences.Get("WIEK", "default_value");
-            //dane.Waga = Preferences.Get("WAGA", "default_value");
-            //dane.Bmi = Preferences.Get("BMI", "default_value");
-
             Device.StartTimer(TimeSpan.FromMilliseconds(300), () => //dzialanie w tle tasku 
             {
                 Task.Run(async () =>

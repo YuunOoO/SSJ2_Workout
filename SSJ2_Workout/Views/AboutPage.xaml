@@ -57,7 +57,7 @@
 
                     <Label Text="Kalorie ogółem: " FontAttributes="Bold"
                            FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
-                    <Label Text="Miejsce na Binda" 
+                    <Label Text="{Binding Sumarycznie}" 
                                FontAttributes="Bold" FontSize="20" TextColor="Black" 
                                Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
                     
@@ -73,7 +73,7 @@
 
                     <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2"
                            Grid.Row="4" FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
-                    <Label  Text="Miejsce na binda" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
+                    <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
                                FontAttributes="Bold" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center"></Label>
                     <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3"/>
                   
@@ -285,7 +285,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.3.1 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.3.3 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

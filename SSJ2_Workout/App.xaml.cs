@@ -47,6 +47,7 @@ namespace SSJ2_Workout
                 Person.Waga = Convert.ToInt32(Preferences.Get("WAGA", ""));
                 Person.BMI = Convert.ToDecimal(Preferences.Get("BMI", ""));
                 Person.Gender = Preferences.Get("GENDER", "");
+                Person.Mnoznik = Preferences.Get("MNOZNIK", "");
             }
             if (Preferences.ContainsKey("LOCAT"))
             {
