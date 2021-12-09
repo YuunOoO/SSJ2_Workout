@@ -103,7 +103,7 @@ namespace SSJ2_Workout.Views
         string waga, wzrost, bmi, wiek;
         public string Waga
         {
-            get => Preferences.Get(nameof(Waga), "default_value");
+            get => Preferences.Get(nameof(Waga), Person.Waga.ToString());
             set
             {
                 Preferences.Set(nameof(Waga), value);
@@ -112,7 +112,7 @@ namespace SSJ2_Workout.Views
         }
         public string Wzrost
         {
-            get => Preferences.Get(nameof(Wzrost), "default_value");
+            get => Preferences.Get(nameof(Wzrost), Person.Wzrost.ToString());
             set
             {
                 Preferences.Set(nameof(Wzrost), value);
@@ -122,7 +122,7 @@ namespace SSJ2_Workout.Views
 
         public string Bmi
         {
-            get => Preferences.Get(nameof(Bmi), "default_value");
+            get => Preferences.Get(nameof(Bmi), Person.BMI.ToString());
             set
             {
                 Preferences.Set(nameof(Bmi), value);
@@ -132,7 +132,7 @@ namespace SSJ2_Workout.Views
 
         public string Wiek
         {
-            get => Preferences.Get(nameof(Wiek), "default_value");
+            get => Preferences.Get(nameof(Wiek), Person.Wiek.ToString());
             set
             {
                 Preferences.Set(nameof(Wiek), value);
