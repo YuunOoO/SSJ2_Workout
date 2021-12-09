@@ -11,5 +11,6 @@ namespace SSJ2_Workout
         public static decimal BMI { get; set; }
         public static int Wiek { get; set; }
         public static string Gender { get; set; }
+        public static string Mnoznik { get; set; }
     }
 }

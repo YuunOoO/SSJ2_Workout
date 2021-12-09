@@ -9,6 +9,7 @@
             <Entry x:Name="wzrostEntry" Placeholder="Podaj wzrost(cm)" TextColor="White" BackgroundColor="Gray"/>
             <Entry x:Name="wagaEntry" Placeholder="Podaj Wage(kg)" TextColor="White" BackgroundColor="Gray"/>
             <Picker x:Name="genderPicker" SelectedIndexChanged="genderChoice" TextColor="White" TitleColor="Gray" BackgroundColor="Gray" Title="Wybierz płeć"/>
+            <Picker x:Name="actionPicker" SelectedIndexChanged="actionChoice" TextColor="White" TitleColor="Gray" BackgroundColor="Gray" Title="Wybierz stopien aktywnosci fizycznej(mnożnik)"/>
             <Button Text="Zmiana parametrów ciała!" Clicked="BodyChange" BackgroundColor="Green"/>
         </StackLayout>
     </ContentPage.Content>

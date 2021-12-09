@@ -19,8 +19,11 @@ namespace SSJ2_Workout.Views
             genderPicker.Items.Add("Kobieta");
             genderPicker.Items.Add("Mężczyzna");
             genderPicker.Items.Add("Inne");
-            
-
+            actionPicker.Items.Add("2.2 - osoby trenujące wyczynowo, profesjonalni sportowcy");
+            actionPicker.Items.Add("2.0 - osoby o dużej aktywności fizycznej");
+            actionPicker.Items.Add("1.7 - osoby o umiarkowanej aktywności fizycznej");
+            actionPicker.Items.Add("1.4 - osoby o małej aktywności fizycznej");
+            actionPicker.Items.Add("1.7 - osoby pozostające w bezruchu");
         }
 
         bool IsDigitsOnly(string str) //chroni przed podaniem liter
@@ -34,6 +37,7 @@ namespace SSJ2_Workout.Views
             return true;
         }
 
+ 
         async void BodyChange(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(wiekEntry.Text) && !string.IsNullOrWhiteSpace(wzrostEntry.Text) && !string.IsNullOrWhiteSpace(wagaEntry.Text))
@@ -45,7 +49,8 @@ namespace SSJ2_Workout.Views
                     Person.Wiek = Convert.ToInt32(wiekEntry.Text);
                     Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
                     Person.BMI = Decimal.Divide (Person.Waga , (Decimal.Divide(Person.Wzrost,100)* Decimal.Divide(Person.Wzrost , 100)));
-
+                    Person.Mnoznik = actionPicker.Items[actionPicker.SelectedIndex];
+                    Preferences.Set("MNOZNIK", $"{Person.Mnoznik}");
                     Preferences.Set("WAGA", $"{Person.Waga}");
                     Preferences.Set("WZROST", $"{Person.Wzrost}");
                     Preferences.Set("WIEK", $"{Person.Wiek}");
@@ -67,6 +72,12 @@ namespace SSJ2_Workout.Views
         private void genderChoice(object sender, EventArgs e)
         {
             string name = genderPicker.Items[genderPicker.SelectedIndex];
+            Name = name;
+        }
+
+        private void actionChoice(object sender, EventArgs e)
+        {
+            string name = actionPicker.Items[actionPicker.SelectedIndex];
             Name = name;
         }
     }

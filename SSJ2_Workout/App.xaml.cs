@@ -40,14 +40,24 @@ namespace SSJ2_Workout
         protected override void OnStart()
         {
             DependencyService.Get<IStepCounter>().InitSensorService();
-            Person.Wzrost = Convert.ToInt32(Preferences.Get("WZROST", ""));
-            Person.Wiek = Convert.ToInt32(Preferences.Get("WIEK", ""));
-            Person.Waga = Convert.ToInt32(Preferences.Get("WAGA", ""));
-            Person.BMI = Convert.ToDecimal(Preferences.Get("BMI", ""));
-            SavedData.locat = Preferences.Get("LOCAT", "");
-            SavedData.posit = Preferences.Get("POSIT", "");
-            SavedData.sum_save = Convert.ToInt32(Preferences.Get("SUM", ""));
-            SavedData.sum2_save = Convert.ToInt32(Preferences.Get("SUM2", ""));
+            if(Preferences.ContainsKey("WZROST"))
+            {
+                Person.Wzrost = Convert.ToInt32(Preferences.Get("WZROST", ""));
+                Person.Wiek = Convert.ToInt32(Preferences.Get("WIEK", ""));
+                Person.Waga = Convert.ToInt32(Preferences.Get("WAGA", ""));
+                Person.BMI = Convert.ToDecimal(Preferences.Get("BMI", ""));
+                Person.Gender = Preferences.Get("GENDER", "");
+            }
+            if (Preferences.ContainsKey("LOCAT"))
+            {
+                SavedData.locat = Preferences.Get("LOCAT", "");
+                SavedData.posit = Preferences.Get("POSIT", "");
+            }
+            if (Preferences.ContainsKey("SUM"))
+            {
+                SavedData.sum_save = Convert.ToInt32(Preferences.Get("SUM", ""));
+                SavedData.sum2_save = Convert.ToInt32(Preferences.Get("SUM2", ""));
+            }
         }
 
         protected override void OnSleep()
