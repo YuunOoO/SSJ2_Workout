@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using System.IO;
 using static SSJ2_Workout.Views.Steps;
 using Plugin.Geolocator.Abstractions;
+using Xamarin.Essentials;
 
 [assembly: ExportFont("Samantha.ttf")]
 
@@ -39,7 +40,10 @@ namespace SSJ2_Workout
         protected override void OnStart()
         {
             DependencyService.Get<IStepCounter>().InitSensorService();
-
+            Person.Wzrost = Convert.ToInt32(Preferences.Get("WZROST", ""));
+            Person.Wiek = Convert.ToInt32(Preferences.Get("WIEK", ""));
+            Person.Waga = Convert.ToInt32(Preferences.Get("WAGA", ""));
+            Person.BMI = Convert.ToDecimal(Preferences.Get("BMI", ""));
         }
 
         protected override void OnSleep()

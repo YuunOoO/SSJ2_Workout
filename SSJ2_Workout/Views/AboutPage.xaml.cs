@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
+using Xamarin.Essentials;
+
 namespace SSJ2_Workout.Views
 {
     public partial class AboutPage : ContentPage, INotifyPropertyChanged
@@ -15,6 +17,12 @@ namespace SSJ2_Workout.Views
             DependencyService.Get<IStepCounter>().InitSensorService();
             var dane = (MainViewModel)BindingContext;
             dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+
+            //dane.Wzrost = Preferences.Get("WZROST", "default_value");
+            //dane.Wiek = Preferences.Get("WIEK", "default_value");
+            //dane.Waga = Preferences.Get("WAGA", "default_value");
+            //dane.Bmi = Preferences.Get("BMI", "default_value");
+
             Device.StartTimer(TimeSpan.FromMilliseconds(300), () => //dzialanie w tle tasku 
             {
                 Task.Run(async () =>
@@ -35,6 +43,7 @@ namespace SSJ2_Workout.Views
             });
             
         }
+
         public void GoToSteps(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Steps());

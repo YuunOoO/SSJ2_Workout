@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +19,7 @@ namespace SSJ2_Workout.Views
             genderPicker.Items.Add("Kobieta");
             genderPicker.Items.Add("Mężczyzna");
             genderPicker.Items.Add("Inne");
+            
 
         }
 
@@ -44,7 +45,14 @@ namespace SSJ2_Workout.Views
                     Person.Wiek = Convert.ToInt32(wiekEntry.Text);
                     Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
                     Person.BMI = Decimal.Divide (Person.Waga , (Decimal.Divide(Person.Wzrost,100)* Decimal.Divide(Person.Wzrost , 100)));
+
+                    Preferences.Set("WAGA", $"{Person.Waga}");
+                    Preferences.Set("WZROST", $"{Person.Wzrost}");
+                    Preferences.Set("WIEK", $"{Person.Wiek}");
+                    Preferences.Set("GENDER", $"{Person.Gender}");
+                    Preferences.Set("BMI", Person.BMI.ToString());
                     
+                    genderPicker.Title = string.Empty;
                     wzrostEntry.Text = string.Empty;
                     wiekEntry.Text = string.Empty;
                     wagaEntry.Text = string.Empty;

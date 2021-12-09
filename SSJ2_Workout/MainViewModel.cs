@@ -103,42 +103,68 @@ namespace SSJ2_Workout.Views
         string waga, wzrost, bmi, wiek;
         public string Waga
         {
-            get => Preferences.Get(nameof(Waga), Person.Waga.ToString());
             set
             {
-                Preferences.Set(nameof(Waga), value);
-                OnPropertyChanged(nameof(Waga));
+                if (waga != value)
+                {
+                    waga = value;
+                    OnPropertyChanged("Waga");
+                }
+            }
+            get
+            {
+                return waga;
             }
         }
         public string Wzrost
         {
-            get => Preferences.Get(nameof(Wzrost), Person.Wzrost.ToString());
             set
             {
-                Preferences.Set(nameof(Wzrost), value);
-                OnPropertyChanged(nameof(Wzrost));
+                if (wzrost != value)
+                {
+                    wzrost = value;
+                    OnPropertyChanged("Wzrost");
+                }
+            }
+            get
+            {
+                return wzrost;
             }
         }
 
         public string Bmi
         {
-            get => Preferences.Get(nameof(Bmi), Person.BMI.ToString());
             set
             {
-                Preferences.Set(nameof(Bmi), value);
-                OnPropertyChanged(nameof(Bmi));
+                if (bmi != value)
+                {
+                    bmi = value;
+                    OnPropertyChanged("Bmi");
+                }
+            }
+            get
+            {
+                return bmi;
             }
         }
 
         public string Wiek
         {
-            get => Preferences.Get(nameof(Wiek), Person.Wiek.ToString());
             set
             {
-                Preferences.Set(nameof(Wiek), value);
-                OnPropertyChanged(nameof(Wiek));
+                if (Preferences.Get(nameof(Wiek), "default_valu") != value)
+                {
+                    //wiek = value;
+                    Preferences.Set(nameof(Wiek), value);
+                    OnPropertyChanged(nameof(Wiek));
+                }
+            }
+            get
+            {
+                return Preferences.Get(nameof(Wiek), "default_value");
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
