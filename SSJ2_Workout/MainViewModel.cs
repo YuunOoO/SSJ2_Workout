@@ -105,30 +105,32 @@ namespace SSJ2_Workout.Views
         {
             set
             {
-                if (waga != value)
+                if (Preferences.Get(nameof(Waga), "default_value") != value)
                 {
-                    waga = value;
-                    OnPropertyChanged("Waga");
+                    //wiek = value;
+                    Preferences.Set(nameof(Waga), value);
+                    OnPropertyChanged(nameof(Waga));
                 }
             }
             get
             {
-                return waga;
+                return Preferences.Get(nameof(Waga), "default_value");
             }
         }
         public string Wzrost
         {
             set
             {
-                if (wzrost != value)
+                if (Preferences.Get(nameof(Wzrost), "default_value") != value)
                 {
-                    wzrost = value;
-                    OnPropertyChanged("Wzrost");
+                    //wiek = value;
+                    Preferences.Set(nameof(Wzrost), value);
+                    OnPropertyChanged(nameof(Wzrost));
                 }
             }
             get
             {
-                return wzrost;
+                return Preferences.Get(nameof(Wzrost), "default_value");
             }
         }
 
@@ -136,15 +138,16 @@ namespace SSJ2_Workout.Views
         {
             set
             {
-                if (bmi != value)
+                if (Preferences.Get(nameof(Bmi), "default_value") != value)
                 {
-                    bmi = value;
-                    OnPropertyChanged("Bmi");
+                    //wiek = value;
+                    Preferences.Set(nameof(Bmi), value);
+                    OnPropertyChanged(nameof(Bmi));
                 }
             }
             get
             {
-                return bmi;
+                return Preferences.Get(nameof(Bmi), "default_value");
             }
         }
 
@@ -152,15 +155,16 @@ namespace SSJ2_Workout.Views
         {
             set
             {
-                if (wiek != value)
+                if (Preferences.Get(nameof(Wiek), "default_value") != value)
                 {
-                    wiek = value;
-                    OnPropertyChanged("Wiek");
+                    //wiek = value;
+                    Preferences.Set(nameof(Wiek),value);
+                    OnPropertyChanged(nameof(Wiek));
                 }
             }
             get
             {
-                return wiek;
+                return Preferences.Get(nameof(Wiek), "default_value");
             }
         }
 
