@@ -55,14 +55,14 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha"
+                    <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,0,0"
                            FontSize="40" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Sumarycznie}" TextColor="Blue"
                                FontAttributes="Bold" FontSize="20" 
                                Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
                     
                     <ProgressBar ProgressColor="Blue" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
-                    <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha"
+                    <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha" Margin="10,0,0,0"
                                FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
                                FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"></Label>
@@ -71,7 +71,7 @@
                     <ProgressBar ProgressColor="Green" Progress="0" x:Name="zjedzone" Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3"/>
 
 
-                    <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Samantha"
+                    <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Samantha" Margin="10,0,0,0"
                            Grid.Row="4" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
                     <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
                                FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Center"></Label>
@@ -168,8 +168,8 @@
                 </Grid>
             </Frame>
 
-            <Frame HeightRequest="160" HorizontalOptions="FillAndExpand" 
-                   Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
+            <Frame MinimumHeightRequest="200" Margin="5" HasShadow="True" 
+                   Padding="5" CornerRadius="20">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
@@ -199,14 +199,14 @@
                         <Grid>
 
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
                             </Grid.RowDefinitions>
                             <Label Text="BMI:" Grid.Row="0" TextColor="Black" FontFamily="Samantha"
-                                   FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                   FontSize="35" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             <Label Text="{Binding Bmi}" Grid.Row="1" TextColor="Gray" 
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             <Label Text="{Binding Wzrost}" Grid.Row="2" TextColor="Gray"
@@ -232,9 +232,9 @@
                         <Grid>
 
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                           
 
                             </Grid.RowDefinitions>
@@ -309,7 +309,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.4.5 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.4.6 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="29" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
