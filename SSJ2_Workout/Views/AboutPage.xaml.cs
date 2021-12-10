@@ -75,6 +75,10 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new Pulse());
         }
+        public void GoToStoper(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Stoper());
+        }
     }
 
 }

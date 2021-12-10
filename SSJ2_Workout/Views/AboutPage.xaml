@@ -277,6 +277,34 @@
                 </Grid>
             </Frame>
 
+            <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
+               Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToStoper" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="STOPER" FontAttributes="Bold" 
+                           FontSize="20" TextColor="Black" Grid.Row="0"
+                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
+
+                </Grid>
+            </Frame>
+
+
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
                    Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
                 <Frame.Background>
@@ -285,7 +313,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.3.3 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.3.5 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
