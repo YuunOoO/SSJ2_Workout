@@ -12,12 +12,9 @@ namespace SSJ2_Workout.Views
     public partial class Stoper : ContentPage, INotifyPropertyChanged
     {
         int Czas;
-        int m, s;
         bool dodawaj = true;
         Timer timer;
-
         int hours = 0, mins = 0, secs = 0, milliseconds = 0;
-
 
         public Stoper()
         {
@@ -79,7 +76,6 @@ namespace SSJ2_Workout.Views
                     }
                 }
 
-
                 if (mins <= 0 && secs <= 0 && milliseconds <= 0)
                 {
                     hours--;
@@ -98,9 +94,6 @@ namespace SSJ2_Workout.Views
                     secs--;
                     milliseconds = 1000;
                 }
-               
-               
-
             }
 
             Device.BeginInvokeOnMainThread(() =>
@@ -120,6 +113,7 @@ namespace SSJ2_Workout.Views
         private void BtnReset_Clicked(object sender, EventArgs e)
         {
             timer.Close();
+            hours = mins = secs = milliseconds = 0;
         }
 
         private void timeBtn_Clicked(object sender, EventArgs e)
