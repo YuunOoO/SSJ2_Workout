@@ -61,21 +61,21 @@
                                FontAttributes="Bold" FontSize="20" 
                                Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
                     
-                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
+                    <ProgressBar ProgressColor="Blue" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
                     <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha"
                                FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
                                FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"></Label>
                     <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Green" Grid.Column="2" Grid.Row="2"></Label>
                     <Label  Text="{Binding Suma2}" FontAttributes="Bold" FontSize="20" TextColor="Green" HorizontalOptions="Start" Grid.Row="2" Grid.Column="3"></Label>
-                    <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3"/>
+                    <ProgressBar ProgressColor="Green" Progress="0" x:Name="zjedzone" Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3"/>
 
 
                     <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Samantha"
                            Grid.Row="4" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
                     <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
                                FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Center"></Label>
-                    <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3"/>
+                    <ProgressBar ProgressColor="Red" Progress="0.5" Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3"/>
                   
 
 
@@ -207,13 +207,13 @@
                             </Grid.RowDefinitions>
                             <Label Text="BMI:" Grid.Row="0" TextColor="Black" FontFamily="Samantha"
                                    FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Bmi}" Grid.Row="1" TextColor="Black" 
+                            <Label Text="{Binding Bmi}" Grid.Row="1" TextColor="Gray" 
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Wzrost}" Grid.Row="2" TextColor="Black"
+                            <Label Text="{Binding Wzrost}" Grid.Row="2" TextColor="Gray"
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Wiek}" Grid.Row="3" TextColor="Black" 
+                            <Label Text="{Binding Wiek}" Grid.Row="3" TextColor="Gray" 
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Waga}" Grid.Row="4" TextColor="Black" 
+                            <Label Text="{Binding Waga}" Grid.Row="4" TextColor="Gray" 
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                         </Grid>
                     </Frame>
@@ -240,9 +240,9 @@
                             </Grid.RowDefinitions>
                             <Label Text="Geo:" Grid.Row="0" TextColor="Black"  FontFamily="Samantha"
                                    FontSize="35" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Langi}" Grid.Row="1" TextColor="Black" 
+                            <Label Text="{Binding Langi}" Grid.Row="1" TextColor="Gray" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Longi}" Grid.Row="2" TextColor="Black"
+                            <Label Text="{Binding Longi}" Grid.Row="2" TextColor="Gray"
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
                         </Grid>
