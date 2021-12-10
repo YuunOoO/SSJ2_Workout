@@ -25,7 +25,7 @@
     </NavigationPage.TitleView>
 
 
-    <ScrollView Orientation="Vertical" HeightRequest="2000">
+    <ScrollView Orientation="Vertical" MinimumHeightRequest="1200">
         <StackLayout WidthRequest="200">
 
             <Frame HeightRequest="220" Margin="5"
@@ -83,8 +83,8 @@
 
             </Frame>
 
-            <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
-               Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
+            <Frame MinimumHeightRequest="60" Margin="5" Padding="0" 
+                   HasShadow="false" CornerRadius="20">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
@@ -93,18 +93,18 @@
                 </Frame.Background>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Powiadomienia:" FontAttributes="Bold"  FontFamily="Samantha"
-                           FontSize="40" TextColor="Gray" Grid.Row="0"
+                           FontSize="40" TextColor="black" Grid.Row="0" Margin="0,5,0,0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     <Label Text="Do roboty!" FontAttributes="Bold"  FontFamily="Samantha"
-                           FontSize="30" TextColor="Gray" Grid.Row="1"
+                           FontSize="30" TextColor="black" Grid.Row="1" Margin="0,0,0,5"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 
                 </Grid>
@@ -130,10 +130,10 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Puls:" FontAttributes="Bold" 
-                           FontSize="25" TextColor="DarkGray" Grid.Row="0"
+                           FontSize="25" TextColor="black" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     <Label Text="2137" FontAttributes="Bold" 
-                           FontSize="25" TextColor="DarkGray" Grid.Row="1"
+                           FontSize="25" TextColor="black" Grid.Row="1"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 
                 </Grid>
@@ -309,7 +309,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.4.6 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.4.7 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="29" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
