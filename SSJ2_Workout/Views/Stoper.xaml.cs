@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace SSJ2_Workout.Views
 {
@@ -66,6 +67,23 @@ namespace SSJ2_Workout.Views
                         {
                             if (milliseconds <= 0)
                             {
+                                try
+                                {
+                                    // Use default vibration length
+                                    //Vibration.Vibrate();
+                                    // Or use specified time
+                                    var duration = TimeSpan.FromSeconds(1);
+                                    Vibration.Vibrate(duration);
+                                }
+                                catch (FeatureNotSupportedException ex)
+                                {
+                                    // Feature not supported on device
+                                }
+                                catch (Exception ex)
+                                {
+                                    // Other error has occurred.
+                                }
+
                                 timer.Stop();
                                 timer.Close();
                                 dodawaj = true;

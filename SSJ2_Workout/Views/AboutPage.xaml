@@ -313,7 +313,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.3.7 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
+                <Label Text="Ver. 0.2.3.9 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
                    FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
