@@ -203,16 +203,18 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
-
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Label Text="{Binding Bmi}" Grid.Row="0" TextColor="Black" 
-                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Wzrost}" Grid.Row="1" TextColor="Black" 
-                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Wiek}" Grid.Row="2" TextColor="Black" 
-                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Waga}" Grid.Row="3" TextColor="Black" 
-                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="BMI:" Grid.Row="0" TextColor="Black" FontFamily="Samantha"
+                                   FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding Bmi}" Grid.Row="1" TextColor="Black" 
+                                   FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding Wzrost}" Grid.Row="2" TextColor="Black"
+                                   FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding Wiek}" Grid.Row="3" TextColor="Black" 
+                                   FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding Waga}" Grid.Row="4" TextColor="Black" 
+                                   FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                         </Grid>
                     </Frame>
 
