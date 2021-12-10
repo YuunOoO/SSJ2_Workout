@@ -29,6 +29,30 @@
                     </Label>
                 </Grid>
             </Frame>
+            <Frame HeightRequest="70" WidthRequest="400"
+               Margin="5"
+               HasShadow="True" Padding="0" CornerRadius="35"
+               HorizontalOptions="Center" 
+               >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToBurned" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Wprowadź Spalone kalorie(aktywnosc)" Grid.Row="0" Grid.Column="0"
+                       TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center">
+                        <Label.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#795e89" Offset="0.1"/>
+                                <GradientStop Color="#df6941" Offset="1."/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                </Grid>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

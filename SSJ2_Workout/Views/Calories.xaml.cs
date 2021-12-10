@@ -17,5 +17,9 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new CaloriesDeliverd());
         }
+        public void GoToBurned(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new CaloriesBurned());
+        }
     }
 }
