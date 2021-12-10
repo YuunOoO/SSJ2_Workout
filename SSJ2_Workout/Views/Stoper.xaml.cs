@@ -30,11 +30,8 @@ namespace SSJ2_Workout.Views
         {
           timer = new Timer();
         timer.Interval = 1; // 1 milliseconds  
-            if(dodawaj)
                 timer.Elapsed += Timer_Elapsed; 
-            else
-                timer.Elapsed -= Timer_Elapsed;
-            timer.AutoReset = true;
+            //timer.AutoReset = true;
             timer.Enabled = true;
             timer.Start();
         }
@@ -64,37 +61,46 @@ namespace SSJ2_Workout.Views
             else
             {
                 milliseconds--;
-
-                if (secs == 0)
+                if (hours == 0)
                 {
-                    if(milliseconds<=0)
-                    {
-                        timer.Stop();
-                        DependencyService.Get<IMessage>().ShortAlert("Koniec czasu!");
-                        timer = null;
-                        dodawaj = true;
-                    }
-                    else
-                    milliseconds--;
-                }
-                else
-                {
-                    if (milliseconds <= 0)
-                    {
-                        secs--;
-                        milliseconds = 1000;
-                    }
-                    if (secs == 0)
-                    {
-                        mins--;
-                        secs = 59;
-                    }
                     if (mins == 0)
                     {
-                        hours--;
-                        mins = 59;
+                        if (secs <= 0)
+                        {
+                            if (milliseconds <= 0)
+                            {
+                                timer.Stop();
+                                timer.Close();
+                                dodawaj = true;
+                                DependencyService.Get<IMessage>().ShortAlert("Stop!");
+                                /// miejsce na kod alarmu
+                            }
+                        }
                     }
                 }
+
+
+                if (mins <= 0 && secs <= 0 && milliseconds <= 0)
+                {
+                    hours--;
+                    mins = 59;
+                    secs = 59;
+                    milliseconds = 1000;
+                }
+                else if (secs <= 0 && milliseconds <= 0)
+                {
+                    mins--;
+                    secs = 59;
+                    milliseconds = 1000;
+                }
+                else if (milliseconds <= 0)
+                {
+                    secs--;
+                    milliseconds = 1000;
+                }
+               
+               
+
             }
 
             Device.BeginInvokeOnMainThread(() =>
@@ -125,7 +131,7 @@ namespace SSJ2_Workout.Views
                     Czas = Convert.ToInt32(timeEntry.Text);
                     topek.Text = $"Wybrałes {Czas} do odmierzenia!";
 
-
+                    hours = mins = secs = 0;
 
                     while (Czas >= 3600)
                     {
@@ -141,7 +147,6 @@ namespace SSJ2_Workout.Views
                     dodawaj = false;
 
                     lbl_result.Text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, mins, secs, milliseconds / 10);
-
 
                     timeEntry.Text = string.Empty;
 
