@@ -2,14 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.Geolocation"
-             Title="Geolokalizacja!">
+             Title="Geolokalizacja!" BackgroundImageSource="gta">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" BackgroundColor="#1e1f26">
-            <Button Text="Pobranie pozycji GPS" Clicked="Button_OnClicked" />
-            <Label Text="Szerokość" TextColor="Gray" FontSize="15"/>
-            <Label x:Name="LatitudeLabel" FontSize="20" TextColor="White"/>
-            <Label Text="Długość geograficzna" TextColor="Gray" FontSize = "15" />
-            <Label x:Name="LongitudeLabel" FontSize="20" TextColor="White"/>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <Frame HeightRequest="220" Margin="5" Grid.Column="1"
+               HasShadow="True" Padding="0" CornerRadius="20">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Grid>
+                    <Label Text="Szerokosc Geograficzna" TextColor="Black" FontSize="50" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="1" VerticalTextAlignment="Start" FontFamily="Samantha"/>
+                    <Label x:Name="LatitudeLabel" FontSize="26" TextColor="Green" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="2"/>
+                    <Label Text="Długosc geograficzna" TextColor="Black" FontSize = "50" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="3" FontFamily="Samantha" />
+                    <Label x:Name="LongitudeLabel" FontSize="26" TextColor="Green" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="4" />
+                </Grid>
+            </Frame>
+            <Button Text="Pobranie pozycji GPS" Clicked="Button_OnClicked" CornerRadius="25" Opacity="0.8" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="Green" Offset="0.1" />
+                        <GradientStop Color="Purple" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </StackLayout>
     </ContentPage.Content>
  </ContentPage>
