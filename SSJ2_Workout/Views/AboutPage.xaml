@@ -55,15 +55,15 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Kalorie ogółem: " FontAttributes="Bold"
-                           FontSize="20" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
+                    <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha"
+                           FontSize="40" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Sumarycznie}" TextColor="Blue"
                                FontAttributes="Bold" FontSize="20" 
                                Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
                     
                     <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
-                    <Label Text="Kalorie zjedzone: "  FontAttributes="Bold" 
-                               FontSize="20" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                    <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha"
+                               FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
                                FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"></Label>
                     <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Green" Grid.Column="2" Grid.Row="2"></Label>
@@ -71,8 +71,8 @@
                     <ProgressBar ProgressColor="#286492" Progress="0" x:Name="zjedzone" Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3"/>
 
 
-                    <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2"
-                           Grid.Row="4" FontAttributes="Bold" FontSize="20" TextColor="Black"></Label>
+                    <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Samantha"
+                           Grid.Row="4" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
                     <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
                                FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Center"></Label>
                     <ProgressBar ProgressColor="#286492" Progress="0.5" Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3"/>
@@ -100,11 +100,11 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Powiadomienia:" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="0"
+                    <Label Text="Powiadomienia:" FontAttributes="Bold"  FontFamily="Samantha"
+                           FontSize="40" TextColor="Gray" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                    <Label Text="Do roboty!" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="1"
+                    <Label Text="Do roboty!" FontAttributes="Bold"  FontFamily="Samantha"
+                           FontSize="30" TextColor="Gray" Grid.Row="1"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 
                 </Grid>
@@ -130,10 +130,10 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Puls:" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="0"
+                           FontSize="25" TextColor="DarkGray" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     <Label Text="2137" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="1"
+                           FontSize="25" TextColor="DarkGray" Grid.Row="1"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 
                 </Grid>
@@ -203,6 +203,7 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
+
                             </Grid.RowDefinitions>
                             <Label Text="{Binding Bmi}" Grid.Row="0" TextColor="Black" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
@@ -232,13 +233,14 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
+                          
 
                             </Grid.RowDefinitions>
-                            <Label Text="Geo:" Grid.Row="0" TextColor="Black" 
-                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Geo:" Grid.Row="0" TextColor="Black"  FontFamily="Samantha"
+                                   FontSize="35" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             <Label Text="{Binding Langi}" Grid.Row="1" TextColor="Black" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Longi}" Grid.Row="2" TextColor="Black" 
+                            <Label Text="{Binding Longi}" Grid.Row="2" TextColor="Black"
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
                         </Grid>
@@ -263,8 +265,8 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Label Text="Kcal:" Grid.Row="0" TextColor="Black" 
-                                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            <Label Text="Kcal:" Grid.Row="0" TextColor="Black"  FontFamily="Samantha"
+                                   FontSize="35" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             <Label Text="{Binding Sumarycznie}" Grid.Row="1" TextColor="Blue" 
                                    FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             <Label Text="{Binding Suma2}" Grid.Row="2" TextColor="Green" 
@@ -288,20 +290,12 @@
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="GoToStoper" NumberOfTapsRequired="1" />
                 </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="STOPER" FontAttributes="Bold" 
-                           FontSize="20" TextColor="Black" Grid.Row="0"
+             
+                    <Label Text="STOPER" FontAttributes="Bold" FontFamily="Samantha"
+                           FontSize="55" TextColor="Black" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 
-                </Grid>
+               
             </Frame>
 
 
@@ -313,8 +307,8 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.3.9 / Jakub Kasprzycki Dariusz Łopian " TextColor="Black" 
-                   FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                <Label Text="Ver. 0.2.4.1 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                   FontSize="29" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
         </StackLayout>
