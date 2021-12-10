@@ -1,15 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SSJ2_Workout.Views.Stoper">
+             x:Class="SSJ2_Workout.Views.Stoper" BackgroundImageSource="Zawarudo">
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-        <Label x:Name="topek" Text="Podaj czas do odmierzenia(sekundy) lub uruchom stoper!"/>
-        <Entry Placeholder="Podaj liczbe sekund do odmierzenia" x:Name="timeEntry"/>
-        <Button Text="Odmierzaj czas" x:Name="timeBtn" Clicked="timeBtn_Clicked"/>
-        <Label HorizontalOptions="Center" FontSize="45" TextColor="#00A8E8" x:Name="lbl_result">
+        <Label x:Name="topek" Text="Podaj czas(s) lub uruchom stoper!"  TextColor="Red" FontSize="25" FontAttributes="Bold"/>
+        <Entry Placeholder="Podaj liczbe sekund do odmierzenia" x:Name="timeEntry" TextColor="Black" FontAttributes="Bold"  FontSize="20" BackgroundColor="Gray" Opacity="0.8"/>
+        <Button Text="Odmierzaj czas" x:Name="timeBtn" Clicked="timeBtn_Clicked" CornerRadius="25" Opacity="0.8">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="Yellow" Offset="0.1" />
+                    <GradientStop Color="Purple" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label HorizontalOptions="Center" FontSize="45" TextColor="#00A8E8" x:Name="lbl_result" FontAttributes="Bold">
         </Label>
-        <Button  x:Name="BtnStart" Text="Start" Clicked="BtnStart_Clicked"/>
-        <Button  x:Name="BtnStop" Text="Stop" Clicked="BtnStop_Clicked"/>
-        <Button  x:Name="BtnReset" Text="Reset" Clicked="BtnReset_Clicked"/>
+        <Button  x:Name="BtnStart" Text="Start" Clicked="BtnStart_Clicked"  CornerRadius="25" Opacity="0.8">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="Blue" Offset="0.1" />
+                    <GradientStop Color="Purple" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button  x:Name="BtnStop" Text="Stop" Clicked="BtnStop_Clicked" CornerRadius="25" Opacity="0.8">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="Green" Offset="0.1" />
+                    <GradientStop Color="Purple" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button  x:Name="BtnReset" Text="Reset" Clicked="BtnReset_Clicked" CornerRadius="25" Opacity="0.8">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="Purple" Offset="0.1" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </StackLayout>
 </ContentPage>

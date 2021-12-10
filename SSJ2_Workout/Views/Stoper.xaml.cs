@@ -132,6 +132,7 @@ namespace SSJ2_Workout.Views
         {
             timer.Close();
             hours = mins = secs = milliseconds = 0;
+            lbl_result.Text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, mins, secs, milliseconds / 10);
         }
 
         private void timeBtn_Clicked(object sender, EventArgs e)
