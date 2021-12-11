@@ -6,7 +6,6 @@ using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
-
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -67,6 +66,10 @@ namespace SSJ2_Workout.Views
                         {
                             if (milliseconds <= 0)
                             {
+                                var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                                player.Load("za_warudo.mp3");
+                                player.Play();
+
                                 try
                                 {
                                     // Use default vibration length
