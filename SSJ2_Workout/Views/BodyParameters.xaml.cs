@@ -23,7 +23,7 @@ namespace SSJ2_Workout.Views
             actionPicker.Items.Add("2.0 - osoby o dużej aktywności fizycznej");
             actionPicker.Items.Add("1.7 - osoby o umiarkowanej aktywności fizycznej");
             actionPicker.Items.Add("1.4 - osoby o małej aktywności fizycznej");
-            actionPicker.Items.Add("1.7 - osoby pozostające w bezruchu");
+            actionPicker.Items.Add("1.2 - osoby pozostające w bezruchu");
         }
 
         bool IsDigitsOnly(string str) //chroni przed podaniem liter
@@ -52,14 +52,15 @@ namespace SSJ2_Workout.Views
                     Person.Wiek = Convert.ToInt32(wiekEntry.Text);
                     Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
                     Person.BMI = Decimal.Divide (Person.Waga , (Decimal.Divide(Person.Wzrost,100)* Decimal.Divide(Person.Wzrost , 100)));
+                    Person.BMI = Convert.ToDecimal(Math.Round((double)Convert.ToDouble(Person.BMI), 3));
                     Person.Mnoznik = actionPicker.Items[actionPicker.SelectedIndex];
+                    SavedData.data_set = true;
                     Preferences.Set("MNOZNIK", Person.Mnoznik);
                     Preferences.Set("WAGA", $"{Person.Waga}");
                     Preferences.Set("WZROST", $"{Person.Wzrost}");
                     Preferences.Set("WIEK", $"{Person.Wiek}");
                     Preferences.Set("GENDER", $"{Person.Gender}");
                     Preferences.Set("BMI", Person.BMI.ToString());
-                    
                     wzrostEntry.Text = string.Empty;
                     wiekEntry.Text = string.Empty;
                     wagaEntry.Text = string.Empty;

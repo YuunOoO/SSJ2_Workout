@@ -65,7 +65,10 @@ namespace SSJ2_Workout.Views
         }
         public void GoToGoals(object obj, EventArgs args)
         {
-            Navigation.PushAsync(new Goals());
+            if(SavedData.data_set)
+                Navigation.PushAsync(new Goals());
+            else
+                DependencyService.Get<IMessage>().ShortAlert("Najpierw uzupełnij parametry ciała!");
         }
         public void GoToSettings(object obj, EventArgs args)
         {

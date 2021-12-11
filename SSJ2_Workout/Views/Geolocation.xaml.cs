@@ -24,6 +24,8 @@ namespace SSJ2_Workout.Views
             var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10000), null, true);
             SavedData.locat = position.Longitude.ToString();
             SavedData.posit = position.Latitude.ToString();
+            SavedData.locat = (Math.Round((double)Convert.ToDouble(SavedData.locat),4)).ToString();//o chuj ale combo zrobilem xDDDD
+            SavedData.posit = (Math.Round((double)Convert.ToDouble(SavedData.posit), 4)).ToString();
             LongitudeLabel.Text = SavedData.locat;
             LatitudeLabel.Text = SavedData.posit;
             Preferences.Set("LOCAT", $"{SavedData.locat}");
