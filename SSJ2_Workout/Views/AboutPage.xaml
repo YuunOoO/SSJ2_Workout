@@ -232,7 +232,7 @@
                                 <RowDefinition Height="30"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
-                          
+
 
                             </Grid.RowDefinitions>
                             <Label Text="Geo:" Grid.Row="0" TextColor="Black"  FontFamily="Samantha"
@@ -277,24 +277,18 @@
 
                 </Grid>
             </Frame>
-
-            <Frame HeightRequest="50" HorizontalOptions="FillAndExpand"
-               Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
-                        <GradientStop Color="#CC182172" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoToStoper" NumberOfTapsRequired="1" />
-                </Frame.GestureRecognizers>
-             
-                    <Label Text="STOPER" FontAttributes="Bold" FontFamily="Samantha"
-                           FontSize="45" TextColor="Black" Grid.Row="0"
-                           VerticalOptions="Center" HorizontalOptions="Center"></Label>    
+            <Frame BackgroundColor="Transparent" Padding="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                <ImageButton Clicked="GoToStoper" Source="bannerStoper" Margin="5" 
+                         Aspect="AspectFill" CornerRadius="40"></ImageButton>
+                    <Label Text="STOPER" TextColor="Black" FontFamily="Samantha" FontSize="60" 
+                           HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                </Grid>
             </Frame>
-
 
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
                    Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
@@ -304,7 +298,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.5.8 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.5.9 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 

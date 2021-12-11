@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SSJ2_Workout.Views.Pulse" Title="Puls">
+             x:Class="SSJ2_Workout.Views.Pulse" Title="Puls" BackgroundImageSource="backPulse">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#1e1f26">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10">
+            <Frame MinimumHeightRequest="200" CornerRadius="20" VerticalOptions="CenterAndExpand">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
+                        <GradientStop Color="#CC182172" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Label Text="Jeśli zdobędziemy opaske tu kiedyś będzie puls." TextColor="Black" FontSize="15"
+                       FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
