@@ -20,6 +20,7 @@ namespace SSJ2_Workout.Droid
             get { return StepsCounter; }
             set { StepsCounter = value; }
         }
+
         public void Dispose()
         {
             sManager.UnregisterListener(this);

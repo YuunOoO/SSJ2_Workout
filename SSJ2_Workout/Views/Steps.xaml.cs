@@ -7,6 +7,7 @@ using Xamarin.Essentials;
 using System.ComponentModel;
 using static Xamarin.Essentials.Permissions;
 using Android.App;
+
 namespace SSJ2_Workout.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -23,6 +24,7 @@ namespace SSJ2_Workout.Views
             void InitSensorService();
 
             void StopSensorService();
+            void Dispose();
         }
 
         public async Task GetSensorsAsync()             ///sprawdzanie uprawnien ale tego akurat nie potrzebujemy
@@ -75,7 +77,8 @@ namespace SSJ2_Workout.Views
 
         private void Button_Clicked2(object sender, EventArgs e)
         {
-                // nw jeszcze XDD
+            // nw jeszcze XDD
+            DependencyService.Get<IStepCounter>().Dispose();
         }
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)
