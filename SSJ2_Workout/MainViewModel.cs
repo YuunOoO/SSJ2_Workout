@@ -191,7 +191,10 @@ namespace SSJ2_Workout.Views
                 decimal Your_strip = Decimal.Multiply((decimal)wz, (decimal)0.415);
                 decimal steps_in_1_km = Decimal.Divide((decimal)100000, Your_strip);
                 decimal conversationFactor = Calories_burned_per_km / steps_in_1_km;
-                return Convert.ToDouble(Convert.ToDecimal(kroki) * conversationFactor);
+
+                double wynik = Convert.ToDouble(Convert.ToDecimal(kroki) * conversationFactor);
+                wynik = Math.Round(wynik, 3);
+                return wynik;
             }
             else
                 return 0;
