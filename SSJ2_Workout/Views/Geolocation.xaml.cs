@@ -16,6 +16,9 @@ namespace SSJ2_Workout.Views
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {
+            var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+            player.Load("gta.mp3");
+            player.Play();
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10000), null, true);

@@ -44,6 +44,9 @@ namespace SSJ2_Workout.Views
             {
                 if (IsDigitsOnly(wiekEntry.Text) && IsDigitsOnly(wzrostEntry.Text) && IsDigitsOnly(wagaEntry.Text))
                 {
+                    var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                    player.Load("goku.mp3");
+                    player.Play();
                     Person.Waga = Convert.ToInt32(wagaEntry.Text);
                     Person.Wzrost = Convert.ToInt32(wzrostEntry.Text);
                     Person.Wiek = Convert.ToInt32(wiekEntry.Text);
