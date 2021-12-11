@@ -18,7 +18,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="p1.png" Aspect="AspectFill"
+                    <Image Source="iconUnderWork" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
 
@@ -43,7 +43,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="p2" Aspect="AspectFill"
+                    <Image Source="StepsIcon" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Aktywnosc / Kroki" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
@@ -112,7 +112,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="p4" Aspect="AspectFill"
+                    <Image Source="iconUnderWork" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Kalorie" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
@@ -135,7 +135,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="LocalIcon" Aspect="AspectFill"
+                    <Image Source="iconUnderWork" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Lokalizacja" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
@@ -156,7 +156,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="p8" Aspect="AspectFill"
+                    <Image Source="iconUnderWork" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Puls" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
@@ -177,7 +177,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="p6" Aspect="AspectFill"
+                    <Image Source="iconUnderWork" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Nasze Cele" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
@@ -199,7 +199,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="p7" Aspect="AspectFill"
+                    <Image Source="SettingsIcon" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Ustawienia aplikacji" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
