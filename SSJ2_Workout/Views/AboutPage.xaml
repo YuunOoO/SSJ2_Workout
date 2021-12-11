@@ -3,31 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.AboutPage"
              xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
-             Title="{Binding Title}" BackgroundImageSource="backMenu">
-
-
-    <NavigationPage.TitleView>
-        <Grid BackgroundColor="Red">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="80" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Button Clicked="GoToMenu" ImageSource="banner" Grid.Row="0" Grid.ColumnSpan="3" 
-                    HeightRequest="60" WidthRequest="300"></Button>
-            <Label Text="SSJ2" FontSize="40" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                   FontFamily="Samantha" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
-        </Grid>
-    </NavigationPage.TitleView>
+             Title="{Binding Title}" BackgroundImageSource="backMenu"
+             NavigationPage.HasNavigationBar="False">
 
 
     <ScrollView Orientation="Vertical" MinimumHeightRequest="1200">
         <StackLayout WidthRequest="200">
+            
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                    <ImageButton Source="menuICON" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+                </Grid>
 
+            
             <Frame HeightRequest="220" Margin="5"
                HasShadow="True" Padding="0" CornerRadius="20">
                 <Frame.Background>
@@ -159,7 +156,7 @@
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="https://icon-library.com/images/step-icon/step-icon-12.jpg" Aspect="AspectFill"
+                    <Image Source="stepsCAT" Aspect="AspectFill"
                        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
                     </Image>
                     <Label Text="{Binding Step}" Grid.Row="0" Grid.Column="1"
@@ -309,7 +306,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.5.5 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.5.6 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="29" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
