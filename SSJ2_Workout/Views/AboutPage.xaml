@@ -7,7 +7,7 @@
              NavigationPage.HasNavigationBar="False">
 
 
-    <ScrollView Orientation="Vertical" MinimumHeightRequest="1200">
+    <ScrollView Orientation="Vertical" MinimumHeightRequest="900">
         <StackLayout WidthRequest="200">
             
             <Grid>
@@ -20,8 +20,8 @@
                     </Grid.ColumnDefinitions>
                     
                     <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
-                    <ImageButton Source="menuICON" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
-                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+                    <ImageButton Source="menuICON" Clicked="GoToMenu" Grid.Column="1" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="End"></ImageButton>
                 </Grid>
 
             
@@ -197,10 +197,10 @@
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
-                                <RowDefinition Height="40"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="25"/>
                             </Grid.RowDefinitions>
                             <Label Text="BMI:" Grid.Row="0" TextColor="Black" FontFamily="Samantha"
                                    FontSize="35" FontAttributes="Bold" HorizontalOptions="Center"></Label>
@@ -291,10 +291,8 @@
                 </Frame.GestureRecognizers>
              
                     <Label Text="STOPER" FontAttributes="Bold" FontFamily="Samantha"
-                           FontSize="55" TextColor="Black" Grid.Row="0"
-                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
-
-               
+                           FontSize="45" TextColor="Black" Grid.Row="0"
+                           VerticalOptions="Center" HorizontalOptions="Center"></Label>    
             </Frame>
 
 
@@ -306,8 +304,8 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.5.6 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
-                   FontSize="29" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                <Label Text="Ver. 0.2.5.7 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                   FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
 
         </StackLayout>
