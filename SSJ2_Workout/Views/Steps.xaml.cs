@@ -24,7 +24,7 @@ namespace SSJ2_Workout.Views
             void InitSensorService();
 
             void StopSensorService();
-            void Dispose();
+            void Zeruj();
         }
 
         public async Task GetSensorsAsync()             ///sprawdzanie uprawnien ale tego akurat nie potrzebujemy
@@ -78,7 +78,7 @@ namespace SSJ2_Workout.Views
         private void Button_Clicked2(object sender, EventArgs e)
         {
             // nw jeszcze XDD
-            DependencyService.Get<IStepCounter>().Dispose();
+            DependencyService.Get<IStepCounter>().Zeruj();
         }
 
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)

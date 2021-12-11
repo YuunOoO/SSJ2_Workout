@@ -26,6 +26,10 @@ namespace SSJ2_Workout.Droid
             sManager.UnregisterListener(this);
             sManager.Dispose();
         }
+        public void Zeruj()
+        {
+            StepsCounter = 0;
+        }
         public void InitSensorService()
         {
             sManager = Application.Context.GetSystemService(Context.SensorService) as SensorManager;

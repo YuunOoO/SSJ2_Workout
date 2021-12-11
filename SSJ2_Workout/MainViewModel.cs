@@ -183,7 +183,18 @@ namespace SSJ2_Workout.Views
 
         double Oblicz_spalone(string kroki)
         {
-            return (0.4 * (double)Person.BMI * Person.Wiek * 4);
+            if (SavedData.data_set)
+            {
+                int wa = Person.Waga;
+                int wz = Person.Wzrost;
+                decimal Calories_burned_per_km = Decimal.Divide((decimal)wa, (decimal)0.45359237) * (decimal)1.7; // calories per km     (ostatnia wartosc do editu)
+                decimal Your_strip = Decimal.Multiply((decimal)wz, (decimal)0.415);
+                decimal steps_in_1_km = Decimal.Divide((decimal)100000, Your_strip);
+                decimal conversationFactor = Calories_burned_per_km / steps_in_1_km;
+                return Convert.ToDouble(Convert.ToDecimal(kroki) * conversationFactor);
+            }
+            else
+                return 0;
         }
         Double Oblicz_Kalorie()
         {
