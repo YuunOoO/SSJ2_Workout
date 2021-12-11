@@ -112,7 +112,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="iconUnderWork" Aspect="AspectFill"
+                    <Image Source="KcalIcon" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Kalorie" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
@@ -135,7 +135,7 @@
                         <ColumnDefinition Width="70"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="iconUnderWork" Aspect="AspectFill"
+                    <Image Source="LocalIcon" Aspect="AspectFill"
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Lokalizacja" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
