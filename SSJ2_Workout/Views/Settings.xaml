@@ -3,9 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.Settings"
              Title="Ustawienia" BackgroundImageSource="backSettings">
-    <ContentPage.Content>
-        <StackLayout>
-           
-        </StackLayout>
-    </ContentPage.Content>
+    <TableView HasUnevenRows="True">
+        <TableRoot>
+
+            <TableSection Title="Ustawienia ogólne.">
+                <ViewCell>
+                    <StackLayout BackgroundColor="Transparent">
+                        <Grid Margin="10">
+                            <Label Text="Powiadomienia" FontSize="20" TextColor="Black" FontAttributes="Bold"></Label>
+                            <Switch ></Switch>
+                        </Grid>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+            
+            <TableSection Title="Motyw aplikacji">
+                <ViewCell>
+                    <StackLayout BackgroundColor="Transparent">
+                        <Grid Margin="10">
+                            <Label Text="Włącz ciemny motyw" FontSize="20" TextColor="Black" FontAttributes="Bold"></Label>
+                            <Switch></Switch>
+                        </Grid>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+            
+            <TableSection Title="Dane">
+                    <ViewCell>
+                        <Button Text="Resetuj Dane" CornerRadius="30" Margin="10"></Button>
+                    </ViewCell>
+                    <ViewCell>
+                        <Button Text="Importuj Dane" CornerRadius="30" Margin="10"></Button>
+                    </ViewCell>
+                    <ViewCell>
+                        <Button Text="Eksportuj Dane" CornerRadius="30" Margin="10"></Button>
+                    </ViewCell>
+            </TableSection>
+            
+        </TableRoot>
+    </TableView>
 </ContentPage>

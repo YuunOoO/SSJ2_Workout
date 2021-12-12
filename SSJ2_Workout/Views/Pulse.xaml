@@ -14,6 +14,7 @@
                 <Label Text="Jeśli zdobędziemy opaske tu kiedyś będzie puls." TextColor="Black" FontSize="15"
                        FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
             </Frame>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
