@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 
 namespace SSJ2_Workout
 {
-    public class Database
+    
+    public class Database <T> where T : new()
     {
         private readonly SQLiteAsyncConnection _database;
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Product>();
+            _database.CreateTableAsync<Exercise>();
         }
 
-        public Task<List<Product>> GetProductAsync()
+        public Task<List<T>> GetProductAsync()
         {
-            return _database.Table<Product>().ToListAsync();
+           return _database.Table<T>().ToListAsync();
         }
 
         public Task<int> SaveProductAsync(Product product)
@@ -34,9 +36,9 @@ namespace SSJ2_Workout
             return _database.DeleteAsync(product);
         }
 
-        public Task<Product> GetProduct(int id)
+        public Task<T> GetProduct(int id)
         {
-            return _database.FindAsync<Product>(id);
+            return _database.FindAsync<T>(id);
         }
         public Task<int> UpdateProduct(Product product)
         {

@@ -11,24 +11,27 @@ using Xamarin.Essentials;
 
 namespace SSJ2_Workout
 {
-    public partial class App : Application
+    public partial class App<T> : Application where T : new()
     {
-        IGeolocator locator = DependencyService.Get<IGeolocator>();
 
-        private static Database database;
+        private static Database<Product> database;
 
-        public static Database Database
+        public static Database<Product> Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "product.db3"));
+                    database = new Database<Product>(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "product.db3"));
                 }
 
                 return database;
             }
         }
+    }
+    public partial class App : Application
+    {
+        IGeolocator locator = DependencyService.Get<IGeolocator>();
         public App()
         {
             InitializeComponent();
@@ -37,10 +40,11 @@ namespace SSJ2_Workout
             MainPage = new AppShell();
             MainPage = new NavigationPage(new AboutPage());
         }
+
         protected override void OnStart()
         {
             DependencyService.Get<IStepCounter>().InitSensorService();
-            if(Preferences.ContainsKey("WZROST"))
+            if (Preferences.ContainsKey("WZROST"))
             {
                 Person.Wzrost = Convert.ToInt32(Preferences.Get("WZROST", ""));
                 Person.Wiek = Convert.ToInt32(Preferences.Get("WIEK", ""));
@@ -71,7 +75,5 @@ namespace SSJ2_Workout
         {
             DependencyService.Get<IStepCounter>().InitSensorService();
         }
-
-
     }
 }

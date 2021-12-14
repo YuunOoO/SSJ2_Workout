@@ -108,7 +108,7 @@ namespace SSJ2_Workout.Views
             }
         }
 
-        string waga, wzrost, bmi, wiek;
+        string waga, wzrost, bmi;
         public string Waga
         {
             set

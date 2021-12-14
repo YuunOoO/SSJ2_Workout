@@ -17,8 +17,10 @@ namespace SSJ2_Workout.Views
 
         protected override async void OnAppearing()
         {
+            
             base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetProductAsync();
+            // collectionView.ItemsSource = await App.Database<Person>().GetProductAsync();
+            collectionView.ItemsSource = await App<Product>.Database.GetProductAsync();
         }
 
         bool IsDigitsOnly(string str) //chroni przed podaniem liter
@@ -35,7 +37,7 @@ namespace SSJ2_Workout.Views
         async void CheckCalories(object sender, EventArgs e)
         {
             var suma = (MainViewModel)BindingContext;
-            var produkty = await App.Database.GetProductAsync();
+            var produkty = await App<Product>.Database.GetProductAsync();
             int suma_tmp = 0;
             foreach (var produkt in produkty)
             {
@@ -47,7 +49,7 @@ namespace SSJ2_Workout.Views
         public async void CheckCalories2()
         {
             var suma = (MainViewModel)BindingContext;
-            var produkty = await App.Database.GetProductAsync();
+            var produkty = await App<Product>.Database.GetProductAsync();
             int suma_tmp = 0;
             int suma_tmp2 = 0;
             foreach (var produkt in produkty)
@@ -77,7 +79,7 @@ namespace SSJ2_Workout.Views
                 else
                     product.Eat = false;
 
-                await App.Database.UpdateProduct(product);
+                await App<Product>.Database.UpdateProduct(product);
           //  }
             //Product robota
             //robota = await App.Database.GetProduct(product.Id);
@@ -92,8 +94,8 @@ namespace SSJ2_Workout.Views
             ImageButton button = sender as ImageButton;
             var product = button.BindingContext as Product;
 
-            await App.Database.DeleteProductAsync(product);
-            collectionView.ItemsSource = await App.Database.GetProductAsync();  //no kurwa jestem genialny i tyle xdddd // ano jesteś -JK
+            await App<Product>.Database.DeleteProductAsync(product);
+            collectionView.ItemsSource = await App<Product>.Database.GetProductAsync();  //no kurwa jestem genialny i tyle xdddd // ano jesteś -JK
             CheckCalories2();
         }
         async void OnButtonClicked(object sender, EventArgs e)
@@ -102,7 +104,7 @@ namespace SSJ2_Workout.Views
             {
                 if (IsDigitsOnly(caloriesEntry.Text))
                 {
-                    await App.Database.SaveProductAsync(new Product
+                    await App<Product>.Database.SaveProductAsync(new Product
                     {
                         Eat = eat.IsChecked,
                         Name = nameEntry.Text,
@@ -112,7 +114,7 @@ namespace SSJ2_Workout.Views
                     nameEntry.Text = string.Empty;
                     caloriesEntry.Text = string.Empty;
                     eat.IsChecked = false;
-                    collectionView.ItemsSource = await App.Database.GetProductAsync();
+                    collectionView.ItemsSource = await App<Product>.Database.GetProductAsync();
                     CheckCalories2();
                     DependencyService.Get<IMessage>().ShortAlert("Pomyślnie dodano produkt!");
                 }
