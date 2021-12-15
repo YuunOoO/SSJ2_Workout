@@ -17,9 +17,6 @@ namespace SSJ2_Workout.Views
         public Goals()
         {
             InitializeComponent();
-            genderPicker.Items.Add("Kobieta");
-            genderPicker.Items.Add("Mężczyzna");
-            genderPicker.Items.Add("Inne");
             goalPicker.Items.Add("Szybkie schudnięcie");
             goalPicker.Items.Add("Schudnięcie");
             goalPicker.Items.Add("Utrzymanie wagi");
@@ -40,17 +37,7 @@ namespace SSJ2_Workout.Views
         }
         async void KcalNeed(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(wiekEntry.Text) && !string.IsNullOrWhiteSpace(wzrostEntry.Text) && !string.IsNullOrWhiteSpace(wagaEntry.Text))
-            {
-                if (IsDigitsOnly(wiekEntry.Text) && IsDigitsOnly(wzrostEntry.Text) && IsDigitsOnly(wagaEntry.Text))
-                {
-                    //var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-                    //player.Load("goku.mp3");
-                    //player.Play();
-                    Person.Waga = Convert.ToInt32(wagaEntry.Text);
-                    Person.Wzrost = Convert.ToInt32(wzrostEntry.Text);
-                    Person.Wiek = Convert.ToInt32(wiekEntry.Text);
-                    Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
+            
                     Person.Cel = goalPicker.Items[goalPicker.SelectedIndex];
                     if (Person.Gender =="Mężczyzna")
                     {
@@ -100,21 +87,8 @@ namespace SSJ2_Workout.Views
                         }
                     }
 
-                    //Person.BMR = Decimal.Divide(Person.Waga, (Decimal.Divide(Person.Wzrost, 100) * Decimal.Divide(Person.Wzrost, 100)));
-                    //Person.BMR = Convert.ToDecimal(Math.Round((double)Convert.ToDouble(Person.BMI), 3));
-                    Person.Mnoznik = goalPicker.Items[goalPicker.SelectedIndex];
-                    SavedData.data_set = true;
                     Preferences.Set("BMR", Person.BMR.ToString());
-                    wzrostEntry.Text = string.Empty;
-                    wiekEntry.Text = string.Empty;
-                    wagaEntry.Text = string.Empty;
                     DependencyService.Get<IMessage>().ShortAlert("Pomyslnie obliczono zapotrzebowanie!");
-                }
-                else
-                {
-                    DependencyService.Get<IMessage>().ShortAlert("Podano Niepoprawne dane ): ");
-                }
-            }
         }
         private void genderChoice(object sender, EventArgs e)
         {
