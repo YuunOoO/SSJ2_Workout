@@ -16,7 +16,24 @@ namespace SSJ2_Workout.Views
     public class MainViewModel : INotifyPropertyChanged
     {
         string step;
-        public double Spalone { get; set; }
+
+        double spalone;
+        public double Spalone
+        {
+            set
+            {
+                if (spalone != value)
+                {
+                    spalone = value;
+                    OnPropertyChanged(nameof(Spalone));
+                }
+            }
+            get
+            {
+                return spalone;
+            }
+        }
+
         public double Sumarycznie { get; set; }
         public string Step
         {
@@ -71,6 +88,44 @@ namespace SSJ2_Workout.Views
             get
             {
                 return suma2;
+            }
+        }
+
+        int suma3;
+        public int Suma3
+        {
+            set
+            {
+                if (suma3 != value)
+                {
+                    suma3 = value;
+                    OnPropertyChanged(nameof(Suma3));
+                }
+            }
+            get
+            {
+                return suma3;
+            }
+        }
+
+        int suma4;
+        public int Suma4
+        {
+            set
+            {
+                if (suma4 != value)
+                {
+                    Spalone = Spalone + Suma4 - value;
+                    suma4 = value;
+                    OnPropertyChanged(nameof(Suma4));
+                    OnPropertyChanged(nameof(Spalone));
+                    Sumarycznie = Oblicz_Kalorie();
+                    OnPropertyChanged(nameof(Sumarycznie));
+                }
+            }
+            get
+            {
+                return suma4;
             }
         }
 

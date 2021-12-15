@@ -15,7 +15,7 @@ namespace SSJ2_Workout
     {
 
         private static Database<Product> database;
-
+        private static Database<Exercise> databaseExercise;
         public static Database<Product> Database
         {
             get
@@ -28,6 +28,20 @@ namespace SSJ2_Workout
                 return database;
             }
         }
+
+        public static Database<Exercise> DatabaseExercise
+        {
+            get
+            {
+                if (databaseExercise == null)
+                {
+                    databaseExercise = new Database<Exercise>(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "exercise.db3"));
+                }
+
+                return databaseExercise;
+            }
+        }
+
     }
     public partial class App : Application
     {
@@ -64,6 +78,12 @@ namespace SSJ2_Workout
                 SavedData.sum_save = Convert.ToInt32(Preferences.Get("SUM", ""));
                 SavedData.sum2_save = Convert.ToInt32(Preferences.Get("SUM2", ""));
             }
+            if (Preferences.ContainsKey("SUM3"))
+            {
+                SavedData.sum3_save = Convert.ToInt32(Preferences.Get("SUM3", ""));
+                SavedData.sum4_save = Convert.ToInt32(Preferences.Get("SUM4", ""));
+            }
+
         }
 
         protected override void OnSleep()

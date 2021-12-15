@@ -7,6 +7,46 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Suma3}" x:Name="testowy" TextColor="Black" HorizontalTextAlignment="Center"
+                      FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding Suma4}"  x:Name="testowy2" TextColor="Black"  HorizontalTextAlignment="Center"
+                        FontSize="Medium" FontAttributes="Bold"/>
+
+
+            <Entry x:Name="nameEntry" Placeholder="Podaj artykuł" TextColor="Black"/>
+            <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc kalori" TextColor="Black" />
+            <CheckBox x:Name="did"/>
+            <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" CornerRadius="50" BackgroundColor="#CCdf6941"/>
+
+            <CollectionView x:Name="collectionView2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Name}" FontSize="Medium" Grid.Row="0" Grid.Column="0" 
+                                       FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
+                                       FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Clicked="DeleteButtonClicked" ></ImageButton>
+                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Grid.Column="1" Clicked="OnChange"></ImageButton>
+                            </Grid>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -23,15 +23,15 @@ namespace SSJ2_Workout
            return _database.Table<T>().ToListAsync();
         }
 
-        public Task<int> SaveProductAsync(Product product)
+        public Task<int> SaveProductAsync(T product)
         {
             return _database.InsertAsync(product);
         }
-        public Task<int> DeleteProductAsync(Product product)
+        public Task<int> DeleteProductAsync(T product)
         {
             return _database.DeleteAsync(product);
         }
-        public Task<int> ChangeCheck(Product product)
+        public Task<int> ChangeCheck(T product)
         {
             return _database.DeleteAsync(product);
         }
@@ -48,6 +48,18 @@ namespace SSJ2_Workout
                 Name = product.Name,
                 Calories = product.Calories,
                 Eat = product.Eat
+            }); ; ;
+
+        }
+
+        public Task<int> UpdateProduct(Exercise exercise)
+        {
+            return _database.UpdateAsync(new Exercise
+            {
+                Id = exercise.Id,
+                Name = exercise.Name,
+                Calories = exercise.Calories,
+                Did = exercise.Did
             }); ; ;
 
         }
