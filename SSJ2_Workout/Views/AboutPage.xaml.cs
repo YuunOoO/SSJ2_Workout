@@ -29,6 +29,8 @@ namespace SSJ2_Workout.Views
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                     dane.Suma = SavedData.sum_save;
                     dane.Suma2 = SavedData.sum2_save;
+                    dane.Suma3 = SavedData.sum3_save;
+                    dane.Suma4 = SavedData.sum4_save;
                     dane.Langi = SavedData.locat;
                     dane.Longi = SavedData.posit;
                     decimal x = Decimal.Divide(SavedData.sum2_save,SavedData.sum_save);

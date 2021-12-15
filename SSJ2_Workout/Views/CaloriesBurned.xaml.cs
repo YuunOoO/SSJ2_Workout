@@ -11,6 +11,7 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
             BindingContext = new MainViewModel();
+            CheckCalories3();
         }
 
 
@@ -39,7 +40,7 @@ namespace SSJ2_Workout.Views
             var exercise = button.BindingContext as Exercise;
 
             await App<Exercise>.DatabaseExercise.DeleteProductAsync(exercise);
-            collectionView2.ItemsSource = await App<Exercise>.DatabaseExercise.GetProductAsync();  
+            collectionView2.ItemsSource = await App<Exercise>.DatabaseExercise.GetProductAsync();
             CheckCalories3();
         }
         async void OnButtonClicked(object sender, EventArgs e)

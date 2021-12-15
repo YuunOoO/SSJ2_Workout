@@ -34,7 +34,22 @@ namespace SSJ2_Workout.Views
             }
         }
 
-        public double Sumarycznie { get; set; }
+        double sumarycznie;
+        public double Sumarycznie
+        {
+            set
+            {
+                if (sumarycznie != value)
+                {
+                    sumarycznie = value;
+                    OnPropertyChanged(nameof(Sumarycznie));
+                }
+            }
+            get
+            {
+                return sumarycznie;
+            }
+        }
         public string Step
         {
             set
@@ -115,12 +130,13 @@ namespace SSJ2_Workout.Views
             {
                 if (suma4 != value)
                 {
-                    Spalone = Spalone + Suma4 - value;
-                    suma4 = value;
-                    OnPropertyChanged(nameof(Suma4));
+                    
+                    Spalone = Spalone - Suma4 + value;
                     OnPropertyChanged(nameof(Spalone));
                     Sumarycznie = Oblicz_Kalorie();
                     OnPropertyChanged(nameof(Sumarycznie));
+                    suma4 = value;
+                    OnPropertyChanged(nameof(Suma4));
                 }
             }
             get
