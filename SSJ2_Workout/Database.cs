@@ -16,6 +16,7 @@ namespace SSJ2_Workout
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Product>();
             _database.CreateTableAsync<Exercise>();
+            _database.CreateTableAsync<StoreData>();
         }
 
         public Task<List<T>> GetProductAsync()
@@ -49,7 +50,6 @@ namespace SSJ2_Workout
                 Calories = product.Calories,
                 Eat = product.Eat
             }); ; ;
-
         }
 
         public Task<int> UpdateProduct(Exercise exercise)
@@ -61,24 +61,21 @@ namespace SSJ2_Workout
                 Calories = exercise.Calories,
                 Did = exercise.Did
             }); ; ;
-
         }
 
-        //_sqLiteConnection.Update(new YourModelClassName
-        //{
-        //   Id=1,
-        //   Name="Updated name"
-        //});
+        public Task<int> UpdateProduct(StoreData storedata)
+        {
+            return _database.UpdateAsync(new StoreData
+            {
+                Id = storedata.Id,
+                Day = storedata.Day,
+                Total_burned = storedata.Total_burned,
+                Total_calories = storedata.Total_calories,
+                Total_delivered = storedata.Total_delivered,
+                Total_steps = storedata.Total_steps
+            }) ; ; ;
 
-
-
-        //public ObservableCollection<Product> GetProductAsync2()
-        //{
-        //    List<Product> list = _database.Table<Product>().ToListAsync().Result;
-        //    ObservableCollection<Product> result = new ObservableCollection<Product>(list);
-
-        //    return result;
-        //}
+        }
 
     }
 }

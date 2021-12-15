@@ -16,6 +16,8 @@ namespace SSJ2_Workout
 
         private static Database<Product> database;
         private static Database<Exercise> databaseExercise;
+        private static Database<StoreData> databaseStore;
+       
         public static Database<Product> Database
         {
             get
@@ -39,6 +41,18 @@ namespace SSJ2_Workout
                 }
 
                 return databaseExercise;
+            }
+        }
+
+        public static Database<StoreData> DatabaseStore
+        {
+            get
+            {
+                if (databaseStore == null)
+                {
+                    databaseStore = new Database<StoreData>(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "store.db3"));
+                }
+                return databaseStore;
             }
         }
 
