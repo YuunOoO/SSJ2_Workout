@@ -54,11 +54,17 @@
 
                     <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,0,0"
                            FontSize="40" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
-                    <Label Text="{Binding Sumarycznie}" TextColor="Blue"
-                               FontAttributes="Bold" FontSize="20" 
-                               Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalTextAlignment="Center"></Label>
+
+                    <Label Text="{Binding Sumarycznie}" x:Name="terefere" FontAttributes="Bold"  TextColor="Blue"
+                               FontSize="20" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"></Label>
+                    
+                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Blue" Grid.Column="2" Grid.Row="0"></Label>
+                    
+                    <Label  Text="{Binding Bmr}" FontAttributes="Bold" FontSize="20" TextColor="Blue" 
+                            HorizontalOptions="Start" Grid.Row="0" Grid.Column="3"></Label>
                     
                     <ProgressBar ProgressColor="Blue" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
+                    
                     <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha" Margin="10,0,0,0"
                                FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
@@ -126,7 +132,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Puls:" FontAttributes="Bold" 
+                    <Label Text="Puls" FontAttributes="Bold" 
                            FontSize="25" TextColor="black" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     <Label Text="2137" FontAttributes="Bold" 
@@ -289,7 +295,7 @@
                            HorizontalOptions="Center" VerticalOptions="Center"></Label>
                 </Grid>
             </Frame>
-
+            
             <Frame HeightRequest="40"  HorizontalOptions="FillAndExpand"
                    Margin="5" HasShadow="False" Padding="0" CornerRadius="20">
                 <Frame.Background>
@@ -298,7 +304,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.6.5 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.6.6 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
         </StackLayout>

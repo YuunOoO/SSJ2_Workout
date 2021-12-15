@@ -179,7 +179,7 @@ namespace SSJ2_Workout.Views
             }
         }
 
-        string waga, wzrost, bmi;
+        string waga, wzrost, bmi, bmr;
         public string Waga
         {
             set
@@ -224,6 +224,21 @@ namespace SSJ2_Workout.Views
             get
             {
                 return bmi;
+            }
+        }
+        public string Bmr
+        {
+            set
+            {
+                if (bmr != value)
+                {
+                    bmr = value;
+                    OnPropertyChanged("Bmr");
+                }
+            }
+            get
+            {
+                return bmr;
             }
         }
 

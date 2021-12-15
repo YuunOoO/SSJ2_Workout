@@ -26,6 +26,7 @@ namespace SSJ2_Workout.Views
                     dane.Wiek = Person.Wiek.ToString();
                     dane.Waga = Person.Waga.ToString();
                     dane.Bmi = Person.BMI.ToString();
+                    dane.Bmr = Person.BMR.ToString();
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                     dane.Suma = SavedData.sum_save;
                     dane.Suma2 = SavedData.sum2_save;

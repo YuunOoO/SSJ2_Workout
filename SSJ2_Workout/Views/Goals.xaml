@@ -5,9 +5,29 @@
              Title="Nasze cele" BackgroundImageSource="backGoals">
     <ContentPage.Content>
         <StackLayout>
+            <Entry x:Name="wiekEntry" Placeholder="Podaj Wiek" HorizontalTextAlignment="Center" TextColor="White" 
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,20,0,5"/>
+            <Entry x:Name="wzrostEntry" Placeholder="Podaj wzrost(cm)" HorizontalTextAlignment="Center" TextColor="White" 
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,5,0,5"/>
+            <Entry x:Name="wagaEntry" Placeholder="Podaj Wage(kg)" HorizontalTextAlignment="Center" TextColor="White" 
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,5,0,5"/>
+            
+            <Picker x:Name="genderPicker" SelectedIndexChanged="genderChoice" TextColor="White" TitleColor="White" 
+                    HorizontalTextAlignment="Center" BackgroundColor="#CC312974" Title="Wybierz płeć" Margin="0,5,0,5"/>
             <Picker x:Name="goalPicker" SelectedIndexChanged="goalChoice" TextColor="White" TitleColor="White" 
                     HorizontalTextAlignment="Center" BackgroundColor="#CC312974" 
                     Title="Wybierz cel treningów" Margin="0,5,0,5"/>
+            
+            <Button Text="Oblicz zapotrzebowanie kaloryczne." Clicked="KcalNeed" CornerRadius="30">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CC2868c9" Offset="0.0"/>
+                        <GradientStop Color="#CC312974" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
