@@ -55,7 +55,7 @@
                     <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,0,0"
                            FontSize="40" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
 
-                    <Label Text="{Binding Sumarycznie}" x:Name="terefere" FontAttributes="Bold"  TextColor="Blue"
+                    <Label Text="{Binding Sumarycznie}" FontAttributes="Bold"  TextColor="Blue"
                                FontSize="20" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"></Label>
                     
                     <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Blue" Grid.Column="2" Grid.Row="0"></Label>
