@@ -5,9 +5,9 @@
              Title="Nasze cele" BackgroundImageSource="backGoals">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Picker x:Name="goalPicker" SelectedIndexChanged="goalChoice" TextColor="White" TitleColor="White" 
+                    HorizontalTextAlignment="Center" BackgroundColor="#CC312974" 
+                    Title="Wybierz cel treningów" Margin="0,5,0,5"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

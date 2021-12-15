@@ -5,7 +5,7 @@
              Title="Geolokalizacja!" BackgroundImageSource="gta">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="Center">
-            <Frame HeightRequest="220" Margin="5" Grid.Column="1"
+            <Frame HeightRequest="250" Margin="5" Grid.Column="1"
                HasShadow="True" Padding="0" CornerRadius="20">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -14,6 +14,12 @@
                     </LinearGradientBrush>
                 </Frame.Background>
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <Label Text="Szerokosc Geograficzna" TextColor="Black" FontSize="50" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="1" VerticalTextAlignment="Start" FontFamily="Samantha"/>
                     <Label x:Name="LatitudeLabel" FontSize="26" TextColor="Green" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="2"/>
                     <Label Text="Długosc geograficzna" TextColor="Black" FontSize = "50" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="3" FontFamily="Samantha" />
