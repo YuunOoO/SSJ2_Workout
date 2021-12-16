@@ -90,11 +90,7 @@ namespace SSJ2_Workout.Views
                     Preferences.Set("BMR", Person.BMR.ToString());
                     DependencyService.Get<IMessage>().ShortAlert("Pomyslnie obliczono zapotrzebowanie!");
         }
-        private void genderChoice(object sender, EventArgs e)
-        {
-            string name = genderPicker.Items[genderPicker.SelectedIndex];
-            Name = name;
-        }
+    
         private void goalChoice(object sender, EventArgs e)
         {
             string name = goalPicker.Items[goalPicker.SelectedIndex];

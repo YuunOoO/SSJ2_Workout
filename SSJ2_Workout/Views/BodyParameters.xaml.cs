@@ -53,9 +53,9 @@ namespace SSJ2_Workout.Views
                     Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
                     Person.BMI = Decimal.Divide (Person.Waga , (Decimal.Divide(Person.Wzrost,100)* Decimal.Divide(Person.Wzrost , 100)));
                     Person.BMI = Convert.ToDecimal(Math.Round((double)Convert.ToDouble(Person.BMI), 3));
-                    Person.Mnoznik = actionPicker.Items[actionPicker.SelectedIndex];
+                    Person.Mnoznik = Convert.ToDecimal((actionPicker.Items[actionPicker.SelectedIndex]).Substring(0,3));
                     SavedData.data_set = true;
-                    Preferences.Set("MNOZNIK", Person.Mnoznik);
+                    Preferences.Set("MNOZNIK", Person.Mnoznik.ToString());
                     Preferences.Set("WAGA", $"{Person.Waga}");
                     Preferences.Set("WZROST", $"{Person.Wzrost}");
                     Preferences.Set("WIEK", $"{Person.Wiek}");

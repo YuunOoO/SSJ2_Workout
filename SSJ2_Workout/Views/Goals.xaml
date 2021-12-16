@@ -5,15 +5,6 @@
              Title="Nasze cele" BackgroundImageSource="backGoals">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="wiekEntry" Placeholder="Podaj Wiek" HorizontalTextAlignment="Center" TextColor="White" 
-                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,20,0,5"/>
-            <Entry x:Name="wzrostEntry" Placeholder="Podaj wzrost(cm)" HorizontalTextAlignment="Center" TextColor="White" 
-                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,5,0,5"/>
-            <Entry x:Name="wagaEntry" Placeholder="Podaj Wage(kg)" HorizontalTextAlignment="Center" TextColor="White" 
-                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,5,0,5"/>
-            
-            <Picker x:Name="genderPicker" SelectedIndexChanged="genderChoice" TextColor="White" TitleColor="White" 
-                    HorizontalTextAlignment="Center" BackgroundColor="#CC312974" Title="Wybierz płeć" Margin="0,5,0,5"/>
             <Picker x:Name="goalPicker" SelectedIndexChanged="goalChoice" TextColor="White" TitleColor="White" 
                     HorizontalTextAlignment="Center" BackgroundColor="#CC312974" 
                     Title="Wybierz cel treningów" Margin="0,5,0,5"/>
