@@ -97,7 +97,10 @@ namespace SSJ2_Workout
                 SavedData.sum3_save = Convert.ToInt32(Preferences.Get("SUM3", ""));
                 SavedData.sum4_save = Convert.ToInt32(Preferences.Get("SUM4", ""));
             }
-
+            if(Preferences.ContainsKey("BMR"))
+            {
+                Person.BMR = Convert.ToDecimal(Preferences.Get("BMR", ""));
+            }
         }
 
         protected override void OnSleep()

@@ -63,7 +63,7 @@
                     <Label  Text="{Binding Bmr}" FontAttributes="Bold" FontSize="20" TextColor="Blue" 
                             HorizontalOptions="Start" Grid.Row="0" Grid.Column="3"></Label>
                     
-                    <ProgressBar ProgressColor="Blue" Progress="0.5" Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" />
+                    <ProgressBar ProgressColor="Blue"  Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3"  x:Name="ogolne"/>
                     
                     <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha" Margin="10,0,0,0"
                                FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
@@ -304,7 +304,7 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.6.6 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.6.7 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             </Frame>
         </StackLayout>

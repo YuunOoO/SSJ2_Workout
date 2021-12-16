@@ -36,6 +36,9 @@ namespace SSJ2_Workout.Views
                     dane.Longi = SavedData.posit;
                     decimal x = Decimal.Divide(SavedData.sum2_save,SavedData.sum_save);
                     await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);
+                    decimal tmp = (decimal)dane.Sumarycznie;
+                    decimal x2 = Decimal.Divide(tmp, Person.BMR);
+                    await ogolne.ProgressTo((double)x2, 1500, Easing.Linear);
                 });
                 return true;
             });
