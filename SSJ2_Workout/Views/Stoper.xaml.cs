@@ -69,7 +69,7 @@ namespace SSJ2_Workout.Views
                                 var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
                                 player.Load("za_warudo.mp3");
                                 player.Play();
-
+                                hours = mins = secs = milliseconds = 0;
                                 try
                                 {
                                     // Use default vibration length
@@ -91,7 +91,6 @@ namespace SSJ2_Workout.Views
                                 timer.Close();
                                 dodawaj = true;
                                 DependencyService.Get<IMessage>().ShortAlert("Stop!");
-                                /// miejsce na kod alarmu
                             }
                         }
                     }
@@ -123,6 +122,11 @@ namespace SSJ2_Workout.Views
             });
         }
 
+        protected override async void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Stop();
+        }
 
         private void BtnStop_Clicked(object sender, EventArgs e)
         {
@@ -145,28 +149,33 @@ namespace SSJ2_Workout.Views
                 if (IsDigitsOnly(timeEntry.Text))
                 {
                     Czas = Convert.ToInt32(timeEntry.Text);
-                    topek.Text = $"Wybrałes {Czas} do odmierzenia!";
-
-                    hours = mins = secs = 0;
-
-                    while (Czas >= 3600)
+                    if(Czas>=1)
                     {
-                        hours++;
-                        Czas -= 3600;
+                        topek.Text = $"Wybrałes {Czas} do odmierzenia!";
+
+                        hours = mins = secs = 0;
+
+                        while (Czas >= 3600)
+                        {
+                            hours++;
+                            Czas -= 3600;
+                        }
+                        while (Czas >= 60)
+                        {
+                            mins++;
+                            Czas -= 60;
+                        }
+                        secs = Czas;
+                        dodawaj = false;
+
+                        lbl_result.Text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, mins, secs, milliseconds / 10);
+
+                        timeEntry.Text = string.Empty;
                     }
-                    while (Czas >= 60)
+                    else
                     {
-                        mins++;
-                        Czas -= 60;
+                        DependencyService.Get<IMessage>().ShortAlert("Podales zle dane ): ");
                     }
-                    secs = Czas;
-                    dodawaj = false;
-
-                    lbl_result.Text = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", hours, mins, secs, milliseconds / 10);
-
-                    timeEntry.Text = string.Empty;
-
-
 
                 }
                 else
