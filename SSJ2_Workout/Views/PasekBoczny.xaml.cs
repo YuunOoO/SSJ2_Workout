@@ -43,6 +43,10 @@ namespace SSJ2_Workout.Views
             else
                 DependencyService.Get<IMessage>().ShortAlert("Najpierw uzupełnij parametry ciała!");
         }
+        public void GoToStat(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Statistics());
+        }
         public void GoToSettings(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Settings());

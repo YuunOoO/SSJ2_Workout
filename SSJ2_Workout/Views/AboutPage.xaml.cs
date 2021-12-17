@@ -88,6 +88,10 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new Stoper());
         }
+        public void GoToStat(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new Statistics());
+        }
     }
 
 }

@@ -17,9 +17,25 @@ namespace SSJ2_Workout.Views
 
         protected override async void OnAppearing()
         {
-
             base.OnAppearing();
             collectionView2.ItemsSource = await App<Exercise>.DatabaseExercise.GetProductAsync();
+            if (SavedData.sounds)
+            {
+                var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+
+                player.Load("guts.mp3");
+                player.Play();
+                player.Loop = true;
+            }
+        }
+        protected override async void OnDisappearing()
+        {
+            base.OnDisappearing();
+            if (SavedData.sounds)
+            {
+                Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Loop = false;
+                Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Stop();
+            }
         }
 
         bool IsDigitsOnly(string str) //chroni przed podaniem liter
