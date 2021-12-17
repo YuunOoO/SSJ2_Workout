@@ -5,6 +5,7 @@
              Title="Nasze cele" BackgroundImageSource="backGoals">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Wybierz swoje cel!" x:Name="Noti" FontSize="46" HorizontalTextAlignment="Center"/>
             <Picker x:Name="goalPicker" SelectedIndexChanged="goalChoice" TextColor="White" TitleColor="White" 
                     HorizontalTextAlignment="Center" BackgroundColor="#CC312974" 
                     Title="Wybierz cel treningów" Margin="0,5,0,5"/>
@@ -17,6 +18,8 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <Label Text="Zapotrzebowanie: " x:Name="Noti2" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Label x:Name="Noti3" FontSize="20" HorizontalTextAlignment="Center"/>
             
             
         </StackLayout>
