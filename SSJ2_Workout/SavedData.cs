@@ -15,5 +15,6 @@ namespace SSJ2_Workout
         public static int spalone { get; set; }
 
         public static bool data_set = false;
+        public static bool sounds = true;
     }
 }

@@ -16,5 +16,19 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+
+            base.OnAppearing();
+            sounds.IsToggled = SavedData.sounds;
+        }
+
+        void OnToggled(object sender, ToggledEventArgs e)
+        {
+            if (!sounds.IsToggled)
+                SavedData.sounds = false;
+            else
+                SavedData.sounds = true;
+        }
     }
 }

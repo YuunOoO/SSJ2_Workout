@@ -21,18 +21,24 @@ namespace SSJ2_Workout.Views
             base.OnAppearing();
             // collectionView.ItemsSource = await App.Database<Person>().GetProductAsync();
             collectionView.ItemsSource = await App<Product>.Database.GetProductAsync();
+           if(SavedData.sounds)
+            {
+                var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
 
-            var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-
-            player.Load("naruto_sad.mp3");
-            player.Play();
-            player.Loop = true;
+                player.Load("naruto_sad.mp3");
+                player.Play();
+                player.Loop = true;
+            }
+           
         }
         protected override async void OnDisappearing()
         {
             base.OnDisappearing();
-            Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Loop = false;
-            Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Stop();
+            if(SavedData.sounds)
+            {
+                Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Loop = false;
+                Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Stop();
+            }
         }
 
         bool IsDigitsOnly(string str) //chroni przed podaniem liter

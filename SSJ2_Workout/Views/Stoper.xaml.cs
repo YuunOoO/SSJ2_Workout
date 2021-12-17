@@ -66,9 +66,12 @@ namespace SSJ2_Workout.Views
                         {
                             if (milliseconds <= 0)
                             {
-                                var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-                                player.Load("za_warudo.mp3");
-                                player.Play();
+                                if(SavedData.sounds)
+                                {
+                                    var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                                    player.Load("za_warudo.mp3");
+                                    player.Play();
+                                }
                                 hours = mins = secs = milliseconds = 0;
                                 try
                                 {
@@ -125,6 +128,7 @@ namespace SSJ2_Workout.Views
         protected override async void OnDisappearing()
         {
             base.OnDisappearing();
+            if(SavedData.sounds)
             Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current.Stop();
         }
 
