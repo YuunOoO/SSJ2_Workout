@@ -303,6 +303,8 @@
                          Aspect="AspectFill" CornerRadius="40"></ImageButton>
                     <Label Text="STOPER" TextColor="Black" FontFamily="Samantha" FontSize="60" 
                            HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                    <Button Clicked="GoToStoper" Text="STOPER" TextColor="Black" FontFamily="Samantha" FontSize="60" 
+                           HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent"></Button>
                 </Grid>
             </Frame>
             
@@ -314,9 +316,23 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.7.3 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
-                   FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                <Grid ColumnSpacing="0" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
+                    <Label Text="Ver. " TextColor="Gray"  FontFamily="Samantha" Grid.Column="0"
+                   FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Center"></Label>
+                    <Label Text="0.2.7.3" TextColor="Gray"  FontFamily="Samantha" Grid.Column="1"
+                   FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                    <Label Text="Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha" Grid.Column="2"
+                   FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                </Grid>
 
             </Frame>
         </StackLayout>
