@@ -24,7 +24,7 @@
                             <Grid Margin="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
-                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="50"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -35,8 +35,10 @@
                                        FontAttributes="Bold" TextColor="white" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
                                        FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <ImageButton Source="KoszButton2.png" Grid.Row="1" BackgroundColor="Transparent" Clicked="DeleteButtonClicked" ></ImageButton>
-                                <ImageButton Source="PlusButton2.png" Grid.Row="1" BackgroundColor="Transparent" Grid.Column="1" Clicked="OnChange"></ImageButton>
+                                <ImageButton Source="KoszButton2.png" Grid.Row="1" BackgroundColor="Transparent" 
+                                             ScaleX="1.1" Clicked="DeleteButtonClicked" ></ImageButton>
+                                <ImageButton Source="PlusButton2.png" Grid.Row="1" BackgroundColor="Transparent" 
+                                             ScaleX="1.1" Grid.Column="1" Clicked="OnChange"></ImageButton>
                             </Grid>
 
                         </StackLayout>

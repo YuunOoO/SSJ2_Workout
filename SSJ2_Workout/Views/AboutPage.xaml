@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
              Title="{Binding Title}" BackgroundImageSource="backMenu"
              NavigationPage.HasNavigationBar="False">
-   
+
 
     <ScrollView Orientation="Vertical">
         <StackLayout>
@@ -54,32 +54,34 @@
 
                     <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,0,0"
                            FontSize="40" TextColor="Black" Grid.Row="0"  Grid.ColumnSpan="2"></Label>
-
                     <Label Text="{Binding Sumarycznie}" FontAttributes="Bold"  TextColor="Blue"
                                FontSize="20" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"></Label>
-                    
                     <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Blue" Grid.Column="2" Grid.Row="0"></Label>
-                    
                     <Label  Text="{Binding Bmr}" FontAttributes="Bold" FontSize="20" TextColor="Blue" 
                             HorizontalOptions="Start" Grid.Row="0" Grid.Column="3"></Label>
-                    
-                    <ProgressBar ProgressColor="Blue"  Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3"  x:Name="ogolne"/>
-                    
+
+
+                    <ProgressBar ProgressColor="Blue"  Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" Margin="0,0,60,0" x:Name="ogolne"/>
+                    <ProgressBar ProgressColor="Black"  Grid.Row="1" Grid.ColumnSpan="4" ScaleY="3" HorizontalOptions="End" Progress="100" />
+
                     <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha" Margin="10,0,0,0"
                                FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                     <Label Text="{Binding Suma}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
                                FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"></Label>
                     <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Green" Grid.Column="2" Grid.Row="2"></Label>
                     <Label  Text="{Binding Suma2}" FontAttributes="Bold" FontSize="20" TextColor="Green" HorizontalOptions="Start" Grid.Row="2" Grid.Column="3"></Label>
-                    <ProgressBar ProgressColor="Green" Progress="0" x:Name="zjedzone" Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3"/>
 
+                    <ProgressBar ProgressColor="Green" Progress="0" x:Name="zjedzone" Grid.Row="3" Margin="0,0,60,0" Grid.ColumnSpan="4" ScaleY="3"/>
+                    <ProgressBar ProgressColor="Black"  Grid.Row="3" Grid.ColumnSpan="4" ScaleY="3" HorizontalOptions="End" Progress="100"/>
 
                     <Label Text="Spalone Kalorie" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Samantha" Margin="10,0,0,0"
                            Grid.Row="4" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
                     <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
                                FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Center"></Label>
-                    <ProgressBar ProgressColor="Red" Progress="0.5" Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3"/>
-                  
+
+                    <ProgressBar ProgressColor="Red" Progress="0.5" Grid.Row="5" Margin="0,0,60,0" Grid.ColumnSpan="4" ScaleY="3"/>
+                    <ProgressBar ProgressColor="Black"  Grid.Row="5" Grid.ColumnSpan="4" ScaleY="3" HorizontalOptions="End" Progress="100"/>
+
 
 
                 </Grid>
@@ -189,7 +191,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <Frame Grid.Column="0" CornerRadius="20" HasShadow="False">
+                    <Frame Grid.Column="0" CornerRadius="20" HasShadow="False" Padding="3">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Color="#995f0a87" Offset="0.0"/>
@@ -199,29 +201,37 @@
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="GoToBMI" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
-                        <Grid>
+                        <Grid RowSpacing="0">
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
                             </Grid.RowDefinitions>
-                            <Label Text="BMI:" Grid.Row="0" TextColor="Black" FontFamily="Samantha"
+                            <Label Text="BMI:" Grid.Row="0" TextColor="Black" FontFamily="Samantha" 
                                    FontSize="35" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             <Label Text="{Binding Bmi}" Grid.Row="1" TextColor="Gray" 
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Wzrost}" Grid.Row="2" TextColor="Gray"
+                            
+                            <Label Text="Wzrost:" Grid.Row="2" VerticalTextAlignment="Start" FontSize="16" 
+                                   TextColor="Gray" HorizontalTextAlignment="Center"></Label>
+                            <Label Text="{Binding Wzrost}" Grid.Row="2" TextColor="Gray" VerticalTextAlignment="End"
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Wiek}" Grid.Row="3" TextColor="Gray" 
+                            
+                            <Label Text="Wiek:" Grid.Row="3" VerticalTextAlignment="Start" FontSize="16" 
+                                   TextColor="Gray" HorizontalTextAlignment="Center"></Label>
+                            <Label Text="{Binding Wiek}" Grid.Row="3" TextColor="Gray" VerticalTextAlignment="End"
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                            <Label Text="{Binding Waga}" Grid.Row="4" TextColor="Gray" 
+                            <Label Text="Waga:" Grid.Row="4" VerticalTextAlignment="Start" FontSize="16" 
+                                   TextColor="Gray" HorizontalTextAlignment="Center"></Label>
+                            <Label Text="{Binding Waga}" Grid.Row="4" TextColor="Gray" VerticalTextAlignment="End"
                                    FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                         </Grid>
                     </Frame>
 
-                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="False">
+                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="False" Padding="3">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Color="#995f0a87" Offset="0.0"/>
@@ -252,7 +262,7 @@
 
                     </Frame>
 
-                    <Frame Grid.Column="2" CornerRadius="20" HasShadow="False">
+                    <Frame Grid.Column="2" CornerRadius="20" HasShadow="False" Padding="3">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Color="#995f0a87" Offset="0.0"/>
@@ -289,7 +299,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
-                <ImageButton Clicked="GoToStoper" Source="bannerStoper" Margin="5" 
+                <ImageButton Clicked="GoToStoper" Source="bannerStoper" Margin="5" BackgroundColor="Transparent"
                          Aspect="AspectFill" CornerRadius="40"></ImageButton>
                     <Label Text="STOPER" TextColor="Black" FontFamily="Samantha" FontSize="60" 
                            HorizontalOptions="Center" VerticalOptions="Center"></Label>
@@ -304,8 +314,10 @@
                         <GradientStop Color="#CC182172" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Frame.Background>
-                <Label Text="Ver. 0.2.7.2 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
+                <Label Text="Ver. 0.2.7.3 Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+
             </Frame>
         </StackLayout>
     </ScrollView>
