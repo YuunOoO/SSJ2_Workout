@@ -5,29 +5,26 @@
              BackgroundImageSource="berserk1">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Suma3}" x:Name="testowy" TextColor="Black" HorizontalTextAlignment="Center"
+            <Label Text="{Binding Suma3}" x:Name="testowy" TextColor="white" HorizontalTextAlignment="Center"
                       FontSize="Medium" FontAttributes="Bold"/>
-            <Label Text="{Binding Suma4}"  x:Name="testowy2" TextColor="Black"  HorizontalTextAlignment="Center"
+            <Label Text="{Binding Suma4}"  x:Name="testowy2" TextColor="white"  HorizontalTextAlignment="Center"
                         FontSize="Medium" FontAttributes="Bold"/>
 
 
-            <Entry x:Name="nameEntry" Placeholder="Podaj artykuł" TextColor="Black"/>
-            <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc kalori" TextColor="Black" />
+            <Entry x:Name="nameEntry" Placeholder="Podaj ćwiczenie" TextColor="white" PlaceholderColor="White"/>
+            <Entry x:Name="caloriesEntry" Placeholder="Podaj ilosc spalonych kalori" TextColor="white" PlaceholderColor="White" />
             <CheckBox x:Name="did"/>
-            <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" CornerRadius="50" BackgroundColor="#CCdf6941"/>
+            <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" CornerRadius="50" BackgroundColor="#CC404040"/>
 
             <CollectionView x:Name="collectionView2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
 
-                            <Grid>
+                            <Grid Margin="5">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="60"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -35,11 +32,11 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label Text="{Binding Name}" FontSize="Medium" Grid.Row="0" Grid.Column="0" 
-                                       FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                       FontAttributes="Bold" TextColor="white" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
-                                       FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Clicked="DeleteButtonClicked" ></ImageButton>
-                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Grid.Column="1" Clicked="OnChange"></ImageButton>
+                                       FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <ImageButton Source="KoszButton2.png" Grid.Row="1" BackgroundColor="Transparent" Clicked="DeleteButtonClicked" ></ImageButton>
+                                <ImageButton Source="PlusButton2.png" Grid.Row="1" BackgroundColor="Transparent" Grid.Column="1" Clicked="OnChange"></ImageButton>
                             </Grid>
 
                         </StackLayout>

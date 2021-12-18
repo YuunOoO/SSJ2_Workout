@@ -34,8 +34,8 @@
                             
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="60"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -46,8 +46,11 @@
                                        FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
                                        FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Clicked="DeleteButtonClicked" ></ImageButton>
-                                <ImageButton Source="iconmoins.png" HeightRequest="40" WidthRequest="30"  Grid.Row="1" Grid.Column="1" Clicked="OnChange"></ImageButton>
+                                
+                                <ImageButton Source="KoszButton.png" CornerRadius="30" BackgroundColor="Transparent" 
+                                             HeightRequest="40" Grid.Row="1" Clicked="DeleteButtonClicked" Opacity="0.8"></ImageButton>
+                                <ImageButton Source="PlusButton.png" HeightRequest="40" BackgroundColor="Transparent"  
+                                             Grid.Row="1" Grid.Column="1" Clicked="OnChange" Opacity="0.8"></ImageButton>
                             </Grid>
                             
                         </StackLayout>
