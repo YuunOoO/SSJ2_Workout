@@ -38,6 +38,17 @@ namespace SSJ2_Workout.Views
         }
 
  
+        void Mnoznik(string tmp)
+        {
+            double x = 1;
+            if (tmp == "2.2 - osoby trenujące wyczynowo, profesjonalni sportowcy") x= 2.2;
+            else if (tmp == "2.0 - osoby o dużej aktywności fizycznej") x= 2.0;
+            else if (tmp == "1.7 - osoby o umiarkowanej aktywności fizycznej") x= 1.7;
+            else if (tmp == "1.4 - osoby o małej aktywności fizycznej") x= 1.4;
+            else if (tmp == "1.2 - osoby pozostające w bezruchu") x= 1.2;
+
+            Person.Mnoznik = Convert.ToDecimal(x);
+        }
         async void BodyChange(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(wiekEntry.Text) && !string.IsNullOrWhiteSpace(wzrostEntry.Text) && !string.IsNullOrWhiteSpace(wagaEntry.Text))
@@ -56,7 +67,7 @@ namespace SSJ2_Workout.Views
                     Person.Gender = genderPicker.Items[genderPicker.SelectedIndex];
                     Person.BMI = Decimal.Divide(Person.Waga, (Decimal.Divide(Person.Wzrost, 100) * Decimal.Divide(Person.Wzrost, 100)));
                     Person.BMI = Convert.ToDecimal(Math.Round((double)Convert.ToDouble(Person.BMI), 3));
-                    Person.Mnoznik = Convert.ToDecimal((actionPicker.Items[actionPicker.SelectedIndex]).Substring(0, 3));
+                    Mnoznik(actionPicker.Items[actionPicker.SelectedIndex]);
                     SavedData.data_set = true;
                     Preferences.Set("MNOZNIK", Person.Mnoznik.ToString());
                     Preferences.Set("WAGA", $"{Person.Waga}");
