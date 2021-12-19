@@ -8,6 +8,7 @@ namespace SSJ2_Workout
     {
         public static int Wzrost { get; set; }
         public static int Waga { get; set; }
+        public static int WlasnyCel { get; set; }
         public static decimal BMI { get; set; }
         public static decimal BMR { get; set; }
         public static int Wiek { get; set; }

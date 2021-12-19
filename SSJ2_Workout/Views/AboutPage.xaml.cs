@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using static SSJ2_Workout.Views.Steps;
 using Xamarin.Essentials;
-using Syncfusion.XForms.ProgressBar;
+
 
 namespace SSJ2_Workout.Views
 {

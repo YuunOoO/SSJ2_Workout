@@ -20,8 +20,10 @@
             </Button>
             <Label Text="Zapotrzebowanie: " x:Name="Noti2" FontSize="20" HorizontalTextAlignment="Center"/>
             <Label x:Name="Noti3" FontSize="20" HorizontalTextAlignment="Center"/>
-            
-            
+            <Entry x:Name="WlasneKcalEntry" Placeholder="Podaj własne zapotrzebowanie" HorizontalTextAlignment="Center" TextColor="White" 
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,20,0,5"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -22,7 +22,7 @@ namespace SSJ2_Workout.Views
             goalPicker.Items.Add("Utrzymanie wagi");
             goalPicker.Items.Add("Przybranie na wadze");
             goalPicker.Items.Add("Szybkie przybranie na wadze");
-            goalPicker.Items.Add("**Wybierz ręcznie własny plan");
+            goalPicker.Items.Add("Wybierz ręcznie własny plan");
 
         }
         bool IsDigitsOnly(string str) //chroni przed podaniem liter
@@ -38,54 +38,63 @@ namespace SSJ2_Workout.Views
 
         public void KcalNeed2()
         {
-            if (Person.Gender == "Mężczyzna")
+            Person.WlasnyCel = Convert.ToInt32(WlasneKcalEntry.Text);
+            if (Person.Cel == "Wybierz ręcznie własny plan")
             {
-                if (Person.Cel == "Szybkie schudnięcie")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) + 5) - 400;
-                }
-                else if (Person.Cel == "Schudnięcie")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) + 5) - 200;
-                }
-                else if (Person.Cel == "Utrzymanie wagi")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) + 5);
-                }
-                else if (Person.Cel == "Przybranie na wadze")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) + 5) + 200;
-                }
-                else if (Person.Cel == "Szybkie przybranie na wadze")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) + 5) + 400;
-                }
+                Person.BMR = Person.WlasnyCel;
             }
             else
             {
-                if (Person.Cel == "Szybkie schudnięcie")
+                if (Person.Gender == "Mężczyzna")
                 {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) - 162) - 300;
+                    if (Person.Cel == "Szybkie schudnięcie")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) + 5) - 400;
+                    }
+                    else if (Person.Cel == "Schudnięcie")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) + 5) - 200;
+                    }
+                    else if (Person.Cel == "Utrzymanie wagi")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) + 5);
+                    }
+                    else if (Person.Cel == "Przybranie na wadze")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) + 5) + 200;
+                    }
+                    else if (Person.Cel == "Szybkie przybranie na wadze")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) + 5) + 400;
+                    }
                 }
-                else if (Person.Cel == "Schudnięcie")
+                else
                 {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) - 162) - 150;
+                    if (Person.Cel == "Szybkie schudnięcie")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) - 162) - 300;
+                    }
+                    else if (Person.Cel == "Schudnięcie")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) - 162) - 150;
+                    }
+                    else if (Person.Cel == "Utrzymanie wagi")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) - 162);
+                    }
+                    else if (Person.Cel == "Przybranie na wadze")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) - 162) + 150;
+                    }
+                    else if (Person.Cel == "Szybkie przybranie na wadze")
+                    {
+                        Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 6) - (Person.Wiek * 5)) - 162) + 300;
+                    }
                 }
-                else if (Person.Cel == "Utrzymanie wagi")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) - 162);
-                }
-                else if (Person.Cel == "Przybranie na wadze")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) - 162) + 150;
-                }
-                else if (Person.Cel == "Szybkie przybranie na wadze")
-                {
-                    Person.BMR = (((Person.Waga * 10) + (Person.Wzrost * 7) - (Person.Wiek * 5)) - 162) + 300;
-                }
+                Person.BMR *= Person.Mnoznik;
+                Preferences.Set("BMR", Person.BMR.ToString());
             }
-            Person.BMR *= Person.Mnoznik;
-            Preferences.Set("BMR", Person.BMR.ToString());
+           
         }
         async void KcalNeed(object sender, EventArgs e)
         {

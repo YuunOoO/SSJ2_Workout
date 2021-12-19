@@ -47,7 +47,7 @@ namespace SSJ2_Workout.Views
             else if (tmp == "1.4 - osoby o małej aktywności fizycznej") x= 1.4;
             else if (tmp == "1.2 - osoby pozostające w bezruchu") x= 1.2;
 
-            Person.Mnoznik = Convert.ToDecimal(x);
+            Person.Mnoznik = Convert.ToInt32(x);
         }
         async void BodyChange(object sender, EventArgs e)
         {
