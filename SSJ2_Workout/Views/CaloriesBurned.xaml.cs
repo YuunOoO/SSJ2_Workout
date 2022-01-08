@@ -11,7 +11,6 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
             BindingContext = new MainViewModel();
-            CheckCalories3();
         }
 
 
@@ -27,6 +26,7 @@ namespace SSJ2_Workout.Views
                 player.Play();
                 player.Loop = true;
             }
+            CheckCalories3();
         }
         protected override async void OnDisappearing()
         {

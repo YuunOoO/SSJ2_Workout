@@ -12,7 +12,6 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
             BindingContext = new MainViewModel();
-            CheckCalories2();
         }
 
         protected override async void OnAppearing()
@@ -20,6 +19,7 @@ namespace SSJ2_Workout.Views
             
             base.OnAppearing();
             // collectionView.ItemsSource = await App.Database<Person>().GetProductAsync();
+            var p = App<Product>.Database;
             collectionView.ItemsSource = await App<Product>.Database.GetProductAsync();
            if(SavedData.sounds)
             {
@@ -29,7 +29,8 @@ namespace SSJ2_Workout.Views
                 player.Play();
                 player.Loop = true;
             }
-           
+            CheckCalories2();
+
         }
         protected override async void OnDisappearing()
         {

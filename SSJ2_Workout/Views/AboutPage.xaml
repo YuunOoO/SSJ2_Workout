@@ -192,7 +192,7 @@
                     <Label Text="Puls" FontAttributes="Bold" 
                            FontSize="25" TextColor="black" Grid.Row="0"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                    <Label Text="2137" FontAttributes="Bold" 
+                    <Label Text="2137" FontAttributes="Bold"  x:Name="dataaa"
                            FontSize="25" TextColor="black" Grid.Row="1"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 

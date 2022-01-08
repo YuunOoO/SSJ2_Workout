@@ -6,6 +6,7 @@ using System.IO;
 using static SSJ2_Workout.Views.Steps;
 using Plugin.Geolocator.Abstractions;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 [assembly: ExportFont("Samantha.ttf")]
 
@@ -13,11 +14,10 @@ namespace SSJ2_Workout
 {
     public partial class App<T> : Application where T : new()
     {
-
         private static Database<Product> database;
         private static Database<Exercise> databaseExercise;
         private static Database<StoreData> databaseStore;
-       
+
         public static Database<Product> Database
         {
             get
@@ -55,11 +55,13 @@ namespace SSJ2_Workout
                 return databaseStore;
             }
         }
-
+    
     }
+
     public partial class App : Application
     {
         IGeolocator locator = DependencyService.Get<IGeolocator>();
+
         public App()
         {
             InitializeComponent();
@@ -101,9 +103,48 @@ namespace SSJ2_Workout
             {
                 Person.BMR = Convert.ToDecimal(Preferences.Get("BMR", ""));
             }
+            if (Preferences.ContainsKey("data"))
+            {
+
+                SavedData.data_save = Preferences.Get("data", "");
+            }
+            else
+            {
+                string tmp = DateTime.Now.ToString();
+                string tmp2 = string.Empty;
+                for (int i = 0; i < tmp.Length; i++)
+                {
+                    if (tmp[i] != ' ')
+                        tmp2 += tmp[i];
+                    else
+                        break;
+                }
+
+
+                SavedData.data_save = tmp2;
+                Preferences.Set("data", SavedData.data_save);
+            }
+
         }
 
-        protected override void OnSleep()
+
+//        Device.StartTimer(TimeSpan.FromMilliseconds(300), () => //dzialanie w tle tasku 
+//            {
+//                Task.Run(async () =>
+//                {
+
+//                    string data_new = DateTime.Now.ToString();
+//                    if (SavedData.data_save != data_new)
+//                    {
+//                        SavedData.data_save = data_new;
+//                    }
+//    Preferences.Set("Data", $"{DateTime.Now.ToString()}");
+//                });
+//return true;
+//            });
+
+
+protected override void OnSleep()
         {
             DependencyService.Get<IStepCounter>().InitSensorService();
         }

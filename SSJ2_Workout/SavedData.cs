@@ -13,6 +13,7 @@ namespace SSJ2_Workout
         public static string locat { get; set; }
         public static string posit { get; set; }
         public static int spalone { get; set; }
+        public static string data_save { get; set; }
 
         public static bool data_set = false;
         public static bool sounds = true;
