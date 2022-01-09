@@ -42,6 +42,7 @@ namespace SSJ2_Workout.Views
                 if (sumarycznie != value)
                 {
                     sumarycznie = value;
+                    SavedData.sumaryczniee = Convert.ToInt32(value);
                     OnPropertyChanged(nameof(Sumarycznie));
                 }
             }

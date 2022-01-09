@@ -5,9 +5,40 @@
              BackgroundImageSource="deathnote">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <CollectionView x:Name="collectionView3">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+
+                            <Grid Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Day}" FontSize="Medium" Grid.Row="0" Grid.Column="0" 
+                                       FontAttributes="Bold" TextColor="white" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Total_burned}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
+                                       FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Total_calories}" FontSize="Medium" Grid.Row="1" Grid.Column="0" 
+                                       FontAttributes="Bold" TextColor="white" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Total_delivered}" FontSize="Medium" Grid.Row="1" Grid.Column="1" 
+                                       FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Total_steps}" FontSize="Medium" Grid.Row="2" Grid.Column="0" 
+                                       FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                            </Grid>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

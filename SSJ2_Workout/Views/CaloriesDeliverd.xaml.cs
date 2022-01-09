@@ -85,6 +85,18 @@ namespace SSJ2_Workout.Views
             Preferences.Set("SUM2", $"{SavedData.sum2_save}");
         }
 
+        public static async void zeruj()
+        {
+            var products = await App<Product>.Database.GetProductAsync();
+            foreach (var product in products)
+            {
+
+                if (product.Eat)
+                    product.Eat = false;
+                await App<Exercise>.Database.UpdateProduct(product);
+            }
+        }
+
         async void OnChange(object sender, EventArgs e)
         {
             ImageButton button = sender as ImageButton;

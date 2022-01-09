@@ -29,13 +29,14 @@ namespace SSJ2_Workout.Views
                     dane.Bmi = Person.BMI.ToString();
                     dane.Bmr = Person.BMR.ToString();
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
+                    SavedData.kroki = Convert.ToInt32(dane.Step);
                     dane.Suma = SavedData.sum_save;
                     dane.Suma2 = SavedData.sum2_save;
                     dane.Suma3 = SavedData.sum3_save;
                     dane.Suma4 = SavedData.sum4_save;
                     dane.Langi = SavedData.locat;
                     dane.Longi = SavedData.posit;
-                    dataaa.Text = SavedData.data_save;
+                  //  dataaa.Text = SavedData.data_save;
                     decimal x = Decimal.Divide(SavedData.sum2_save,SavedData.sum_save);
                     await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);
                     decimal tmp = (decimal)dane.Sumarycznie;

@@ -6,6 +6,8 @@ namespace SSJ2_Workout
 {
     public class SavedData
     {
+        public static int kroki { get; set; }
+        public static int sumaryczniee { get; set; }
         public static int sum_save { get; set; }
         public static int sum2_save { get; set; }
         public static int sum3_save { get; set; }

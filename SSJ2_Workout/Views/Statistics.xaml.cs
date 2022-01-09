@@ -18,5 +18,11 @@ namespace SSJ2_Workout.Views
          
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            collectionView3.ItemsSource = await App<StoreData>.DatabaseStore.GetProductAsync();
+        }
+
     }
 }

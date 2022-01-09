@@ -9,7 +9,7 @@ namespace SSJ2_Workout
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public int Day { get; set; }
+        public string Day { get; set; }
         public double Total_burned { get; set; }
         public double Total_delivered { get; set; }
         public double Total_calories { get; set; }

@@ -125,23 +125,50 @@ namespace SSJ2_Workout
                 Preferences.Set("data", SavedData.data_save);
             }
 
+
+
+            Device.StartTimer(TimeSpan.FromMinutes(1), () =>
+            {
+
+                Task.Run(async () =>
+                {
+                    string tmp = DateTime.Now.ToString();
+                    string tmp2 = string.Empty;
+                    for (int i = 0; i < tmp.Length; i++)
+                    {
+                        if (tmp[i] != ' ')
+                            tmp2 += tmp[i];
+                        else
+                            break;
+                    }
+                    if (tmp2 != SavedData.data_save)    //zmienila sie data
+                    {
+                        SavedData.data_save = tmp2;
+                        Preferences.Set("data", SavedData.data_save);
+
+
+                        await App<StoreData>.DatabaseStore.SaveProductAsync(new StoreData
+                        {
+                          Day = SavedData.data_save,
+                          Total_burned = SavedData.spalone,
+                          Total_calories = SavedData.sumaryczniee,
+                          Total_delivered = SavedData.sum2_save,
+                          Total_steps = SavedData.kroki,
+                        });        
+                        DependencyService.Get<IMessage>().ShortAlert("Zapisano statystki!");
+
+                        DependencyService.Get<IStepCounter>().Zeruj();
+                        CaloriesBurned.zeruj();
+                        CaloriesDeliverd.zeruj();
+                        SavedData.spalone = SavedData.sum2_save = SavedData.sum3_save = SavedData.sum4_save = SavedData.sumaryczniee = SavedData.sum_save = 0;
+
+                    }
+                });
+                return true;
+            });
+
         }
 
-
-//        Device.StartTimer(TimeSpan.FromMilliseconds(300), () => //dzialanie w tle tasku 
-//            {
-//                Task.Run(async () =>
-//                {
-
-//                    string data_new = DateTime.Now.ToString();
-//                    if (SavedData.data_save != data_new)
-//                    {
-//                        SavedData.data_save = data_new;
-//                    }
-//    Preferences.Set("Data", $"{DateTime.Now.ToString()}");
-//                });
-//return true;
-//            });
 
 
 protected override void OnSleep()

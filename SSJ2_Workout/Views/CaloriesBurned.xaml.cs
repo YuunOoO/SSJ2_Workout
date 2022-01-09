@@ -99,7 +99,7 @@ namespace SSJ2_Workout.Views
             CheckCalories3();
         }
 
-        public async void CheckCalories3()
+        public  async void CheckCalories3()
         {
             var suma = (MainViewModel)BindingContext;
             var exercises = await App<Exercise>.DatabaseExercise.GetProductAsync();
@@ -117,6 +117,19 @@ namespace SSJ2_Workout.Views
             SavedData.sum4_save = suma_tmp2;
             Preferences.Set("SUM3", $"{SavedData.sum3_save}");
             Preferences.Set("SUM4", $"{SavedData.sum4_save}");
+        }
+
+        public static async void zeruj()
+        {
+            var exercises = await App<Exercise>.DatabaseExercise.GetProductAsync();
+            foreach (var exercise in exercises)
+            {
+
+                if (exercise.Did)
+                    exercise.Did = false;
+                await App<Exercise>.DatabaseExercise.UpdateProduct(exercise);
+            }
+            
         }
 
     }

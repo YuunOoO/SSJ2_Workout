@@ -383,7 +383,7 @@
 
                     <Label Text="Ver. " TextColor="Gray"  FontFamily="Samantha" Grid.Column="0"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Center"></Label>
-                    <Label Text="0.2.7.5" TextColor="Gray"  FontFamily="Samantha" Grid.Column="1"
+                    <Label Text="0.2.7.7" TextColor="Gray"  FontFamily="Samantha" Grid.Column="1"
                    FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
                     <Label Text="Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha" Grid.Column="2"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
