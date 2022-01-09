@@ -133,6 +133,7 @@ namespace SSJ2_Workout.Views
                 {
                     
                     Spalone = Spalone - Suma4 + value;
+                    if (Spalone < 0) Spalone = 0;
                     OnPropertyChanged(nameof(Spalone));
                     Sumarycznie = Oblicz_Kalorie();
                     OnPropertyChanged(nameof(Sumarycznie));

@@ -126,7 +126,7 @@ namespace SSJ2_Workout
             }
 
 
-
+            bool reset = false;
             Device.StartTimer(TimeSpan.FromMinutes(1), () =>
             {
 
@@ -145,7 +145,7 @@ namespace SSJ2_Workout
                     {
                         SavedData.data_save = tmp2;
                         Preferences.Set("data", SavedData.data_save);
-
+                        reset = true;
 
                         await App<StoreData>.DatabaseStore.SaveProductAsync(new StoreData
                         {
@@ -155,15 +155,22 @@ namespace SSJ2_Workout
                           Total_delivered = SavedData.sum2_save,
                           Total_steps = SavedData.kroki,
                         });        
-                        DependencyService.Get<IMessage>().ShortAlert("Zapisano statystki!");
-
-                        DependencyService.Get<IStepCounter>().Zeruj();
-                        CaloriesBurned.zeruj();
-                        CaloriesDeliverd.zeruj();
-                        SavedData.spalone = SavedData.sum2_save = SavedData.sum3_save = SavedData.sum4_save = SavedData.sumaryczniee = SavedData.sum_save = 0;
+                       
 
                     }
                 });
+                if(reset)
+                {
+                    DependencyService.Get<IMessage>().ShortAlert("Zapisano statystki!");
+
+                    DependencyService.Get<IStepCounter>().Zeruj();
+                    CaloriesBurned.zeruj();
+                    CaloriesDeliverd.zeruj();
+                    SavedData.spalone = SavedData.sum2_save = SavedData.sum3_save = SavedData.sum4_save = SavedData.sumaryczniee = SavedData.sum_save = 0;
+                    reset = false;
+                }
+                
+
                 return true;
             });
 

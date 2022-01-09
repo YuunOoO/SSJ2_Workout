@@ -90,11 +90,11 @@ namespace SSJ2_Workout.Views
             var products = await App<Product>.Database.GetProductAsync();
             foreach (var product in products)
             {
-
-                if (product.Eat)
-                    product.Eat = false;
+                product.Eat = false;
                 await App<Exercise>.Database.UpdateProduct(product);
             }
+            CaloriesDeliverd elo = new CaloriesDeliverd();
+            elo.CheckCalories2();
         }
 
         async void OnChange(object sender, EventArgs e)

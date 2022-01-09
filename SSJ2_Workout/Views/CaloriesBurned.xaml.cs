@@ -124,12 +124,11 @@ namespace SSJ2_Workout.Views
             var exercises = await App<Exercise>.DatabaseExercise.GetProductAsync();
             foreach (var exercise in exercises)
             {
-
-                if (exercise.Did)
                     exercise.Did = false;
                 await App<Exercise>.DatabaseExercise.UpdateProduct(exercise);
             }
-            
+            CaloriesBurned elo = new CaloriesBurned();
+            elo.CheckCalories3();
         }
 
     }
