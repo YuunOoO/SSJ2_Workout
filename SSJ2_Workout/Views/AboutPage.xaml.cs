@@ -38,7 +38,7 @@ namespace SSJ2_Workout.Views
                     dane.Longi = SavedData.posit;
                     dane.Cel_Dostarczone = Person.Dostarczone_cel;
                     dane.Cel_Spalone = Person.Spalone_cel;
-                  //  dataaa.Text = SavedData.data_save;
+                   // dataaa.Text = DateTime.Now.ToString();
                     decimal x = Decimal.Divide(SavedData.sum2_save,Person.Dostarczone_cel);
                     await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);
                     decimal tmp = (decimal)dane.Sumarycznie;
@@ -50,6 +50,10 @@ namespace SSJ2_Workout.Views
                 return true;
             });
             
+        }
+        protected override async void OnAppearing()
+        {
+            dataaa.Text = SavedData.data_save;
         }
 
         public void GoToSteps(object obj, EventArgs args)
