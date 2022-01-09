@@ -19,6 +19,26 @@ namespace SSJ2_Workout.Views
     public class MainViewModel : INotifyPropertyChanged
     {
 
+        decimal cel_spalone;
+        decimal cel_dostarczone;
+        public decimal Cel_Dostarczone { get; set; }
+        public decimal Cel_Spalone
+        {
+            set
+            {
+                if (cel_spalone != value)
+                {
+                    cel_spalone = value;
+                    OnPropertyChanged(nameof(Cel_Spalone));
+                    OnPropertyChanged(nameof(Cel_Dostarczone));
+                }
+            }
+            get
+            {
+                return cel_spalone;
+            }
+        }
+
 
         string step;
 

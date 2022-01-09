@@ -111,6 +111,11 @@ namespace SSJ2_Workout
             {
                 Person.BMR = Convert.ToDecimal(Preferences.Get("BMR", ""));
             }
+            if(Preferences.ContainsKey("Spalone_Cel"))
+            {
+                Person.Spalone_cel = Convert.ToDecimal(Preferences.Get("Spalone_Cel", ""));
+                Person.Dostarczone_cel = Convert.ToDecimal(Preferences.Get("Dostarczone_Cel", ""));
+            }
             if (Preferences.ContainsKey("data"))
             {
 

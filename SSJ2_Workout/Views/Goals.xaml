@@ -23,6 +23,28 @@
             <Entry x:Name="WlasneKcalEntry" Placeholder="Podaj własne zapotrzebowanie" HorizontalTextAlignment="Center" TextColor="White" 
                    BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,20,0,5"/>
 
+            <Slider x:Name="slider" IsVisible="false"
+                Maximum="100"
+                    Minimum="0"
+                    ValueChanged="OnSliderValueChanged"
+                    />
+
+            <Label x:Name="displayLabel"  
+               Text="{Binding Source={x:Reference slider},
+                              Path=Value,
+                              StringFormat='The Slider value is {0:F0}'}"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" FontSize="20"  TextColor="White" IsVisible="false"/>
+            <Label x:Name="pomoc" HorizontalOptions="Center" IsVisible="false"
+               VerticalOptions="CenterAndExpand" FontSize="16"  TextColor="White"/>
+            <Button Text="zatwierdz" Clicked="btnZatwierdz_Clicked" CornerRadius="30" IsVisible="false" x:Name="btnZatwierdz">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#CC2868c9" Offset="0.0"/>
+                        <GradientStop Color="#CC312974" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
         </StackLayout>
     </ContentPage.Content>

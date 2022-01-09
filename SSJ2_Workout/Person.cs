@@ -15,5 +15,12 @@ namespace SSJ2_Workout
         public static string Gender { get; set; }
         public static string Cel { get; set; }
         public static decimal Mnoznik { get; set; }
+
+        public static decimal Stosunek { get; set; }
+
+
+        public static decimal Spalone_cel { get; set; }
+        public static decimal Dostarczone_cel { get; set; }
+
     }
 }

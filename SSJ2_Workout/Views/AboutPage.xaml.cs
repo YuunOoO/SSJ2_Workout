@@ -36,12 +36,16 @@ namespace SSJ2_Workout.Views
                     dane.Suma4 = SavedData.sum4_save;
                     dane.Langi = SavedData.locat;
                     dane.Longi = SavedData.posit;
+                    dane.Cel_Dostarczone = Person.Dostarczone_cel;
+                    dane.Cel_Spalone = Person.Spalone_cel;
                   //  dataaa.Text = SavedData.data_save;
-                    decimal x = Decimal.Divide(SavedData.sum2_save,SavedData.sum_save);
+                    decimal x = Decimal.Divide(SavedData.sum2_save,Person.Dostarczone_cel);
                     await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);
                     decimal tmp = (decimal)dane.Sumarycznie;
                     decimal x2 = Decimal.Divide(tmp, Person.BMR);
                     await ogolne.ProgressTo((double)x2, 1500, Easing.Linear);
+                    decimal x3 = Decimal.Divide(Convert.ToDecimal(dane.Spalone), dane.Cel_Spalone);
+                    await Bar_spalone.ProgressTo((double)x3,1500,Easing.Linear);
                 });
                 return true;
             });
