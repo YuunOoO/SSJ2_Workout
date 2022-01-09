@@ -9,12 +9,17 @@ using static Xamarin.Essentials.Permissions;
 using Android.App;
 using System.Timers;
 using static SSJ2_Workout.Views.Steps;
+using Microcharts;
+using SkiaSharp;
+using System.Collections.Generic;
 
 namespace SSJ2_Workout.Views
 {
    
     public class MainViewModel : INotifyPropertyChanged
     {
+
+
         string step;
 
         double spalone;

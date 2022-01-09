@@ -1,10 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Microcharts;assembly=Microcharts"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              x:Class="SSJ2_Workout.Views.Statistics"
              BackgroundImageSource="deathnote">
     <ContentPage.Content>
         <StackLayout>
+
+
+            <Grid>
+
+                <StackLayout Padding="0,20,0,0" >
+
+                    <chart:SfChart  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis x:Name="primaryAxis"/>
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis />
+                        </chart:SfChart.SecondaryAxis>
+                    </chart:SfChart>
+                </StackLayout>
+
+            </Grid>
 
             <CollectionView x:Name="collectionView3">
                 <CollectionView.ItemTemplate>

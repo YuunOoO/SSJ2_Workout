@@ -69,10 +69,18 @@ namespace SSJ2_Workout
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
             MainPage = new NavigationPage(new AboutPage());
+
+            var p = App<Product>.Database;
+            var q = App<Exercise>.DatabaseExercise;
+            var f = App<StoreData>.DatabaseStore;
+           
         }
 
         protected override void OnStart()
         {
+            var p = App<Product>.Database;
+            var q = App<Exercise>.DatabaseExercise;
+            var f = App<StoreData>.DatabaseStore;
             DependencyService.Get<IStepCounter>().InitSensorService();
             if (Preferences.ContainsKey("WZROST"))
             {
