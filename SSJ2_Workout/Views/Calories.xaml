@@ -2,9 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.Calories"
-             Title="Kalorie" BackgroundImageSource="backFood">
+             NavigationPage.HasNavigationBar="False" BackgroundImageSource="backFood">
     <ContentPage.Content>
-        <StackLayout Margin="10">
+        <StackLayout >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+            </Grid>
             <Frame HeightRequest="70" WidthRequest="400"
                Margin="5" BackgroundColor="#CC404040"
                HasShadow="True" Padding="0" CornerRadius="35"

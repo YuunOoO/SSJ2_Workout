@@ -103,5 +103,9 @@ namespace SSJ2_Workout.Views
             string name = actionPicker.Items[actionPicker.SelectedIndex];
             Name = name;
         }
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
     }
 }

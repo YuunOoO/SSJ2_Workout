@@ -3,17 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.Settings"
              Title="Ustawienia" BackgroundImageSource="evangelion" 
-             NavigationPage.HasNavigationBar="True" >
+             NavigationPage.HasNavigationBar="False" >
 
     
-    
+
     <TableView HasUnevenRows="True" Intent="Settings">
         
         <TableRoot>
-            
+            <TableSection>
+                <ViewCell>
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                            <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+                        </Grid>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
             <TableSection Title="Ustawienia ogólne.">
                 <ViewCell>
-                    <StackLayout BackgroundColor="#73d3290f">
+                    <StackLayout BackgroundColor="#AAd3290f">
                         <Grid Margin="10">
                             <Label Text="Powiadomienia" FontSize="20" TextColor="Black" FontAttributes="Bold"></Label>
                             <Switch OnColor="#d3290f" ThumbColor="#d3290f"></Switch>
@@ -24,7 +42,7 @@
             
             <TableSection Title="Motyw aplikacji">
                 <ViewCell >
-                    <StackLayout BackgroundColor="#73765898">
+                    <StackLayout BackgroundColor="#AA765898">
                         <Grid Margin="10">
                             <Label Text="Włącz ciemny motyw" FontSize="20" TextColor="Black" FontAttributes="Bold"></Label>
                             <Switch OnColor="#765898" ThumbColor="#765898"></Switch>
@@ -35,7 +53,7 @@
 
             <TableSection Title="Dzwieki aplikacji">
                 <ViewCell>
-                    <StackLayout BackgroundColor="#73e6770b">
+                    <StackLayout BackgroundColor="#AAe6770b">
                         <Grid Margin="10">
                             <Label Text="Wyłącz dzwięki aplikajci" FontSize="20" 
                                    TextColor="Black" FontAttributes="Bold"></Label>
@@ -48,8 +66,16 @@
 
             <TableSection Title="Dane">
                     <ViewCell>
-                        <Button Text="Resetuj Dane" CornerRadius="30" Margin="10" Opacity="0.75"></Button>
-                    </ViewCell>
+                        <Button Text="Resetuj Dane" CornerRadius="30" Margin="10" Opacity="0.75">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#d3290f" Offset="0.0" />
+                                <GradientStop Color="#765898" Offset="0.50" />
+                                <GradientStop Color="#e6770b" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                    </Button>
+                </ViewCell>
 
             </TableSection>
             

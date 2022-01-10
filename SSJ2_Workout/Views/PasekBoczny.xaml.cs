@@ -16,6 +16,10 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new Steps());
         }
+        public void GoToAbout(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new AboutPage());
+        }
         public void GoToGeolocation(object obj, EventArgs args)
         {
             Navigation.PushAsync(new Geolocation());

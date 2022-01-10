@@ -1,9 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SSJ2_Workout.Views.Pulse" Title="Puls" BackgroundImageSource="backPulse">
+             xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
+             x:Class="SSJ2_Workout.Views.Pulse" NavigationPage.HasNavigationBar="False" BackgroundImageSource="backPulse">
     <ContentPage.Content>
-        <StackLayout Margin="10">
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+            </Grid>
+            
             <Frame MinimumHeightRequest="200" CornerRadius="20" VerticalOptions="CenterAndExpand">
                 <Frame.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

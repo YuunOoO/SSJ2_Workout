@@ -80,7 +80,10 @@ namespace SSJ2_Workout.Views
             // nw jeszcze XDD
             DependencyService.Get<IStepCounter>().Zeruj();
         }
-
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
         void Readchanged(Object sender, AccelerometerChangedEventArgs args)
         {
             LabelX.Text = $"X: {args.Reading.Acceleration.X}";

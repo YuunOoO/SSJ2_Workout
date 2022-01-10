@@ -13,7 +13,10 @@ namespace SSJ2_Workout.Views
             InitializeComponent();
             BindingContext = new MainViewModel();
         }
-
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
         protected override async void OnAppearing()
         {
             

@@ -30,5 +30,9 @@ namespace SSJ2_Workout.Views
             else
                 SavedData.sounds = true;
         }
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
     }
 }

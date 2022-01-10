@@ -13,7 +13,10 @@ namespace SSJ2_Workout.Views
         {
             InitializeComponent();
         }
-
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
         private async void Button_OnClicked(object sender, EventArgs e)
         {
             if(SavedData.sounds)

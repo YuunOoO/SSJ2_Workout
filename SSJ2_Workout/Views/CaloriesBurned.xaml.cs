@@ -130,6 +130,9 @@ namespace SSJ2_Workout.Views
             CaloriesBurned elo = new CaloriesBurned();
             elo.CheckCalories3();
         }
-
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
     }
 }

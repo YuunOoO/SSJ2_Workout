@@ -1,8 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SSJ2_Workout.Views.Stoper" BackgroundImageSource="Zawarudo">
-    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+             xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
+             x:Class="SSJ2_Workout.Views.Stoper" BackgroundImageSource="Zawarudo"
+             NavigationPage.HasNavigationBar="False">
+    
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+            <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+        </Grid>
+        
         <Label x:Name="topek" Text="Podaj czas(s) lub uruchom stoper!"  TextColor="Red" FontSize="25" FontAttributes="Bold"/>
         <Entry Placeholder="Podaj liczbe sekund do odmierzenia" x:Name="timeEntry" TextColor="Black" FontAttributes="Bold"  FontSize="20" BackgroundColor="Gray" Opacity="0.8"/>
         <Button Text="Odmierzaj czas" x:Name="timeBtn" Clicked="timeBtn_Clicked" CornerRadius="25" Opacity="0.8">

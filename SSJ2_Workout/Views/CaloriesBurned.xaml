@@ -2,9 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.CaloriesBurned"
-             BackgroundImageSource="berserk1">
+             BackgroundImageSource="berserk1" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+            </Grid>
             <Label Text="{Binding Suma3}" x:Name="testowy" TextColor="white" HorizontalTextAlignment="Center"
                       FontSize="Medium" FontAttributes="Bold"/>
             <Label Text="{Binding Suma4}"  x:Name="testowy2" TextColor="white"  HorizontalTextAlignment="Center"

@@ -148,5 +148,9 @@ namespace SSJ2_Workout.Views
             Preferences.Set("Dostarczone_Cel", Person.Dostarczone_cel.ToString());
             DependencyService.Get<IMessage>().ShortAlert("Zatwierdzono dane!");
         }
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
     }
 }

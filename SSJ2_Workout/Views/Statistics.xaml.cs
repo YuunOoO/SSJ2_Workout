@@ -24,7 +24,10 @@ namespace SSJ2_Workout.Views
             MultiLine multiLine  = new MultiLine();
 
         }
-
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
         public class ViewModel
         {
             public ObservableCollection<ChartDataPoint> Data1 { get; set; }

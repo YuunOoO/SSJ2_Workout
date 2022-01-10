@@ -2,13 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.PasekBoczny" BackgroundImageSource="backw"
-             >
-
-
-
+             NavigationPage.HasNavigationBar="False">
+    
     <ScrollView>
         <StackLayout WidthRequest="300">
-            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                <ImageButton Source="backIcon" Clicked="GoToAbout" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+            </Grid>
 
             <Frame HeightRequest="70" BorderColor="MediumPurple"
                    BackgroundColor="#CC30324d" Margin="5"

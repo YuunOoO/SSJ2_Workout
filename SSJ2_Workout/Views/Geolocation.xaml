@@ -2,9 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.Geolocation"
-             Title="Geolokalizacja!" BackgroundImageSource="gta">
+             NavigationPage.HasNavigationBar="False" BackgroundImageSource="gta">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+        
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+            </Grid>
+            
             <Frame HeightRequest="250" Margin="5" Grid.Column="1"
                HasShadow="True" Padding="0" CornerRadius="20">
                 <Frame.Background>

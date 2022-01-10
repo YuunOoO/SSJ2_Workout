@@ -2,24 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SSJ2_Workout.Views.BodyParameters"
-             Title="Parametry ciała / BMI" BackgroundImageSource="backBMI">
+             xmlns:vm="clr-namespace:SSJ2_Workout.ViewModels"
+             BackgroundImageSource="backBMI" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Margin="10">
+        <StackLayout Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
+                <Image Source="banner" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
+                <ImageButton Source="backIcon" Clicked="GoToMenu" Grid.Column="0" Aspect="AspectFit" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"></ImageButton>
+            </Grid>
+            
             <Entry x:Name="wiekEntry" Placeholder="Podaj Wiek" HorizontalTextAlignment="Center" TextColor="White" 
-                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,20,0,5"/>
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="10,20,10,5"/>
             <Entry x:Name="wzrostEntry" Placeholder="Podaj wzrost(cm)" HorizontalTextAlignment="Center" TextColor="White" 
-                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,5,0,5"/>
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="10,5,10,5"/>
             <Entry x:Name="wagaEntry" Placeholder="Podaj Wage(kg)" HorizontalTextAlignment="Center" TextColor="White" 
-                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="0,5,0,5"/>
+                   BackgroundColor="#CC312974" PlaceholderColor="White" Margin="10,5,10,5"/>
 
             <Picker x:Name="genderPicker" SelectedIndexChanged="genderChoice" TextColor="White" TitleColor="White" 
-                    HorizontalTextAlignment="Center" BackgroundColor="#CC312974" Title="Wybierz płeć" Margin="0,5,0,5"/>
+                    HorizontalTextAlignment="Center" BackgroundColor="#CC312974" Title="Wybierz płeć" Margin="10,5,10,5"/>
             <Picker x:Name="actionPicker" SelectedIndexChanged="actionChoice" TextColor="White" TitleColor="White" 
                     HorizontalTextAlignment="Center" BackgroundColor="#CC312974" 
-                    Title="Wybierz stopien aktywnosci fizycznej(mnożnik)" Margin="0,5,0,5"/>
+                    Title="Wybierz stopien aktywnosci fizycznej(mnożnik)" Margin="10,5,10,5"/>
             
-            <Button Text="Zmiana parametrów ciała!" Clicked="BodyChange" CornerRadius="30" VerticalOptions="EndAndExpand">
+            <Button Text="Zmiana parametrów ciała!" Clicked="BodyChange" CornerRadius="30" VerticalOptions="StartAndExpand">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#CC2868c9" Offset="0.0"/>

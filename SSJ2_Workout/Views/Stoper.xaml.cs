@@ -22,7 +22,10 @@ namespace SSJ2_Workout.Views
             BindingContext = this;
             Title = "Stoper";
         }
-
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
         private void BtnStart_Clicked(object sender, EventArgs e)
         {
           timer = new Timer();

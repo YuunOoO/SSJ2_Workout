@@ -21,5 +21,9 @@ namespace SSJ2_Workout.Views
         {
             Navigation.PushAsync(new CaloriesBurned());
         }
+        public void GoToMenu(object obj, EventArgs args)
+        {
+            Navigation.PushAsync(new PasekBoczny());
+        }
     }
 }
