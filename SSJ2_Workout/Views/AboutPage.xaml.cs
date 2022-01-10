@@ -51,10 +51,10 @@ namespace SSJ2_Workout.Views
             });
             
         }
-        protected override async void OnAppearing()
-        {
-            dataaa.Text = SavedData.data_save;
-        }
+       // protected override async void OnAppearing()
+        //{
+           // dataaa.Text = SavedData.data_save;
+       // }
 
         public void GoToSteps(object obj, EventArgs args)
         {

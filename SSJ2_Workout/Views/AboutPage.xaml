@@ -47,23 +47,23 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="180"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="230"/>
                         <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="80"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,0,0"
+                    <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,10,0"
                            FontSize="40" TextColor="Black" Grid.Row="0"  Grid.Column="0"></Label>
 
-                    <Label Text="{Binding Sumarycznie}" FontAttributes="Bold"  TextColor="Blue" 
-                               FontSize="20" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"></Label>
+                    <Label Text="{Binding Sumarycznie}" FontAttributes="Bold"  TextColor="Blue"
+                               FontSize="20" Grid.Row="0" Grid.Column="0" HorizontalOptions="End"></Label>
 
-                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Blue" Grid.Column="2" Grid.Row="0"
-                           HorizontalOptions="Center"></Label>
+                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Blue" Grid.Column="1" Grid.Row="0"
+                           HorizontalOptions="Start"></Label>
 
                     <Label  Text="{Binding Bmr}" FontAttributes="Bold" FontSize="20" TextColor="Blue" 
-                             Grid.Row="0" Grid.Column="3" HorizontalOptions="Start"></Label>
+                             Grid.Row="0" Grid.Column="2" HorizontalOptions="Start"></Label>
 
                     <Frame CornerRadius="60" Padding="0" Margin="10" Grid.Row="1" HorizontalOptions="Start"
                            Grid.ColumnSpan="3" BackgroundColor="Transparent" WidthRequest="300">
@@ -86,12 +86,15 @@
 
                     <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha" Margin="10,0,0,0"
                                FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" ></Label>
+                    
                     <Label Text="{Binding Suma2}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
-                               FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"></Label>
-                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Green" Grid.Column="2" 
-                           Grid.Row="2" HorizontalOptions="Center"></Label>
+                               FontSize="20" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" Margin="40,0,0,0"></Label>
+                    
+                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="Green" Grid.Column="1" 
+                           Grid.Row="2" HorizontalOptions="Start"></Label>
+                    
                     <Label  Text="{Binding Cel_Dostarczone}" FontAttributes="Bold" FontSize="20" TextColor="Green" 
-                            HorizontalOptions="Start" Grid.Row="2" Grid.Column="3"></Label>
+                            HorizontalOptions="Start" Grid.Row="2" Grid.Column="2"></Label>
 
                     <Frame CornerRadius="60" Padding="0" Margin="10" Grid.Row="3" HorizontalOptions="Start"
                            Grid.ColumnSpan="3" BackgroundColor="Transparent" WidthRequest="300">
@@ -115,10 +118,15 @@
 
                     <Label Text="Spalone Kalorie" FontFamily="Samantha" Margin="10,0,0,0"
                            Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
-                    <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
-                               FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Center"></Label>
-                    <Label  Text="{Binding Cel_Spalone}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
-                               FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Center"></Label>
+                    
+                    <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="0"
+                               FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="End"></Label>
+                    
+                    <Label Text="/" FontAttributes="Bold" FontSize="20" TextColor="red" Grid.Column="1" 
+                           Grid.Row="4" HorizontalOptions="Start"></Label>
+                    
+                    <Label  Text="{Binding Cel_Spalone}" Grid.Row="4" Grid.Column="2"
+                               FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="Start"></Label>
                        
                     <Frame CornerRadius="60" Padding="0" Margin="10" Grid.Row="5" HorizontalOptions="Start"
                            Grid.ColumnSpan="3" BackgroundColor="Transparent" WidthRequest="300">
@@ -167,35 +175,6 @@
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     <Label Text="Do roboty!" FontAttributes="Bold"  FontFamily="Samantha"
                            FontSize="30" TextColor="black" Grid.Row="1" Margin="0,0,0,5"
-                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
-
-                </Grid>
-            </Frame>
-            <Frame HeightRequest="60" HorizontalOptions="FillAndExpand"
-               Margin="5" HasShadow="True" Padding="5" CornerRadius="20">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
-                        <GradientStop Color="#CC182172" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoToPulse" NumberOfTapsRequired="1" />
-                </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="Puls" FontAttributes="Bold" 
-                           FontSize="25" TextColor="black" Grid.Row="0"
-                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                    <Label Text="2137" FontAttributes="Bold"  x:Name="dataaa"
-                           FontSize="25" TextColor="black" Grid.Row="1"
                            VerticalOptions="Center" HorizontalOptions="Center"></Label>
 
                 </Grid>
@@ -385,7 +364,7 @@
 
                     <Label Text="Ver. " TextColor="Gray"  FontFamily="Samantha" Grid.Column="0"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Center"></Label>
-                    <Label Text="0.2.7.9" TextColor="Gray"  FontFamily="Samantha" Grid.Column="1"
+                    <Label Text="0.2.8.0" TextColor="Gray"  FontFamily="Samantha" Grid.Column="1"
                    FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
                     <Label Text="Lopian Dariusz Kasprzycki Jakub" TextColor="Gray"  FontFamily="Samantha" Grid.Column="2"
                    FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
