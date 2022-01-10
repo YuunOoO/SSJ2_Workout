@@ -146,9 +146,6 @@
                         </Frame.Content>
                     </Frame>
 
-
-
-
                 </Grid>
 
             </Frame>
@@ -203,9 +200,9 @@
                     <Image Source="stepsCAT" Aspect="AspectFill"
                        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
                     </Image>
-                    <Label Text="{Binding Step}" Grid.Row="0" Grid.Column="1"
+                    <Label Text="{Binding Step}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
                        TextColor="Black" FontSize="20" FontAttributes="Bold"
-                       VerticalTextAlignment="Center"></Label>
+                       HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,80,0"></Label>
                 </Grid>
             </Frame>
 

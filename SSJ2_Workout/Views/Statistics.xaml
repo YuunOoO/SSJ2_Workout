@@ -29,28 +29,63 @@
             <CollectionView x:Name="collectionView3">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
+                        <StackLayout HeightRequest="480">  
 
-                            <Grid Margin="5">
+                            <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="{Binding Day}" FontSize="Medium" Grid.Row="0" Grid.Column="0" 
+                                <Frame BackgroundColor="#AA4B4E53" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="10">
+                                    <Grid>
+                                        <Label Text="Ostatnia zapisana data:" FontSize="Medium" FontAttributes="Bold" TextColor="white"
+                                               VerticalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                        <Label Text="{Binding Day}" FontSize="Medium" Grid.Row="1"
                                        FontAttributes="Bold" TextColor="white" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <Label Text="{Binding Total_burned}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
+                                    </Grid>
+                                </Frame>
+
+                                <Frame BackgroundColor="#AA4B4E53" Grid.Column="0" Grid.Row="1" CornerRadius="10">
+                                    <Grid>
+                                        <Label Text="Spalone: " FontSize="Medium" FontAttributes="Bold" TextColor="white"
+                                               VerticalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                        <Label Text="{Binding Total_burned}" Grid.Row="1"
                                        FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <Label Text="{Binding Total_calories}" FontSize="Medium" Grid.Row="1" Grid.Column="0" 
+                                    </Grid>
+                                </Frame>
+
+                                <Frame BackgroundColor="#AA4B4E53" Grid.Column="1" Grid.Row="1" CornerRadius="10">
+                                    <Grid>
+                                        <Label Text="Kalorie ogółem: " FontSize="Medium" FontAttributes="Bold" TextColor="white"
+                                               VerticalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                        <Label Text="{Binding Total_calories}" Grid.Row="1"
                                        FontAttributes="Bold" TextColor="white" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <Label Text="{Binding Total_delivered}" FontSize="Medium" Grid.Row="1" Grid.Column="1" 
+                                    </Grid>
+                                </Frame>
+
+                                <Frame BackgroundColor="#AA4B4E53" Grid.Column="1" Grid.Row="2" CornerRadius="10">
+                                    <Grid>
+                                        <Label Text="Zjedzone: " FontSize="Medium" FontAttributes="Bold" TextColor="white"
+                                               VerticalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                        <Label Text="{Binding Total_delivered}" FontSize="Medium" Grid.Row="1"
                                        FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
-                                <Label Text="{Binding Total_steps}" FontSize="Medium" Grid.Row="2" Grid.Column="0" 
+                                    </Grid>
+                                </Frame>
+
+                                <Frame BackgroundColor="#AA4B4E53" Grid.Column="0" Grid.Row="2" CornerRadius="10">
+                                    <Grid>
+                                        <Label Text="Kroki łącznie: " FontSize="Medium" FontAttributes="Bold" TextColor="white"
+                                               VerticalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                        <Label Text="{Binding Total_steps}" FontSize="Medium" Grid.Row="1"
                                        FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </Frame>
                             </Grid>
 
                         </StackLayout>
