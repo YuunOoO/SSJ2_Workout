@@ -31,13 +31,13 @@ namespace SSJ2_Workout.Views
                     dane.Step = DependencyService.Get<IStepCounter>().Steps.ToString();
                     SavedData.kroki = Convert.ToInt32(dane.Step);
                     dane.Suma = SavedData.sum_save;
-                    dane.Suma2 = SavedData.sum2_save;
+                    dane.Suma2 = Convert.ToInt32(SavedData.sum2_save);
                     dane.Suma3 = SavedData.sum3_save;
                     dane.Suma4 = SavedData.sum4_save;
                     dane.Langi = SavedData.locat;
                     dane.Longi = SavedData.posit;
-                    dane.Cel_Dostarczone = Person.Dostarczone_cel;
-                    dane.Cel_Spalone = Person.Spalone_cel;
+                    dane.Cel_Dostarczone = Convert.ToInt32(Person.Dostarczone_cel);
+                    dane.Cel_Spalone = Convert.ToInt32(Person.Spalone_cel);
                    // dataaa.Text = DateTime.Now.ToString();
                     decimal x = Decimal.Divide(SavedData.sum2_save,Person.Dostarczone_cel);
                     await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);
