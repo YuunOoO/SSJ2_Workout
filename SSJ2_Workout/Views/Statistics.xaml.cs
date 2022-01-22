@@ -20,35 +20,12 @@ namespace SSJ2_Workout.Views
         public Statistics()
         {
             InitializeComponent();
-            //fastline.StrokeDashArray = new double[] { 2, 3 };
-            MultiLine multiLine  = new MultiLine();
+         
 
         }
         public void GoToMenu(object obj, EventArgs args)
         {
             Navigation.PushAsync(new PasekBoczny());
-        }
-        public class ViewModel
-        {
-            public ObservableCollection<ChartDataPoint> Data1 { get; set; }
-
-            public ViewModel()
-            {
-                Data1 = new ObservableCollection<ChartDataPoint>();
-                Data1.Add(new ChartDataPoint("Jan", 32));
-                Data1.Add(new ChartDataPoint("Feb", 15));
-                Data1.Add(new ChartDataPoint("Mar", 26));
-                Data1.Add(new ChartDataPoint("Apr", 15));
-                Data1.Add(new ChartDataPoint("May", 10));
-                Data1.Add(new ChartDataPoint("Jun", 34));
-                Data1.Add(new ChartDataPoint("Jul", 27));
-                Data1.Add(new ChartDataPoint("Aug", 43));
-                Data1.Add(new ChartDataPoint("Sep", 54));
-                Data1.Add(new ChartDataPoint("Oct", 18));
-                Data1.Add(new ChartDataPoint("Nov", 22));
-                Data1.Add(new ChartDataPoint("Dec", 47));
-            }
-
         }
 
         protected override async void OnAppearing()

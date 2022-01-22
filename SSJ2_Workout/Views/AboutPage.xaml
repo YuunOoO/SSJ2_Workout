@@ -150,32 +150,6 @@
 
             </Frame>
 
-            <Frame MinimumHeightRequest="60" Margin="5" Padding="0" 
-                   HasShadow="false" CornerRadius="20">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#CCbf6ddb" Offset="0.0"/>
-                        <GradientStop Color="#CC182172" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Frame.Background>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="Powiadomienia:" FontAttributes="Bold"  FontFamily="Samantha"
-                           FontSize="40" TextColor="black" Grid.Row="0" Margin="0,5,0,0"
-                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                    <Label Text="Do roboty!" FontAttributes="Bold"  FontFamily="Samantha"
-                           FontSize="30" TextColor="black" Grid.Row="1" Margin="0,0,0,5"
-                           VerticalOptions="Center" HorizontalOptions="Center"></Label>
-
-                </Grid>
-            </Frame>
 
             <Frame HeightRequest="70"  HorizontalOptions="FillAndExpand"
                Margin="5" HasShadow="True" Padding="0" CornerRadius="20">

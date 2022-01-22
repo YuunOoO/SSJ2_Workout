@@ -128,32 +128,7 @@
                            VerticalTextAlignment="Center"></Label>
                 </Grid>
             </Frame>
-
-            <Frame HeightRequest="70" BorderColor="MediumPurple" 
-                   BackgroundColor="#CC30324d" Margin="5"
-                   HasShadow="True" Padding="0" CornerRadius="35"
-                   HorizontalOptions="FillAndExpand" 
-                   >
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoToNotifications" NumberOfTapsRequired="1" />
-                </Frame.GestureRecognizers>
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="NotifyIcon" Aspect="AspectFill"
-                           Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
-                    </Image>
-
-
-                    <Label Text="Powiadomienia" Grid.Row="0" Grid.Column="1"  FontFamily="Samantha"
-                           TextColor="Gray" FontSize="50" Margin="20,0,0,0" FontAttributes="Bold"
-                           VerticalTextAlignment="Center"></Label>
-
-                </Grid>
-            </Frame>
+            
             <Frame HeightRequest="70" BorderColor="MediumPurple"
                    BackgroundColor="#CC30324d" Margin="5"
                    HasShadow="True" Padding="0" CornerRadius="35"
@@ -193,27 +168,6 @@
                            Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
                     </Image>
                     <Label Text="Stoper" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
-                           TextColor="Gray" FontSize="50" Margin="20,0,0,0" FontAttributes="Bold"
-                           VerticalTextAlignment="Center"></Label>
-                </Grid>
-            </Frame>
-            <Frame HeightRequest="70" BorderColor="MediumPurple"
-                   BackgroundColor="#CC30324d" Margin="5"
-                   HasShadow="True" Padding="0" CornerRadius="35"
-                   HorizontalOptions="FillAndExpand" 
-                   >
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoToPulse" NumberOfTapsRequired="1" />
-                </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="PulseIcon" Aspect="AspectFill"
-                           Grid.Row="0" Grid.Column="0" Grid.RowSpan="1">
-                    </Image>
-                    <Label Text="Puls" Grid.Row="0" Grid.Column="1" FontFamily="Samantha"
                            TextColor="Gray" FontSize="50" Margin="20,0,0,0" FontAttributes="Bold"
                            VerticalTextAlignment="Center"></Label>
                 </Grid>
