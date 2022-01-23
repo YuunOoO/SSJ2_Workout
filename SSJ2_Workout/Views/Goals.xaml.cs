@@ -45,6 +45,14 @@ namespace SSJ2_Workout.Views
             return true;
         }
 
+        public void refresh()
+        {
+            if (!Preferences.ContainsKey("Stosunek")) Person.Stosunek = 25;
+            Person.Spalone_cel = Decimal.Divide(Person.BMR * Person.Stosunek, 100);
+            Person.Dostarczone_cel = Person.BMR + Person.Spalone_cel;
+            Preferences.Set("Spalone_Cel", Person.Spalone_cel.ToString());
+            Preferences.Set("Dostarczone_Cel", Person.Dostarczone_cel.ToString());
+        }
         public void KcalNeed2()
         {
             Person.WlasnyCel = Convert.ToInt32(WlasneKcalEntry.Text);
@@ -139,13 +147,15 @@ namespace SSJ2_Workout.Views
             Name = name;
         }
 
+
         private void btnZatwierdz_Clicked(object sender, EventArgs e)
         {
             Person.Stosunek = Convert.ToDecimal(slider.Value); //spalone %
             Person.Spalone_cel = Decimal.Divide(Person.BMR * Person.Stosunek, 100);
-            Person.Dostarczone_cel = Person.BMR - Person.Spalone_cel;
+            Person.Dostarczone_cel = Person.BMR + Person.Spalone_cel;
             Preferences.Set("Spalone_Cel", Person.Spalone_cel.ToString());
             Preferences.Set("Dostarczone_Cel", Person.Dostarczone_cel.ToString());
+            Preferences.Set("Stosunek", Person.Stosunek.ToString());
             DependencyService.Get<IMessage>().ShortAlert("Zatwierdzono dane!");
         }
         public void GoToMenu(object obj, EventArgs args)

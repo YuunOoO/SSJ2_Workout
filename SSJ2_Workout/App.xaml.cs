@@ -115,6 +115,7 @@ namespace SSJ2_Workout
             {
                 Person.Spalone_cel = Convert.ToDecimal(Preferences.Get("Spalone_Cel", ""));
                 Person.Dostarczone_cel = Convert.ToDecimal(Preferences.Get("Dostarczone_Cel", ""));
+                Person.Stosunek = Convert.ToDecimal(Preferences.Get("Stosunek", ""));
             }
             if (Preferences.ContainsKey("data"))
             {

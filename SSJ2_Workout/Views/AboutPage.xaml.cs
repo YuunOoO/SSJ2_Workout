@@ -38,6 +38,7 @@ namespace SSJ2_Workout.Views
                     dane.Longi = SavedData.posit;
                     dane.Cel_Dostarczone = Convert.ToInt32(Person.Dostarczone_cel);
                     dane.Cel_Spalone = Convert.ToInt32(Person.Spalone_cel);
+                    SavedData.spalone = Convert.ToInt32(dane.Spalone);
                    // dataaa.Text = DateTime.Now.ToString();
                     decimal x = Decimal.Divide(SavedData.sum2_save,Person.Dostarczone_cel);
                     await zjedzone.ProgressTo((double)x, 1500, Easing.Linear);

@@ -82,6 +82,7 @@ namespace SSJ2_Workout.Views
                     {
                         Goals goals = new Goals();
                         goals.KcalNeed2();
+                        goals.refresh();
                     }
                     DependencyService.Get<IMessage>().ShortAlert("Pomyslnie zmieniono parametry!");
                 }
