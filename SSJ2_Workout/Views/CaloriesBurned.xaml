@@ -49,9 +49,9 @@
                                 <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
                                        FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
                                 <ImageButton Source="KoszButton2.png" Grid.Row="1" BackgroundColor="Transparent" 
-                                             ScaleX="1.1" Clicked="DeleteButtonClicked" ></ImageButton>
+                                             ScaleX="1.0" Clicked="DeleteButtonClicked" ></ImageButton>
                                 <ImageButton Source="PlusButton2.png" Grid.Row="1" BackgroundColor="Transparent" 
-                                             ScaleX="1.1" Grid.Column="1" Clicked="OnChange"></ImageButton>
+                                             ScaleX="1.0" Grid.Column="1" Clicked="OnChange"></ImageButton>
                             </Grid>
 
                         </StackLayout>

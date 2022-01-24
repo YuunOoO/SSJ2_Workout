@@ -38,7 +38,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Row="1" Grid.Column="0" CornerRadius="30">
-                        <Label x:Name="LabelX" TextColor="black" FontSize="25" FontAttributes="Bold" 
+                        <Label x:Name="LabelX" TextColor="black" FontSize="15" FontAttributes="Bold" 
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -48,7 +48,7 @@
                         </Frame.Background>
                     </Frame>
                     <Frame Grid.Row="1" Grid.Column="1" CornerRadius="30">
-                        <Label x:Name="LabelY" TextColor="black" FontSize="25" FontAttributes="Bold" 
+                        <Label x:Name="LabelY" TextColor="black" FontSize="15" FontAttributes="Bold" 
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -58,7 +58,7 @@
                         </Frame.Background>
                     </Frame>
                     <Frame Grid.Row="1" Grid.Column="2" CornerRadius="30">
-                        <Label x:Name="LabelZ" TextColor="black" FontSize="25" FontAttributes="Bold"
+                        <Label x:Name="LabelZ" TextColor="black" FontSize="15" FontAttributes="Bold"
                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

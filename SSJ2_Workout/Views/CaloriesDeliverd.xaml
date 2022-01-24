@@ -46,7 +46,7 @@
                     <DataTemplate>
                         <StackLayout Padding="0">
 
-                            <Grid Margin="20,5,20,20">
+                            <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="50"/>
@@ -61,9 +61,9 @@
                                 <Label Text="{Binding Calories}" FontSize="Medium" Grid.Row="0" Grid.Column="1" 
                                        FontAttributes="Bold" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
 
-                                <ImageButton Source="KoszButton.png" BackgroundColor="Transparent" ScaleX="1.1"
+                                <ImageButton Source="KoszButton.png" BackgroundColor="Transparent" ScaleX="1.0"
                                              Padding="0" Margin="0" Grid.Row="1" Grid.Column="0" Clicked="DeleteButtonClicked" Opacity="0.8"></ImageButton>
-                                <ImageButton Source="PlusButton.png" BackgroundColor="Transparent" ScaleX="1.1"
+                                <ImageButton Source="PlusButton.png" BackgroundColor="Transparent" ScaleX="1.0"
                                              Padding="0" Margin="0" Grid.Row="1" Grid.Column="1" Clicked="OnChange" Opacity="0.8"></ImageButton>
                             </Grid>
                             

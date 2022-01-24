@@ -48,13 +48,13 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="230"/>
-                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="5"/>
                         <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="40"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Kalorie ogołem: " FontAttributes="Bold" FontFamily="Samantha" Margin="10,0,10,0"
-                           FontSize="40" TextColor="Black" Grid.Row="0"  Grid.Column="0"></Label>
+                           FontSize="35" TextColor="Black" Grid.Row="0"  Grid.Column="0"></Label>
 
                     <Label Text="{Binding Sumarycznie}" FontAttributes="Bold"  TextColor="Blue"
                                FontSize="20" Grid.Row="0" Grid.Column="0" HorizontalOptions="End"></Label>
@@ -85,7 +85,7 @@
 
 
                     <Label Text="Kalorie zjedzone: "  FontAttributes="Bold"  FontFamily="Samantha" Margin="10,0,0,0"
-                               FontSize="40" TextColor="Black" Grid.Row="2" Grid.Column="0" ></Label>
+                               FontSize="35" TextColor="Black" Grid.Row="2" Grid.Column="0" ></Label>
                     
                     <Label Text="{Binding Suma2}" x:Name="terefere" FontAttributes="Bold"  TextColor="Green"
                                FontSize="20" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" Margin="40,0,0,0"></Label>
@@ -116,8 +116,8 @@
                     </Frame>
 
 
-                    <Label Text="Spalone Kalorie" FontFamily="Samantha" Margin="10,0,0,0"
-                           Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
+                    <Label Text="Spalone Kalorie:" FontFamily="Samantha" Margin="10,0,0,0"
+                           Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize="35" TextColor="Black"></Label>
                     
                     <Label  Text="{Binding Spalone}" Grid.Row="4" Grid.Column="0"
                                FontAttributes="Bold" FontSize="20" TextColor="Red" HorizontalTextAlignment="End"></Label>

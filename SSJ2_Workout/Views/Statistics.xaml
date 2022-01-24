@@ -50,8 +50,8 @@
                                     <RowDefinition Height="100"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="200"/>
-                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="150"/>
                                 </Grid.ColumnDefinitions>
 
                                 <Frame BackgroundColor="#AA4B4E53" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="10">
